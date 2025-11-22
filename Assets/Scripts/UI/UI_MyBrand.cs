@@ -13,5 +13,10 @@ public class UI_MyBrand : MonoBehaviour
 
     }
 
+    public void RequestList()
+    {
+
+    }
+
 
 }
