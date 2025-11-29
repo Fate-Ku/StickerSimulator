@@ -295,6 +295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CircleSticler
       objectReference: {fileID: 0}
+    - target: {fileID: 8195336964585548563, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
+      propertyPath: m_TagString
+      value: Sticker
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -320,6 +324,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5816774591770658973, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816774591770658973, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816774591770658973, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.61
@@ -363,6 +379,10 @@ PrefabInstance:
     - target: {fileID: 8558523432423376187, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
       propertyPath: m_Name
       value: TriangleSticker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558523432423376187, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
+      propertyPath: m_TagString
+      value: Sticker
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1620,7 +1640,6 @@ GameObject:
   - component: {fileID: 1085776965}
   - component: {fileID: 1085776964}
   - component: {fileID: 1085776963}
-  - component: {fileID: 1085776966}
   m_Layer: 5
   m_Name: SelectStickerButton
   m_TagString: Untagged
@@ -1690,7 +1709,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1085776964}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2083599932}
+        m_TargetAssemblyTypeName: Select, Assembly-CSharp
+        m_MethodName: OnButtonDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1267376014}
+        m_TargetAssemblyTypeName: Select, Assembly-CSharp
+        m_MethodName: OnButtonDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1085776964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1729,18 +1772,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085776961}
   m_CullTransparentMesh: 1
---- !u!114 &1085776966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085776961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a8e767039c57d041b85af77433fecb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1086264486
 GameObject:
   m_ObjectHideFlags: 0

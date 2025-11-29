@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class ScaleTool : MonoBehaviour
 {
     //サイズを変更するオブジェクト
