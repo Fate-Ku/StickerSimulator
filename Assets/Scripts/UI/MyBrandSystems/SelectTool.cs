@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Select : MonoBehaviour
 {
@@ -8,15 +9,29 @@ public class Select : MonoBehaviour
     //オブジェクト選択モードか？デフォルトはtrue
     private bool IsSelectMode = true;
 
-    //オブジェクトが選択されているか？
-    private bool IsSelected = false;
-
     // 現在選択しているオブジェクト
     private Transform targetObject;
     private SpriteRenderer targetRenderer;
 
     // 元の色を保存する変数
     private Color defaultColor;
+
+    [SerializeField] private LayerMask stickerMask;
+
+    void Update()
+    {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            OnMouseDown();
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            OnMouseDrag();
+        }
+    }
+
 
     //ボタンを押すとオブジェクト選択モードに移行または解除
     public void OnButtonDown()
@@ -34,9 +49,8 @@ public class Select : MonoBehaviour
 
                     targetRenderer = null;
                     targetObject = null;
-                    IsSelected = false;
-
                 }
+
 
                 IsSelectMode = false;
                 break;
@@ -60,26 +74,22 @@ public class Select : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector2(mousePosition.x, mousePosition.y));
 
-        //中央とマウスの座標のずれを計算
-        m_offset = new Vector2(transform.position.x - worldPosition.x, transform.position.y - worldPosition.y);
-
         //当たり判定
-        RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+        RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero, 10f, stickerMask);
+
+        // 以前の選択オブジェクトがあれば色を戻し、選択解除
+        if (targetRenderer != null)
+        {
+            targetRenderer.color = defaultColor;
+
+            targetRenderer = null;
+            targetObject = null;
+        }
+
 
         //オブジェクトが選択されているかつそのオブジェクトがStickerタグを持っている場合
         if (hit.collider != null && hit.collider.CompareTag("Sticker"))
         {
-
-            // 以前の選択オブジェクトがあれば色を戻し、選択解除
-            if (targetRenderer != null)
-            {
-                targetRenderer.color = defaultColor;
-
-                targetRenderer = null;
-                targetObject = null;
-                IsSelected = false;
-
-            }
 
             //クリックしたオブジェクトを選択対象として登録
             targetObject = hit.transform;
@@ -92,8 +102,10 @@ public class Select : MonoBehaviour
             //色の変更
             targetRenderer.color = new Color(0.8f, 0.8f, 0.8f);
 
-            //選択状態にする
-            IsSelected = true;
+            //座標のずれを計算
+            m_offset = targetObject.position - worldPosition;
+
+
 
         }
 

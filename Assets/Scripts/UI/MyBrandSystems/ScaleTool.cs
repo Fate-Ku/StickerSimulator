@@ -60,4 +60,16 @@ public class ScaleTool : MonoBehaviour
 
     }
 
+    //targetObject ‚ğ Set ‚Å‚«‚éŠÖ”
+    public void SetTarget(Transform target)
+    {
+        targetObject = target;
+
+        if (targetObject != null)
+        {
+            defaultSize = targetObject.localScale;
+        }
+    }
+
+
 }
