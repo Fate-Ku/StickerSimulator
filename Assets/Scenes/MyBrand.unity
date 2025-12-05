@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 40667255}
   - component: {fileID: 40667257}
   - component: {fileID: 40667256}
+  - component: {fileID: 40667258}
   m_Layer: 5
   m_Name: StickerType
   m_TagString: Untagged
@@ -170,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -194,6 +195,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40667254}
   m_CullTransparentMesh: 1
+--- !u!114 &40667258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40667254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 160, y: 160}
+  m_Spacing: {x: 20, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &71149402
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,16 +277,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4825725250775735925, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.41636378
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825725250775735925, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.41636378
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825725250775735925, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5309
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825725250775735925, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.04
+      value: 4.9871764
       objectReference: {fileID: 0}
     - target: {fileID: 4825725250775735925, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.99
+      value: 3.3597748
       objectReference: {fileID: 0}
     - target: {fileID: 4825725250775735925, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4825725250775735925, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -312,6 +349,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8195336964585548563, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2083599931}
+    - targetCorrespondingSourceObject: {fileID: 8195336964585548563, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2083599937}
   m_SourcePrefab: {fileID: 100100000, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
 --- !u!1001 &161620589
 PrefabInstance:
@@ -334,12 +374,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.41636378
+      objectReference: {fileID: 0}
+    - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.41636378
+      objectReference: {fileID: 0}
+    - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.540267
+      objectReference: {fileID: 0}
+    - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.61
+      value: 6.6533933
       objectReference: {fileID: 0}
     - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.99
+      value: 3.396812
       objectReference: {fileID: 0}
     - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -351,15 +403,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -409,7 +461,7 @@ GameObject:
   - component: {fileID: 211493064}
   m_Layer: 5
   m_Name: LayerUpStickerButton
-  m_TagString: Untagged
+  m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -553,7 +605,7 @@ GameObject:
   - component: {fileID: 223808155}
   m_Layer: 5
   m_Name: SelectStickerTypeButton (1)
-  m_TagString: Untagged
+  m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -710,7 +762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -785,7 +837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -860,7 +912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -898,7 +950,7 @@ GameObject:
   - component: {fileID: 415023790}
   m_Layer: 5
   m_Name: ScaleDownStickerButton
-  m_TagString: Untagged
+  m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1216,7 +1268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1254,7 +1306,7 @@ GameObject:
   - component: {fileID: 574717260}
   m_Layer: 5
   m_Name: LayerDownStickerButton
-  m_TagString: Untagged
+  m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1495,7 +1547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1533,7 +1585,7 @@ GameObject:
   - component: {fileID: 1033010010}
   m_Layer: 5
   m_Name: DeleteStickerButton
-  m_TagString: Untagged
+  m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1824,19 +1876,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Select, Assembly-CSharp
-        m_MethodName: OnButtonDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1382962249}
         m_TargetAssemblyTypeName: Select, Assembly-CSharp
         m_MethodName: OnButtonDown
         m_Mode: 1
@@ -1937,7 +1977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2012,7 +2052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2049,7 +2089,7 @@ GameObject:
   - component: {fileID: 1217892199}
   m_Layer: 5
   m_Name: SelectStickerFrame
-  m_TagString: Untagged
+  m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2087,7 +2127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2116,11 +2156,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8558523432423376187, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
   m_PrefabInstance: {fileID: 161620589}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1267376012 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6499600197767143271, guid: 597eed1fd7ae8834b9f057fac91b0b9d, type: 3}
-  m_PrefabInstance: {fileID: 161620589}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1267376013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2145,7 +2180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5232a1637e59570409cda7e12b15fa7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1267376012}
 --- !u!114 &1267376016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2158,81 +2192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1827a327d5e2349b3f4eb7796bb0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1381328637
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1381328638}
-  - component: {fileID: 1381328640}
-  - component: {fileID: 1381328639}
-  m_Layer: 5
-  m_Name: StickerType (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1381328638
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381328637}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 685307399916951778}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 627.8, y: 43.86}
-  m_SizeDelta: {x: 405.79, y: 884.8}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1381328639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381328637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -5668518402485374812, guid: 3e8ba170958604e4e97302f24ce8c058, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1381328640
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381328637}
-  m_CullTransparentMesh: 1
 --- !u!1 &1382962247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,8 +2225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.24247, y: -0.18243481}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.2575302, y: -0.18243408}
+  m_SizeDelta: {x: 19, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1382962249
 MonoBehaviour:
@@ -2281,9 +2240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8e767039c57d041b85af77433fecb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stickerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  targetRenderer: {fileID: 0}
 --- !u!1 &1438594604
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,7 +2292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2373,7 +2330,7 @@ GameObject:
   - component: {fileID: 1512377529}
   m_Layer: 5
   m_Name: SelectStickerTypeButton
-  m_TagString: Untagged
+  m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2591,7 +2548,7 @@ GameObject:
   - component: {fileID: 1953018768}
   m_Layer: 5
   m_Name: ScaleUpStickerButton
-  m_TagString: Untagged
+  m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2775,11 +2732,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8195336964585548563, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
   m_PrefabInstance: {fileID: 77154464}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2083599924 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4825725250775735925, guid: 73dac4ca0e60e734ba29dd1a37104af8, type: 3}
-  m_PrefabInstance: {fileID: 77154464}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2083599931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2804,7 +2756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5232a1637e59570409cda7e12b15fa7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 2083599924}
 --- !u!114 &2083599934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2815,6 +2766,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f1827a327d5e2349b3f4eb7796bb0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2083599937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083599922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6242b986dbac6d149b516ca1872345ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2120839342
@@ -2875,7 +2838,7 @@ GameObject:
   - component: {fileID: 2137307805}
   m_Layer: 5
   m_Name: ChangeColorStickerButton
-  m_TagString: Untagged
+  m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3056,7 +3019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3123,7 +3086,6 @@ RectTransform:
   - {fileID: 8901376745191166463}
   - {fileID: 372916127}
   - {fileID: 40667255}
-  - {fileID: 1381328638}
   - {fileID: 1086264487}
   - {fileID: 1185996808}
   - {fileID: 1217892198}
@@ -3889,6 +3851,6 @@ SceneRoots:
   - {fileID: 1974088520861275541}
   - {fileID: 1051299859}
   - {fileID: 2120839343}
-  - {fileID: 77154464}
   - {fileID: 161620589}
+  - {fileID: 77154464}
   - {fileID: 1382962248}

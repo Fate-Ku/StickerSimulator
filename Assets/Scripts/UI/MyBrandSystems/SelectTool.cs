@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,19 +11,19 @@ public class Select : MonoBehaviour
     private bool IsSelectMode = true;
 
     // 現在選択しているオブジェクト
-    private Transform targetObject;
-    private SpriteRenderer targetRenderer;
+    [NonSerialized] public static Transform targetObject;
+    public SpriteRenderer targetRenderer;
 
     // 元の色を保存する変数
     private Color defaultColor;
 
-    [SerializeField] private LayerMask stickerMask;
-
     void Update()
     {
+      
 
         if (Input.GetMouseButtonDown(0))
         {
+
             OnMouseDown();
         }
 
@@ -63,29 +64,36 @@ public class Select : MonoBehaviour
     }
 
 
+
+
     //マウスが押された
     public void OnMouseDown()
     {
 
+        // UIの上にカーソルがあったら、入力を受け付けない
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         //オブジェクト選択モードでなければ処理しない
         if (!IsSelectMode) { return; }
+
 
         //マウスポインタの取得
         Vector3 mousePosition = Input.mousePosition;
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector2(mousePosition.x, mousePosition.y));
 
         //当たり判定
-        RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero, 10f, stickerMask);
+        RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+       
+
 
         // 以前の選択オブジェクトがあれば色を戻し、選択解除
         if (targetRenderer != null)
         {
             targetRenderer.color = defaultColor;
-
+//
             targetRenderer = null;
             targetObject = null;
-        }
-
+         }
 
         //オブジェクトが選択されているかつそのオブジェクトがStickerタグを持っている場合
         if (hit.collider != null && hit.collider.CompareTag("Sticker"))
@@ -113,6 +121,10 @@ public class Select : MonoBehaviour
     //マウスがドラッグされた
     private void OnMouseDrag()
     {
+
+        // UIの上にカーソルがあったら、入力を受け付けない
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         //Stickerオブジェクトが選択されていなければ処理しない
         if (targetObject == null) { return; }
 
