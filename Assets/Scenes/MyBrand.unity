@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 211493065}
   - component: {fileID: 211493064}
   m_Layer: 5
-  m_Name: LayerUpStickerButton
+  m_Name: LayerUpToolButton
   m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,8 +482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -159.34, y: 429.86}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: -149.29999, y: 370}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &211493064
 MonoBehaviour:
@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 223808156}
   - component: {fileID: 223808155}
   m_Layer: 5
-  m_Name: SelectStickerTypeButton (1)
+  m_Name: SelectStickerAnimalGroupButton
   m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,6 +711,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223808153}
   m_CullTransparentMesh: 1
+--- !u!1 &293519955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293519956}
+  - component: {fileID: 293519958}
+  - component: {fileID: 293519957}
+  m_Layer: 5
+  m_Name: RotateToolFrame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &293519956
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293519955}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 685307399916951778}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -382.6, y: 370}
+  m_SizeDelta: {x: 124.38, y: 124.38}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &293519957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293519955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.95294124, g: 0.79215693, b: 0.9176471, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5668518402485374812, guid: 3e8ba170958604e4e97302f24ce8c058, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &293519958
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293519955}
+  m_CullTransparentMesh: 1
 --- !u!1 &370787188
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +798,7 @@ GameObject:
   - component: {fileID: 370787191}
   - component: {fileID: 370787190}
   m_Layer: 5
-  m_Name: LayerDownStickerFrame
+  m_Name: LayerDownToolFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -745,8 +820,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.8, y: 429.86002}
-  m_SizeDelta: {x: 148.54, y: 148.54}
+  m_AnchoredPosition: {x: -30.200005, y: 370}
+  m_SizeDelta: {x: 124.38, y: 124.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370787190
 MonoBehaviour:
@@ -820,8 +895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -214.02, y: -55.9}
-  m_SizeDelta: {x: 1174.504, y: 840.913}
+  m_AnchoredPosition: {x: -213.99, y: -41.932}
+  m_SizeDelta: {x: 1174.5, y: 713.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &372916128
 MonoBehaviour:
@@ -873,7 +948,7 @@ GameObject:
   - component: {fileID: 381867764}
   - component: {fileID: 381867763}
   m_Layer: 5
-  m_Name: ScaleDownStickerFrame
+  m_Name: ScaleDownToolFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -895,8 +970,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -443.4, y: 429.73}
-  m_SizeDelta: {x: 148.54, y: 148.54}
+  m_AnchoredPosition: {x: -501.5, y: 370}
+  m_SizeDelta: {x: 124.38, y: 124.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &381867763
 MonoBehaviour:
@@ -949,7 +1024,7 @@ GameObject:
   - component: {fileID: 415023791}
   - component: {fileID: 415023790}
   m_Layer: 5
-  m_Name: ScaleDownStickerButton
+  m_Name: ScaleDownToolButton
   m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,8 +1046,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -443.61, y: 429.85995}
-  m_SizeDelta: {x: 135.38, y: 132.3}
+  m_AnchoredPosition: {x: -501.5, y: 370}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &415023790
 MonoBehaviour:
@@ -1229,7 +1304,7 @@ GameObject:
   - component: {fileID: 543525316}
   - component: {fileID: 543525315}
   m_Layer: 5
-  m_Name: LayerUpStickerFrame
+  m_Name: LayerUpToolFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1251,8 +1326,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -159.33998, y: 429.86}
-  m_SizeDelta: {x: 148.54, y: 148.54}
+  m_AnchoredPosition: {x: -149.29999, y: 370}
+  m_SizeDelta: {x: 124.38, y: 124.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &543525315
 MonoBehaviour:
@@ -1305,7 +1380,7 @@ GameObject:
   - component: {fileID: 574717261}
   - component: {fileID: 574717260}
   m_Layer: 5
-  m_Name: LayerDownStickerButton
+  m_Name: LayerDownToolButton
   m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1327,8 +1402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: 428}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchoredPosition: {x: -30.2, y: 370}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574717260
 MonoBehaviour:
@@ -1508,7 +1583,7 @@ GameObject:
   - component: {fileID: 978543262}
   - component: {fileID: 978543261}
   m_Layer: 5
-  m_Name: ChangeColorStickerFrame
+  m_Name: ChangeColorToolFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1530,8 +1605,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -301.1, y: 429.73}
-  m_SizeDelta: {x: 148.54, y: 148.54}
+  m_AnchoredPosition: {x: -268.5, y: 370}
+  m_SizeDelta: {x: 124.38, y: 124.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &978543261
 MonoBehaviour:
@@ -1584,7 +1659,7 @@ GameObject:
   - component: {fileID: 1033010011}
   - component: {fileID: 1033010010}
   m_Layer: 5
-  m_Name: DeleteStickerButton
+  m_Name: DeleteToolButton
   m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1606,8 +1681,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 298.30002, y: 428.84995}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 311.07, y: 370}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1033010010
 MonoBehaviour:
@@ -1807,7 +1882,7 @@ GameObject:
   - component: {fileID: 1085776964}
   - component: {fileID: 1085776963}
   m_Layer: 5
-  m_Name: SelectStickerButton
+  m_Name: SelectToolButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1829,8 +1904,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -727.66, y: 429.86}
-  m_SizeDelta: {x: 134.35, y: 132.3}
+  m_AnchoredPosition: {x: -739.08, y: 370}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1085776963
 MonoBehaviour:
@@ -1938,7 +2013,7 @@ GameObject:
   - component: {fileID: 1086264489}
   - component: {fileID: 1086264488}
   m_Layer: 5
-  m_Name: SelectStickerType
+  m_Name: SelectStickerShapeGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2013,7 +2088,7 @@ GameObject:
   - component: {fileID: 1185996810}
   - component: {fileID: 1185996809}
   m_Layer: 5
-  m_Name: SelectStickerType (1)
+  m_Name: SelectStickerAnimalGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2088,7 +2163,7 @@ GameObject:
   - component: {fileID: 1217892200}
   - component: {fileID: 1217892199}
   m_Layer: 5
-  m_Name: SelectStickerFrame
+  m_Name: SelectToolFrame
   m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2110,8 +2185,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -727, y: 429.73}
-  m_SizeDelta: {x: 148.54, y: 148.54}
+  m_AnchoredPosition: {x: -739.08, y: 370}
+  m_SizeDelta: {x: 124.38, y: 124.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217892199
 MonoBehaviour:
@@ -2253,7 +2328,7 @@ GameObject:
   - component: {fileID: 1438594607}
   - component: {fileID: 1438594606}
   m_Layer: 5
-  m_Name: ScaleUpStickerFrame
+  m_Name: ScaleUpToolFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2275,8 +2350,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -586, y: 429.73}
-  m_SizeDelta: {x: 148.54, y: 148.54}
+  m_AnchoredPosition: {x: -620.2, y: 370}
+  m_SizeDelta: {x: 124.38, y: 124.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438594606
 MonoBehaviour:
@@ -2329,7 +2404,7 @@ GameObject:
   - component: {fileID: 1512377530}
   - component: {fileID: 1512377529}
   m_Layer: 5
-  m_Name: SelectStickerTypeButton
+  m_Name: SelectStickerShapeGroupButton
   m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2547,7 +2622,7 @@ GameObject:
   - component: {fileID: 1953018769}
   - component: {fileID: 1953018768}
   m_Layer: 5
-  m_Name: ScaleUpStickerButton
+  m_Name: ScaleUpToolButton
   m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2569,8 +2644,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -586.1, y: 429.86}
-  m_SizeDelta: {x: 134.35, y: 132.3}
+  m_AnchoredPosition: {x: -620.2, y: 370}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1953018768
 MonoBehaviour:
@@ -2837,7 +2912,7 @@ GameObject:
   - component: {fileID: 2137307806}
   - component: {fileID: 2137307805}
   m_Layer: 5
-  m_Name: ChangeColorStickerButton
+  m_Name: ChangeColorToolButton
   m_TagString: ToolButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2859,8 +2934,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -301.3, y: 429.86}
-  m_SizeDelta: {x: 135.38, y: 132.3}
+  m_AnchoredPosition: {x: -268.5, y: 370}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2137307805
 MonoBehaviour:
@@ -2980,7 +3055,7 @@ GameObject:
   - component: {fileID: 2144993793}
   - component: {fileID: 2144993792}
   m_Layer: 5
-  m_Name: DeleteStickerFrame
+  m_Name: DeleteToolFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3002,8 +3077,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 299, y: 430}
-  m_SizeDelta: {x: 148.54, y: 148.54}
+  m_AnchoredPosition: {x: 311.07, y: 370}
+  m_SizeDelta: {x: 124.38, y: 124.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2144993792
 MonoBehaviour:
@@ -3091,6 +3166,7 @@ RectTransform:
   - {fileID: 1217892198}
   - {fileID: 1438594605}
   - {fileID: 381867762}
+  - {fileID: 293519956}
   - {fileID: 978543260}
   - {fileID: 543525314}
   - {fileID: 370787189}
