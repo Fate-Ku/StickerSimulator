@@ -14,25 +14,40 @@ public class Select : MonoBehaviour
     [NonSerialized] public static Transform targetObject;
     public SpriteRenderer targetRenderer;
 
+    //シール編集エリア
+    [SerializeField] private Collider2D StickerArea;
+
+    // 選択オブジェクトの元の位置を保存
+    private Vector3 originalPosition;
+
+
     // 元の色を保存する変数
     private Color defaultColor;
+
 
     void Update()
     {
       
-
+        //左クリックが押された
         if (Input.GetMouseButtonDown(0))
         {
 
             OnMouseDown();
         }
 
+
+        //マウスがドラッグされた
         if (Input.GetMouseButton(0))
         {
             OnMouseDrag();
         }
-    }
 
+        //左クリックが離された
+        if (Input.GetMouseButtonUp(0))
+        { 
+            OnMouseUp();
+        }
+    }
 
     //ボタンを押すとオブジェクト選択モードに移行または解除
     public void OnButtonDown()
@@ -90,7 +105,7 @@ public class Select : MonoBehaviour
         if (targetRenderer != null)
         {
             targetRenderer.color = defaultColor;
-//
+
             targetRenderer = null;
             targetObject = null;
          }
@@ -113,7 +128,8 @@ public class Select : MonoBehaviour
             //座標のずれを計算
             m_offset = targetObject.position - worldPosition;
 
-
+            // 元の位置も保存
+            originalPosition = targetObject.position;
 
         }
 
@@ -135,5 +151,21 @@ public class Select : MonoBehaviour
         //オブジェクトのどこを掴んでも良いようにする、画面の外に出ないようにする
         targetObject.position = new Vector2(Mathf.Clamp(worldPosition.x + m_offset.x, -8.0f, 8.0f), Mathf.Clamp(worldPosition.y + m_offset.y, -4.0f, 4.0f));
 
+    }
+
+    private void OnMouseUp()
+    {
+        if (targetObject == null) return;
+
+        //シール編集エリアの中に現在位置があるか？
+        bool isInsideArea = StickerArea.OverlapPoint(targetObject.position);
+
+        // 枠内なら何もしない
+        if (isInsideArea) { return; }
+        else
+        {
+            // 枠外なら元の位置に強制戻し
+            targetObject.position = originalPosition;
+        }
     }
 }

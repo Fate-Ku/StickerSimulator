@@ -8,7 +8,13 @@ public class DeleteTool : MonoBehaviour
 
     public void DestroyObject()
     {
-        // 指定したオブジェクトを削除する
-        Destroy(objectToDestroy);
+        // 何も選択していなければ終了
+        if (Select.targetObject == null){ return; }
+
+        // 選択されているオブジェクトを削除
+        Destroy(Select.targetObject.gameObject);
+
+        // 選択解除
+        Select.targetObject = null;
     }
 }
