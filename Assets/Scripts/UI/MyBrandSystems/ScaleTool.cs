@@ -22,6 +22,7 @@ public class ScaleTool : MonoBehaviour
 
     public void Start()
     {
+        //新しいオブジェクトを設定
         SetTarget(transform);
 
         //オブジェクトの元のサイズを保存
@@ -74,6 +75,7 @@ public class ScaleTool : MonoBehaviour
         //選択オブジェクトを変更する
         Select.targetObject = target;
 
+        //選択されていれば
         if (Select.targetObject != null)
         {
             //オブジェクトの元のサイズを保存

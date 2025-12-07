@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class ChangeColorTool : MonoBehaviour
 {
-    private Renderer color;
-
     //元の色を保存する変数
     private Color defaultColor;
 
     //現在の色の段階
     private int colorStep = 0;
 
-    // 選択が切り替わったか確認用
+    //シールの種類が切り替わったか確認用
     private Renderer prevRenderer = null;
 
     //色を変更する
@@ -25,19 +23,21 @@ public class ChangeColorTool : MonoBehaviour
         //選択中のオブジェクトのRendererを取得
         Renderer renderer = Select.targetObject.GetComponent<Renderer>();
 
-        //選択オブジェクトが変わった時だけ元の色を保存
+        //選択しているオブジェクトが切り替わったら
         if (renderer != prevRenderer)
         {
+            //元の色を保存
             defaultColor = renderer.material.color;
+
+            //選択中のオブジェクトに設定
             prevRenderer = renderer;
 
             colorStep = 0;
         }
 
-
+        //現在の色の段階によって色を変える
         switch (colorStep)
         {
-
             case 0:
 
                 //オブジェクトを元の色にする
@@ -46,7 +46,7 @@ public class ChangeColorTool : MonoBehaviour
                 colorStep = 1;
                 break;
             case 1:
-                //オブジェクトの色を黄色に変更
+                //オブジェクトの色を黄色に変更（乗算で色計算しているので黄色になりません）
                 renderer.material.color = new Color32(255, 255, 180, 255);
                 //色の段階を2にする
                 colorStep = 2;
