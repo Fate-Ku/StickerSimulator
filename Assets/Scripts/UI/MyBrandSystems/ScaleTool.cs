@@ -1,10 +1,9 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public class ScaleTool : MonoBehaviour
 {
-    //サイズを変更するオブジェクト
-    public Transform targetObject;
 
     //元のサイズを保存
     private Vector2 defaultSize;
@@ -23,22 +22,27 @@ public class ScaleTool : MonoBehaviour
 
     public void Start()
     {
+        SetTarget(transform);
 
         //オブジェクトの元のサイズを保存
-        defaultSize = targetObject.transform.localScale; 
+        defaultSize = Select.targetObject.transform.localScale; 
 
     }
 
     //オブジェクトの拡大
     public void ScaleUp()
     {
-        if(targetObject == null) { return; }
+        //選択状態でなければ処理しない
+        if (Select.targetObject == null) { return; }
 
-        //段階が最大でない場合
+        //段階が最大でない場合、拡大
         if (scaleStep < maxStep)
         {
+            //段階を1増やす
             scaleStep++;
-            targetObject.transform.localScale = defaultSize * (1 + scaleStep * changeScale);
+
+            //デフォルトのサイズを基準にサイズ変更
+            Select.targetObject.transform.localScale = defaultSize * (1 + scaleStep * changeScale);
 
         }
 
@@ -47,17 +51,35 @@ public class ScaleTool : MonoBehaviour
     //オブジェクトの縮小
     public void ScaleDown()
     {
-        if (targetObject == null) { return; }
+        //選択状態でなければ処理しない
+        if (Select.targetObject == null) { return; }
 
-        //段階が最小でない場合
+        //段階が最小でない場合、縮小
         if (scaleStep > minStep)
         {
+            //段階を1減らす
             scaleStep--;
-            targetObject.transform.localScale = defaultSize * (1 + scaleStep * changeScale);
+
+            //デフォルトのサイズを基準にサイズ変更
+            Select.targetObject.transform.localScale = defaultSize * (1 + scaleStep * changeScale);
 
 
         }
 
     }
+
+    //新しいオブジェクトを設定する関数
+    public void SetTarget(Transform target)
+    {
+        //選択オブジェクトを変更する
+        Select.targetObject = target;
+
+        if (Select.targetObject != null)
+        {
+            //オブジェクトの元のサイズを保存
+            defaultSize = Select.targetObject.localScale;
+        }
+    }
+
 
 }

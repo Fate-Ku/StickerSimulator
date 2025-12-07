@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Select : MonoBehaviour
 {
@@ -8,15 +10,44 @@ public class Select : MonoBehaviour
     //オブジェクト選択モードか？デフォルトはtrue
     private bool IsSelectMode = true;
 
-    //オブジェクトが選択されているか？
-    private bool IsSelected = false;
-
     // 現在選択しているオブジェクト
-    private Transform targetObject;
-    private SpriteRenderer targetRenderer;
+    [NonSerialized] public static Transform targetObject;
+    public SpriteRenderer targetRenderer;
+
+    //シール編集エリア
+    [SerializeField] private Collider2D StickerArea;
+
+    // 選択オブジェクトの元の位置を保存
+    private Vector3 originalPosition;
+
 
     // 元の色を保存する変数
     private Color defaultColor;
+
+
+    void Update()
+    {
+      
+        //左クリックが押された
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            OnMouseDown();
+        }
+
+
+        //マウスがドラッグされた
+        if (Input.GetMouseButton(0))
+        {
+            OnMouseDrag();
+        }
+
+        //左クリックが離された
+        if (Input.GetMouseButtonUp(0))
+        { 
+            OnMouseUp();
+        }
+    }
 
     //ボタンを押すとオブジェクト選択モードに移行または解除
     public void OnButtonDown()
@@ -34,9 +65,8 @@ public class Select : MonoBehaviour
 
                     targetRenderer = null;
                     targetObject = null;
-                    IsSelected = false;
-
                 }
+
 
                 IsSelectMode = false;
                 break;
@@ -49,37 +79,40 @@ public class Select : MonoBehaviour
     }
 
 
+
+
     //マウスが押された
     public void OnMouseDown()
     {
 
+        // UIの上にカーソルがあったら、入力を受け付けない
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         //オブジェクト選択モードでなければ処理しない
         if (!IsSelectMode) { return; }
+
 
         //マウスポインタの取得
         Vector3 mousePosition = Input.mousePosition;
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector2(mousePosition.x, mousePosition.y));
 
-        //中央とマウスの座標のずれを計算
-        m_offset = new Vector2(transform.position.x - worldPosition.x, transform.position.y - worldPosition.y);
-
         //当たり判定
         RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+       
+
+
+        // 以前の選択オブジェクトがあれば色を戻し、選択解除
+        if (targetRenderer != null)
+        {
+            targetRenderer.color = defaultColor;
+
+            targetRenderer = null;
+            targetObject = null;
+         }
 
         //オブジェクトが選択されているかつそのオブジェクトがStickerタグを持っている場合
         if (hit.collider != null && hit.collider.CompareTag("Sticker"))
         {
-
-            // 以前の選択オブジェクトがあれば色を戻し、選択解除
-            if (targetRenderer != null)
-            {
-                targetRenderer.color = defaultColor;
-
-                targetRenderer = null;
-                targetObject = null;
-                IsSelected = false;
-
-            }
 
             //クリックしたオブジェクトを選択対象として登録
             targetObject = hit.transform;
@@ -92,8 +125,11 @@ public class Select : MonoBehaviour
             //色の変更
             targetRenderer.color = new Color(0.8f, 0.8f, 0.8f);
 
-            //選択状態にする
-            IsSelected = true;
+            //座標のずれを計算
+            m_offset = targetObject.position - worldPosition;
+
+            // 元の位置も保存
+            originalPosition = targetObject.position;
 
         }
 
@@ -101,6 +137,10 @@ public class Select : MonoBehaviour
     //マウスがドラッグされた
     private void OnMouseDrag()
     {
+
+        // UIの上にカーソルがあったら、入力を受け付けない
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         //Stickerオブジェクトが選択されていなければ処理しない
         if (targetObject == null) { return; }
 
@@ -111,5 +151,21 @@ public class Select : MonoBehaviour
         //オブジェクトのどこを掴んでも良いようにする、画面の外に出ないようにする
         targetObject.position = new Vector2(Mathf.Clamp(worldPosition.x + m_offset.x, -8.0f, 8.0f), Mathf.Clamp(worldPosition.y + m_offset.y, -4.0f, 4.0f));
 
+    }
+
+    private void OnMouseUp()
+    {
+        if (targetObject == null) return;
+
+        //シール編集エリアの中に現在位置があるか？
+        bool isInsideArea = StickerArea.OverlapPoint(targetObject.position);
+
+        // 枠内なら何もしない
+        if (isInsideArea) { return; }
+        else
+        {
+            // 枠外なら元の位置に強制戻し
+            targetObject.position = originalPosition;
+        }
     }
 }
