@@ -12,18 +12,24 @@ public class Select : MonoBehaviour
 
     // 現在選択しているオブジェクト
     [NonSerialized] public static Transform targetObject;
-    public SpriteRenderer targetRenderer;
+    [NonSerialized] public static SpriteRenderer targetRenderer;
 
     //シール編集エリア
-    [SerializeField] private Collider2D StickerArea;
+    public Collider2D StickerArea;
 
     // 選択オブジェクトの元の位置を保存
     private Vector3 originalPosition;
 
 
     // 元の色を保存する変数
-    private Color defaultColor;
+    [NonSerialized] public static Color defaultColor;
 
+    //選択状態をオフにしておく
+    public void Start()
+    {
+        targetRenderer = null;
+        targetObject = null;
+    }
 
     void Update()
     {
@@ -31,7 +37,6 @@ public class Select : MonoBehaviour
         //左クリックが押された
         if (Input.GetMouseButtonDown(0))
         {
-
             OnMouseDown();
         }
 
@@ -57,7 +62,6 @@ public class Select : MonoBehaviour
             //選択モード・選択オブジェクトの解除
             case true:
 
-
                 // 以前の選択オブジェクトがあれば色を戻し、選択解除
                 if (targetRenderer != null)
                 {
@@ -67,12 +71,14 @@ public class Select : MonoBehaviour
                     targetObject = null;
                 }
 
-
+                //オブジェクト選択モード解除
                 IsSelectMode = false;
                 break;
 
             //選択モード移行
             case false:
+
+                //オブジェクト選択モードにする
                 IsSelectMode = true;
                 break;
         }
@@ -141,7 +147,7 @@ public class Select : MonoBehaviour
         // UIの上にカーソルがあったら、入力を受け付けない
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        //Stickerオブジェクトが選択されていなければ処理しない
+        //オブジェクトが選択されていなければ処理しない
         if (targetObject == null) { return; }
 
         //マウスポインタの取得
@@ -153,8 +159,10 @@ public class Select : MonoBehaviour
 
     }
 
+    //マウスが離された
     private void OnMouseUp()
     {
+        //オブジェクトが選択されていなければ処理しない
         if (targetObject == null) return;
 
         //シール編集エリアの中に現在位置があるか？
@@ -162,9 +170,10 @@ public class Select : MonoBehaviour
 
         // 枠内なら何もしない
         if (isInsideArea) { return; }
+
         else
         {
-            // 枠外なら元の位置に強制戻し
+            // 枠外なら元の位置に戻す
             targetObject.position = originalPosition;
         }
     }
