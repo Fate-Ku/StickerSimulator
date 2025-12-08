@@ -3584,8 +3584,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4515819217016439336}
-        m_TargetAssemblyTypeName: UI_MyBrand, Assembly-CSharp
-        m_MethodName: StickerBookBTN
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: StickerBookMenuBTN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4068,7 +4068,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3812977351163869275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbaf3d29886eac449be553a394f7371, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b13c52a26f165b47803ec77c864fafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!222 &4924710968221960493
@@ -4249,8 +4249,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4515819217016439336}
-        m_TargetAssemblyTypeName: UI_MyBrand, Assembly-CSharp
-        m_MethodName: BackToMainMenuBTN
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: MainMenuBTN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4280,10 +4280,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sticker Book
+  m_text: "\u56F3\u304B\u3093\n\u30B7\u30FC\u30EB\u3061\u3087\u3046"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
+  m_sharedMaterial: {fileID: -7786892333198751292, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4307,8 +4307,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.9
-  m_fontSizeBase: 39.9
+  m_fontSize: 34.55
+  m_fontSizeBase: 34.55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0

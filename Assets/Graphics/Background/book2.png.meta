@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9afb363568f39e44e94b69ceb3c0c9d7
+guid: d7e13d7833395d44984065b2625bcda8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4352497984924540416
-    second: zukanBook_0
+      213: -5597995755193609183
+    second: book2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zukanBook_0
+      name: book2_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 53
-        width: 719
-        height: 952
+        x: 317
+        y: 27
+        width: 1285
+        height: 1026
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00228faa422d893c0800000000000000
-      internalID: -4352497984924540416
+      spriteID: 1245a85258cef42b0800000000000000
+      internalID: -5597995755193609183
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      zukanBook_0: -4352497984924540416
+      book2_0: -5597995755193609183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
