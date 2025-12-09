@@ -162,6 +162,9 @@ public class Select : MonoBehaviour
     //マウスが離された
     private void OnMouseUp()
     {
+        // UIの上にカーソルがあったら、入力を受け付けない
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         //オブジェクトが選択されていなければ処理しない
         if (targetObject == null) return;
 
