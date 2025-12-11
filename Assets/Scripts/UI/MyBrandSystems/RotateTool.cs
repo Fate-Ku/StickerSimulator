@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 public class RotateTool : MonoBehaviour
 {
 
-    private bool canRotate = false;
+    //private bool canRotate = false;
 
     public void Start()
     {
@@ -21,12 +21,16 @@ public class RotateTool : MonoBehaviour
 
     }
 
-    public void RotatePicture()
+    //左に15度回転
+    public void RotateLeft()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            Select.targetObject.transform.Rotate(0, 0, -45f); // click → turn left 45°
-        }
+        Select.targetObject.transform.Rotate(0, 0, 15.0f, Space.World);
+    }
+
+    //右に15度回転
+    public void RotateRight()
+    {
+        Select.targetObject.transform.Rotate(0, 0, -15.0f, Space.World);
     }
 
 
