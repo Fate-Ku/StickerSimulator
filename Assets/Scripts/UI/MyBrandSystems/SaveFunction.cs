@@ -12,14 +12,14 @@ public class SaveFunction : MonoBehaviour
     void Update()
     {
         //サイズ取得
-        Vector2 size = gameObject.GetComponent<RectTransform>().sizeDelta;
-        float width = size.x;  //幅
-        float height = size.y; //高さ
+        //Vector2 size = gameObject.GetComponent<RectTransform>().sizeDelta;
+        //float width = size.x;  //幅
+        //float height = size.y; //高さ
 
         //ファイルパスを定義
-		string filePath = Application.dataPath + @"\Scripts\File\ObjectPos.txt";
+		//string filePath = Application.dataPath + @"\Scripts\File\ObjectPos.txt";
 
 		//ファイルの末尾に値を追加（Convertでfloat型の座標値をString型に変換している）
-		File.AppendAllText(filePath, Convert.ToString(x)+","+ Convert.ToString(y)+","+ Convert.ToString(z) + "\n");
+		//File.AppendAllText(filePath, Convert.ToString(x)+","+ Convert.ToString(y)+","+ Convert.ToString(z) + "\n");
     }
 }
