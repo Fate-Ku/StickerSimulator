@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class Timer:MonoBehaviour
@@ -8,28 +9,46 @@ public class Timer:MonoBehaviour
     public int CountDownMinutes = 1;
 
     //カウントダウンタイマー（秒）
-    public float CountDownSeconds = 30;
+    public float CountDownSeconds = 30.0f;
 
-    private Text TimeText;
+    //合計時間（秒）
+    private float TotalTime;
+
+    //文字を表示
+    private TMP_Text TimeText;
 
     private void Start()
     {
-        TimeText = GetComponent<Text>();
+        TimeText = GetComponent<TMP_Text>();
+
+        //分と秒を合計秒に変換する
+        TotalTime = CountDownMinutes * 60 + CountDownSeconds;
+
     }
 
     private void Update()
     {
-        //カウントダウンを減らす
-        CountDownSeconds -= Time.deltaTime;
+        //カウントを減らす
+        TotalTime -= Time.deltaTime;
 
-        var span = new TimeSpan(0, 0, (int)CountDownSeconds);
+        //マイナスにならないようにする
+        if(TotalTime < 0) { TotalTime = 0; }
 
-        TimeText.text = span.ToString(@"mm\:ss");
+        //合計秒を分と秒に変換
+        int minutes = (int)TotalTime / 60;
+        int seconds = (int)TotalTime % 60;
+
+        //分と秒を分けて表示（:00は2桁）（$"は変数を文字列に組み込む）
+        TimeText.text = $"{minutes:00}:{seconds:00}";
 
         //カウントダウンタイマーがゼロになったときの処理
-        if(CountDownSeconds <= 0)
+        if (CountDownSeconds <= 0)
         {
             //シーン遷移
+            //SceneManager.LoadScene("報酬画面スクリプト名");
+
+            //一度だけ実行
+            enabled = false;
         }
     }
 }
