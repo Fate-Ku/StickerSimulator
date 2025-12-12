@@ -1,19 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 public class LayerUpTool : MonoBehaviour
 {
     // 最前面に移動させたいGameObjectをインスペクターから設定するための変数 
     public GameObject objectToBringToFront;
+    SpriteRenderer sprRenderer;
 
     // このメソッドをボタンのOnClickイベントに紐づける
     public void MoveObjectToFront()
     {
-        if (objectToBringToFront != null)
-        {
-            // 対象のオブジェクトを、親要素の最後の子要素（最前面）に設定する 
-            objectToBringToFront.transform.SetAsLastSibling();
-            //Debug.Log(objectToBringToFront.name + "を最前面に移動しました。"); 
-        }
+        //新しいレイヤー名(事前に設定)
+        sprRenderer.sortingLayerName = "ForeGround";
+        //レイヤー内順序（数字が大きいほど前面）
+        sprRenderer.sortingOrder = 2;
     }
+
 }
