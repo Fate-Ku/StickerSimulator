@@ -5,17 +5,27 @@ using UnityEngine.Rendering;
 
 public class LayerUpTool : MonoBehaviour
 {
-    // 最前面に移動させたいGameObjectをインスペクターから設定するための変数 
-    public GameObject objectToBringToFront;
-    SpriteRenderer sprRenderer;
+    public string targetSortingLayer = "Default"; // 手前にしたいSorting Layer名
+    public int orderInLayerOffset = 1; // 現在のOrder In Layerに加算する値
 
-    // このメソッドをボタンのOnClickイベントに紐づける
-    public void MoveObjectToFront()
+    public void LayerUp()
     {
-        //新しいレイヤー名(事前に設定)
-        sprRenderer.sortingLayerName = "ForeGround";
-        //レイヤー内順序（数字が大きいほど前面）
-        sprRenderer.sortingOrder = 2;
+        // 自身のRectTransformを取得し、描画順を最後に設定（一番手前）
+        GetComponent<RectTransform>().SetAsLastSibling();
+
+
+        // スプライトレンダラーを取得
+        //SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        //if (spriteRenderer != null)
+        //{
+            // 現在のSorting LayerとOrder In Layerを取得し、手前にする設定を適用
+            // （もしレイヤーが違うなら、レイヤー名も設定する必要がある）
+            //spriteRenderer.sortingLayerName = targetSortingLayer;
+            //spriteRenderer.sortingOrder = orderInLayerOffset;
+            // または、すでに設定されているOrder in Layerに加算する場合:
+            //spriteRenderer.sortingOrder += orderInLayerOffset;
+        //}
     }
 
 }
