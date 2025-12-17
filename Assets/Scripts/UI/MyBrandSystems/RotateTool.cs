@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 
 public class RotateTool : MonoBehaviour
 {
+    [SerializeField] private Select select;
 
     //private bool canRotate = false;
 
@@ -17,20 +18,20 @@ public class RotateTool : MonoBehaviour
     public void SetTarget(Transform target)
     {
         //選択オブジェクトを変更する
-        Select.targetObject = target;
+        select.targetObject = target;
 
     }
 
     //左に15度回転
     public void RotateLeft()
     {
-        Select.targetObject.transform.Rotate(0, 0, 15.0f, Space.World);
+        select.targetObject.transform.Rotate(0, 0, 15.0f, Space.World);
     }
 
     //右に15度回転
     public void RotateRight()
     {
-        Select.targetObject.transform.Rotate(0, 0, -15.0f, Space.World);
+        select.targetObject.transform.Rotate(0, 0, -15.0f, Space.World);
     }
 
 

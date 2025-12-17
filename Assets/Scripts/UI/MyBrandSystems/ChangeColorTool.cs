@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ChangeColorTool : MonoBehaviour
 {
+    [SerializeField] private Select select;
+
     //元の色を保存する変数
     private Color defaultColor;
 
@@ -18,10 +20,10 @@ public class ChangeColorTool : MonoBehaviour
     {
 
         //選択状態でなければ処理しない
-        if (Select.targetObject == null) { return; }
+        if (select.targetObject == null) { return; }
 
         //選択中のオブジェクトのRendererを取得
-        Renderer renderer = Select.targetObject.GetComponent<Renderer>();
+        Renderer renderer = select.targetObject.GetComponent<Renderer>();
 
         //選択しているオブジェクトが切り替わったら
         if (renderer != prevRenderer)

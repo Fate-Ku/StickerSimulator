@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SelectStickerTypeTool : MonoBehaviour
 {
+    [SerializeField] private Select select;
+
     //形状シールのグループを入れる配列
     [Header(header: "ShapeSticker")]
     public GameObject[] shapeStickers;
@@ -29,12 +31,12 @@ public class SelectStickerTypeTool : MonoBehaviour
     public void OnShapeButton()
     {
         //選択していたシールの選択状態（色）を基に戻す
-        if (Select.targetRenderer != null)
-            Select.targetRenderer.color = Select.defaultColor;
+        if (select.targetRenderer != null)
+            select.targetRenderer.color = select.defaultColor;
 
         //選択状態解除
-        Select.targetObject = null;
-        Select.targetRenderer = null;
+        select.targetObject = null;
+        select.targetRenderer = null;
 
         //形状シールを表示し、動物シールを非表示にする
         ShowGroup(shapeStickers);
@@ -45,12 +47,12 @@ public class SelectStickerTypeTool : MonoBehaviour
     public void OnAnimalButton()
     {
         //選択していたシールの選択状態（色）を基に戻す
-        if (Select.targetRenderer != null)
-            Select.targetRenderer.color = Select.defaultColor;
+        if (select.targetRenderer != null)
+            select.targetRenderer.color = select.defaultColor;
 
         //選択状態解除
-        Select.targetObject = null;
-        Select.targetRenderer = null;
+        select.targetObject = null;
+        select.targetRenderer = null;
 
         //動物シールを表示し、形状シールを非表示にする
         ShowGroup(animalStickers);
@@ -75,11 +77,12 @@ public class SelectStickerTypeTool : MonoBehaviour
             if (sticker == null) continue;
 
             //選択状態なら解除する・色を戻す
-            if (Select.targetObject == sticker.transform)
+            if (select.targetObject == sticker.transform)
             {
-                Select.targetObject = null;
-                Select.targetRenderer = null;
-                Select.targetRenderer.color = Select.defaultColor;
+                select.targetRenderer.color = select.defaultColor;
+                select.targetObject = null;
+                select.targetRenderer = null;
+              
             }
 
             //シール編集エリア内にオブジェクトがあるか？
