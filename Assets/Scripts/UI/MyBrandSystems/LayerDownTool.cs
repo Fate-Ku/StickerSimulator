@@ -6,7 +6,7 @@ public class LayerDownTool : MonoBehaviour
         {
             //このスクリプトがアタッチされたGameOjectを最背面に移動
             GetComponent<RectTransform>().SetAsFirstSibling();
-
+            
             //transform.SetAsFirstSibling();
         }
     
