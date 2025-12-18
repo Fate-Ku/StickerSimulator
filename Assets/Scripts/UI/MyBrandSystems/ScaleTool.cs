@@ -4,9 +4,13 @@ using UnityEngine.UIElements;
 
 public class ScaleTool : MonoBehaviour
 {
+    [SerializeField] private Select select;
 
     //元のサイズを保存
     private Vector2 defaultSize;
+
+    //最後に選択していたオブジェクト
+    private Transform lastTarget;
 
     //現在のサイズの段階
     private int scaleStep = 0;
@@ -20,21 +24,24 @@ public class ScaleTool : MonoBehaviour
     //1段階のサイズの変化量
     private float changeScale = 0.2f;
 
-    public void Start()
+    Transform target;
+
+    public void Update()
     {
-        //新しいオブジェクトを設定
-        SetTarget(transform);
+        var target = select.targetObject;
 
-        //オブジェクトの元のサイズを保存
-        defaultSize = Select.targetObject.transform.localScale; 
+        //選択しているオブジェクトが同じなら変更しない
+        if (target == lastTarget) return;
 
+        lastTarget = target;
+        SetTarget(target);
     }
 
     //オブジェクトの拡大
     public void ScaleUp()
     {
         //選択状態でなければ処理しない
-        if (Select.targetObject == null) { return; }
+        if (select.targetObject == null) { return; }
 
         //段階が最大でない場合、拡大
         if (scaleStep < maxStep)
@@ -43,7 +50,7 @@ public class ScaleTool : MonoBehaviour
             scaleStep++;
 
             //デフォルトのサイズを基準にサイズ変更
-            Select.targetObject.transform.localScale = defaultSize * (1 + scaleStep * changeScale);
+            select.targetObject.transform.localScale = defaultSize * (1 + scaleStep * changeScale);
 
         }
 
@@ -53,7 +60,7 @@ public class ScaleTool : MonoBehaviour
     public void ScaleDown()
     {
         //選択状態でなければ処理しない
-        if (Select.targetObject == null) { return; }
+        if (select.targetObject == null) { return; }
 
         //段階が最小でない場合、縮小
         if (scaleStep > minStep)
@@ -62,7 +69,7 @@ public class ScaleTool : MonoBehaviour
             scaleStep--;
 
             //デフォルトのサイズを基準にサイズ変更
-            Select.targetObject.transform.localScale = defaultSize * (1 + scaleStep * changeScale);
+            select.targetObject.transform.localScale = defaultSize * (1 + scaleStep * changeScale);
 
 
         }
@@ -73,13 +80,13 @@ public class ScaleTool : MonoBehaviour
     public void SetTarget(Transform target)
     {
         //選択オブジェクトを変更する
-        Select.targetObject = target;
+        select.targetObject = target;
 
         //選択されていれば
-        if (Select.targetObject != null)
+        if (select.targetObject != null)
         {
             //オブジェクトの元のサイズを保存
-            defaultSize = Select.targetObject.localScale;
+            defaultSize = select.targetObject.localScale;
         }
     }
 

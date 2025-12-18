@@ -11,8 +11,8 @@ public class Select : MonoBehaviour
     private bool IsSelectMode = true;
 
     // 現在選択しているオブジェクト
-    [NonSerialized] public static Transform targetObject;
-    [NonSerialized] public static SpriteRenderer targetRenderer;
+    [NonSerialized] public  Transform targetObject;
+    [NonSerialized] public  SpriteRenderer targetRenderer;
 
     //シール編集エリア
     public Collider2D StickerArea;
@@ -22,7 +22,7 @@ public class Select : MonoBehaviour
 
 
     // 元の色を保存する変数
-    [NonSerialized] public static Color defaultColor;
+    [NonSerialized] public Color defaultColor;
 
     //選択状態をオフにしておく
     public void Start()
