@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 8277145062390284872}
   - component: {fileID: 4138573205489869812}
   - component: {fileID: 4498767645114524753}
+  - component: {fileID: 1278516572496540280}
   - component: {fileID: 3922148081914655260}
   m_Layer: 0
-  m_Name: CircleSticler
-  m_TagString: Untagged
+  m_Name: CircleSticker
+  m_TagString: Sticker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +126,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: baf7638bebd96514a94da0682c17d795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1278516572496540280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8195336964585548563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a65ff7e032a2bf43acf89f51ed664ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &3922148081914655260

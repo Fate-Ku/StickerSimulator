@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
+using UnityEditor.Overlays;
 
 public class StickerFileSaveManager : MonoBehaviour
 {
@@ -25,28 +27,27 @@ public class StickerFileSaveManager : MonoBehaviour
     // プレハブ登録リスト
     public List<GameObject> stickerPrefabs;
 
-    private string SavePath => Path.Combine(Application.persistentDataPath, "stickers.json");
+    //保存するファイル名前
+    [SerializeField]public string sceneName;
+
+    //保存するところ
+    public string SavePath => Path.Combine(Application.persistentDataPath, sceneName + ".json");
 
 
-    //private void Start()
-    //{
-    //    LoadFromFile();
-    //}
-
+    //最初からデータを読み込む
     private void Start()
     {
-        StartCoroutine(LoadNextFrame());
-    }
-
-    private System.Collections.IEnumerator LoadNextFrame()
-    {
-        yield return null; // 1フレーム待つ
+        // シーン名を自動でセット
+        if (string.IsNullOrEmpty(sceneName))
+        {
+            sceneName = SceneManager.GetActiveScene().name;
+        }
         LoadFromFile();
     }
 
 
     // ─────────────────────────────
-    // 保存
+    // シール帳の保存
     // ─────────────────────────────
     public void SaveToFile()
     {
@@ -73,12 +74,12 @@ public class StickerFileSaveManager : MonoBehaviour
         string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(SavePath, json);
 
-        Debug.Log("ステッカー保存完了: " + SavePath);
+        Debug.Log("シール保存完了: " + SavePath);
     }
 
 
     // ─────────────────────────────
-    // 読み込み
+    // シール帳の読み込み
     // ─────────────────────────────
     public void LoadFromFile()
     {
@@ -91,15 +92,41 @@ public class StickerFileSaveManager : MonoBehaviour
         string json = File.ReadAllText(SavePath);
         StickerSaveData saveData = JsonUtility.FromJson<StickerSaveData>(json);
 
-        // 既存のステッカーを全削除
-        GameObject[] oldStickers = GameObject.FindGameObjectsWithTag("Sticker");
-        foreach (var s in oldStickers) Destroy(s);
+        Debug.Log($"JSONから{saveData.stickers.Count}個のシールデータを読み込みました。");
+
+        //Debug.Log("--- stickerPrefabs リストの内容 ---");
+        //foreach (var prefab in stickerPrefabs)
+        //{
+        //    if (prefab != null)
+        //    {
+        //        // リストに登録されているGameObjectのnameを出力
+        //        Debug.Log($"登録プレハブ名: {prefab.name}");
+        //    }
+        //    else
+        //    {
+        //        Debug.LogWarning("登録プレハブ: (None) または削除済みアセットが含まれています。");
+        //    }
+        //}
+        //Debug.Log("------------------------------------");
 
         foreach (var data in saveData.stickers)
         {
+            // JSONから読み込んだ名前を出力
+            Debug.Log($"ロードを試行: JSONのprefabNameは '{data.prefabName}' です。");
+
             GameObject prefab = stickerPrefabs.Find(p => p.name == data.prefabName);
+
+            // プレハブが見つかったかチェック
+            if (prefab == null)
+            {
+                Debug.LogError($"プレハブが見つかりません: {data.prefabName}");
+                continue; // 次のデータへ
+            }
+
             if (prefab != null)
             {
+                Debug.Log($"プレハブ発見: {data.prefabName}。位置 ({data.x}, {data.y}) に生成します。");
+
                 GameObject obj = Instantiate(prefab,
                     new Vector2(data.x, data.y),
                     Quaternion.Euler(0, 0, data.rotation));
@@ -109,6 +136,30 @@ public class StickerFileSaveManager : MonoBehaviour
             }
         }
 
-        Debug.Log("ステッカーロード完了: " + SavePath);
+        Debug.Log("シールロード完了: " + SavePath);
     }
+
+
+    // ─────────────────────────────
+    // 保存ファイル削除(シール帳)
+    // ─────────────────────────────
+    public void DeleteSaveFile()
+    {
+        if (File.Exists(SavePath))
+        {
+            // 現在設定されている sceneName のファイルを削除しにいく
+            File.Delete(SavePath);
+            Debug.Log($"{sceneName}.json を削除しました。");
+
+            // （オプション）ロードしているステッカーも同時に全削除
+            GameObject[] oldStickers = GameObject.FindGameObjectsWithTag("Sticker");
+            foreach (var s in oldStickers) Destroy(s);
+        }
+        else
+        {
+            Debug.Log("削除対象の保存ファイルが存在しません: " + SavePath);
+        }
+    }
+
+
 }

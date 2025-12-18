@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 2561455616045991555}
   - component: {fileID: 168009615532503518}
   - component: {fileID: 3429267239595053773}
+  - component: {fileID: 1575323499318784817}
   - component: {fileID: 188588072244611734}
   m_Layer: 0
   m_Name: BearSticker
-  m_TagString: Untagged
+  m_TagString: Sticker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +126,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: baf7638bebd96514a94da0682c17d795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1575323499318784817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3711927557344740132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a65ff7e032a2bf43acf89f51ed664ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &188588072244611734
