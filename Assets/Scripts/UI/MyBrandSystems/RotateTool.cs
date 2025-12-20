@@ -5,13 +5,20 @@ public class RotateTool : MonoBehaviour
 {
     [SerializeField] private Select select;
 
+    //最後に選択していたオブジェクト
+    private Transform lastTarget;
+
     //private bool canRotate = false;
 
-    public void Start()
+    public void Update()
     {
-        //新しいオブジェクトを設定
-        SetTarget(transform);
+        var target = select.targetObject;
 
+        //選択しているオブジェクトが同じなら変更しない
+        if (target == lastTarget) return;
+
+        lastTarget = target;
+        SetTarget(target);
     }
 
     //新しいオブジェクトを設定する関数

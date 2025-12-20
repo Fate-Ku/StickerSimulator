@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class Timer:MonoBehaviour
 {
@@ -44,7 +42,7 @@ public class Timer:MonoBehaviour
         //カウントダウンタイマーがゼロになったときの処理
         if (CountDownSeconds <= 0)
         {
-            //シーン遷移
+            //シーン遷移(未実装よりコメントアウト)
             //SceneManager.LoadScene("報酬画面スクリプト名");
 
             //一度だけ実行
