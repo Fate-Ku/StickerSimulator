@@ -4,27 +4,27 @@ using UnityEngine.EventSystems;
 
 public class Select : MonoBehaviour
 {
-    //‚Ç‚ê‚¾‚¯’†‰›‚ÆÀ•W‚ª‚¸‚ê‚Ä‚¢‚é‚©
+    //ã©ã‚Œã ã‘ä¸­å¤®ã¨åº§æ¨™ãŒãšã‚Œã¦ã„ã‚‹ã‹
     private Vector3 m_offset;
 
-    //ƒIƒuƒWƒFƒNƒg‘I‘ğƒ‚[ƒh‚©HƒfƒtƒHƒ‹ƒg‚Ítrue
+    //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆé¸æŠãƒ¢ãƒ¼ãƒ‰ã‹ï¼Ÿãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯true
     private bool IsSelectMode = true;
 
-    // Œ»İ‘I‘ğ‚µ‚Ä‚¢‚éƒIƒuƒWƒFƒNƒg
-    [NonSerialized] public static Transform targetObject;
-    [NonSerialized] public static SpriteRenderer targetRenderer;
+    // ç¾åœ¨é¸æŠã—ã¦ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+    [NonSerialized] public  Transform targetObject;
+    [NonSerialized] public  SpriteRenderer targetRenderer;
 
-    //ƒV[ƒ‹•ÒWƒGƒŠƒA
+    //ã‚·ãƒ¼ãƒ«ç·¨é›†ã‚¨ãƒªã‚¢
     public Collider2D StickerArea;
 
-    // ‘I‘ğƒIƒuƒWƒFƒNƒg‚ÌŒ³‚ÌˆÊ’u‚ğ•Û‘¶
+    // é¸æŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å…ƒã®ä½ç½®ã‚’ä¿å­˜
     private Vector3 originalPosition;
 
 
-    // Œ³‚ÌF‚ğ•Û‘¶‚·‚é•Ï”
-    [NonSerialized] public static Color defaultColor;
+    // å…ƒã®è‰²ã‚’ä¿å­˜ã™ã‚‹å¤‰æ•°
+    [NonSerialized] public Color defaultColor;
 
-    //‘I‘ğó‘Ô‚ğƒIƒt‚É‚µ‚Ä‚¨‚­
+    //é¸æŠçŠ¶æ…‹ã‚’ã‚ªãƒ•ã«ã—ã¦ãŠã
     public void Start()
     {
         targetRenderer = null;
@@ -33,36 +33,36 @@ public class Select : MonoBehaviour
 
     void Update()
     {
-      
-        //¶ƒNƒŠƒbƒN‚ª‰Ÿ‚³‚ê‚½
+
+        //å·¦ã‚¯ãƒªãƒƒã‚¯ãŒæŠ¼ã•ã‚ŒãŸ
         if (Input.GetMouseButtonDown(0))
         {
             OnMouseDown();
         }
 
 
-        //ƒ}ƒEƒX‚ªƒhƒ‰ƒbƒO‚³‚ê‚½
+        //ãƒã‚¦ã‚¹ãŒãƒ‰ãƒ©ãƒƒã‚°ã•ã‚ŒãŸ
         if (Input.GetMouseButton(0))
         {
             OnMouseDrag();
         }
 
-        //¶ƒNƒŠƒbƒN‚ª—£‚³‚ê‚½
+        //å·¦ã‚¯ãƒªãƒƒã‚¯ãŒé›¢ã•ã‚ŒãŸ
         if (Input.GetMouseButtonUp(0))
-        { 
+        {
             OnMouseUp();
         }
     }
 
-    //ƒ{ƒ^ƒ“‚ğ‰Ÿ‚·‚ÆƒIƒuƒWƒFƒNƒg‘I‘ğƒ‚[ƒh‚ÉˆÚs‚Ü‚½‚Í‰ğœ
+    //ãƒœã‚¿ãƒ³ã‚’æŠ¼ã™ã¨ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆé¸æŠãƒ¢ãƒ¼ãƒ‰ã«ç§»è¡Œã¾ãŸã¯è§£é™¤
     public void OnButtonDown()
     {
         switch (IsSelectMode)
         {
-            //‘I‘ğƒ‚[ƒhE‘I‘ğƒIƒuƒWƒFƒNƒg‚Ì‰ğœ
+            //é¸æŠãƒ¢ãƒ¼ãƒ‰ãƒ»é¸æŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è§£é™¤
             case true:
 
-                // ˆÈ‘O‚Ì‘I‘ğƒIƒuƒWƒFƒNƒg‚ª‚ ‚ê‚ÎF‚ğ–ß‚µA‘I‘ğ‰ğœ
+                // ä»¥å‰ã®é¸æŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒã‚ã‚Œã°è‰²ã‚’æˆ»ã—ã€é¸æŠè§£é™¤
                 if (targetRenderer != null)
                 {
                     targetRenderer.color = defaultColor;
@@ -71,14 +71,14 @@ public class Select : MonoBehaviour
                     targetObject = null;
                 }
 
-                //ƒIƒuƒWƒFƒNƒg‘I‘ğƒ‚[ƒh‰ğœ
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆé¸æŠãƒ¢ãƒ¼ãƒ‰è§£é™¤
                 IsSelectMode = false;
                 break;
 
-            //‘I‘ğƒ‚[ƒhˆÚs
+            //é¸æŠãƒ¢ãƒ¼ãƒ‰ç§»è¡Œ
             case false:
 
-                //ƒIƒuƒWƒFƒNƒg‘I‘ğƒ‚[ƒh‚É‚·‚é
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆé¸æŠãƒ¢ãƒ¼ãƒ‰ã«ã™ã‚‹
                 IsSelectMode = true;
                 break;
         }
@@ -87,96 +87,129 @@ public class Select : MonoBehaviour
 
 
 
-    //ƒ}ƒEƒX‚ª‰Ÿ‚³‚ê‚½
+    //ãƒã‚¦ã‚¹ãŒæŠ¼ã•ã‚ŒãŸ
     public void OnMouseDown()
     {
 
-        // UI‚Ìã‚ÉƒJ[ƒ\ƒ‹‚ª‚ ‚Á‚½‚çA“ü—Í‚ğó‚¯•t‚¯‚È‚¢
+        // UIã®ä¸Šã«ã‚«ãƒ¼ã‚½ãƒ«ãŒã‚ã£ãŸã‚‰ã€å…¥åŠ›ã‚’å—ã‘ä»˜ã‘ãªã„
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        //ƒIƒuƒWƒFƒNƒg‘I‘ğƒ‚[ƒh‚Å‚È‚¯‚ê‚Îˆ—‚µ‚È‚¢
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆé¸æŠãƒ¢ãƒ¼ãƒ‰ã§ãªã‘ã‚Œã°å‡¦ç†ã—ãªã„
         if (!IsSelectMode) { return; }
 
 
-        //ƒ}ƒEƒXƒ|ƒCƒ“ƒ^‚Ìæ“¾
+        //ãƒã‚¦ã‚¹ãƒã‚¤ãƒ³ã‚¿ã®å–å¾—
         Vector3 mousePosition = Input.mousePosition;
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector2(mousePosition.x, mousePosition.y));
+        //Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector2(mousePosition.x, mousePosition.y));
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        //“–‚½‚è”»’è
+        //å½“ãŸã‚Šåˆ¤å®š
         RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
-       
 
 
-        // ˆÈ‘O‚Ì‘I‘ğƒIƒuƒWƒFƒNƒg‚ª‚ ‚ê‚ÎF‚ğ–ß‚µA‘I‘ğ‰ğœ
+
+        // ä»¥å‰ã®é¸æŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒã‚ã‚Œã°è‰²ã‚’æˆ»ã—ã€é¸æŠè§£é™¤
         if (targetRenderer != null)
         {
             targetRenderer.color = defaultColor;
 
             targetRenderer = null;
             targetObject = null;
-         }
+        }
 
-        //ƒIƒuƒWƒFƒNƒg‚ª‘I‘ğ‚³‚ê‚Ä‚¢‚é‚©‚Â‚»‚ÌƒIƒuƒWƒFƒNƒg‚ªStickerƒ^ƒO‚ğ‚Á‚Ä‚¢‚éê‡
+        // 2025.12.12 added by ko
+        // Cloneable ã‚¿ã‚°ãªã‚‰ã€Œè¤‡è£½ã€ã—ã¦ Sticker ã«å¤‰ãˆã‚‹
+        if (hit.collider != null && hit.collider.CompareTag("Cloneable"))
+        {
+            // è¤‡è£½ç”Ÿæˆ
+            GameObject clone = Instantiate(hit.collider.gameObject, hit.collider.transform.position, Quaternion.identity);
+
+            // è¤‡è£½ã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¯ã‚‚ã†è¤‡è£½ã§ããªã„ã‚ˆã†ã«ã‚¿ã‚°å¤‰æ›´
+            clone.tag = "Sticker";
+
+            // è¤‡è£½ã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ–°ã—ã„é¸æŠå¯¾è±¡ã«ã™ã‚‹
+            targetObject = clone.transform;
+            targetRenderer = clone.GetComponent<SpriteRenderer>();
+
+            //å…ƒã®è‰²ã‚’ä¿å­˜
+            defaultColor = targetRenderer.color;
+
+            //è‰²ã®å¤‰æ›´
+            targetRenderer.color = new Color(0.8f, 0.8f, 0.8f);
+
+            //åº§æ¨™ã®ãšã‚Œã‚’è¨ˆç®—
+            m_offset = targetObject.position - worldPosition;
+
+            // å…ƒã®ä½ç½®ã‚‚ä¿å­˜
+            originalPosition = targetObject.position;
+
+            return; // Sticker é¸æŠå‡¦ç†ã«é€²ã¾ãªã„
+        }
+        // 2025.12.12 added by ko
+
+        // Sticker ã‚’é¸æŠã—ãŸå ´åˆã®å‡¦ç†
+        // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒé¸æŠã•ã‚Œã¦ã„ã‚‹ã‹ã¤ãã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒStickerã‚¿ã‚°ã‚’æŒã£ã¦ã„ã‚‹å ´åˆ
         if (hit.collider != null && hit.collider.CompareTag("Sticker"))
         {
 
-            //ƒNƒŠƒbƒN‚µ‚½ƒIƒuƒWƒFƒNƒg‚ğ‘I‘ğ‘ÎÛ‚Æ‚µ‚Ä“o˜^
+            //ã‚¯ãƒªãƒƒã‚¯ã—ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’é¸æŠå¯¾è±¡ã¨ã—ã¦ç™»éŒ²
             targetObject = hit.transform;
             targetRenderer = targetObject.GetComponent<SpriteRenderer>();
 
 
-            //Œ³‚ÌF‚ğ•Û‘¶
+            //å…ƒã®è‰²ã‚’ä¿å­˜
             defaultColor = targetRenderer.color;
 
-            //F‚Ì•ÏX
+            //è‰²ã®å¤‰æ›´
             targetRenderer.color = new Color(0.8f, 0.8f, 0.8f);
 
-            //À•W‚Ì‚¸‚ê‚ğŒvZ
+            //åº§æ¨™ã®ãšã‚Œã‚’è¨ˆç®—
             m_offset = targetObject.position - worldPosition;
 
-            // Œ³‚ÌˆÊ’u‚à•Û‘¶
+            // å…ƒã®ä½ç½®ã‚‚ä¿å­˜
             originalPosition = targetObject.position;
 
         }
 
+
     }
-    //ƒ}ƒEƒX‚ªƒhƒ‰ƒbƒO‚³‚ê‚½
+    //ãƒã‚¦ã‚¹ãŒãƒ‰ãƒ©ãƒƒã‚°ã•ã‚ŒãŸ
     private void OnMouseDrag()
     {
 
-        // UI‚Ìã‚ÉƒJ[ƒ\ƒ‹‚ª‚ ‚Á‚½‚çA“ü—Í‚ğó‚¯•t‚¯‚È‚¢
+        // UIã®ä¸Šã«ã‚«ãƒ¼ã‚½ãƒ«ãŒã‚ã£ãŸã‚‰ã€å…¥åŠ›ã‚’å—ã‘ä»˜ã‘ãªã„
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        //ƒIƒuƒWƒFƒNƒg‚ª‘I‘ğ‚³‚ê‚Ä‚¢‚È‚¯‚ê‚Îˆ—‚µ‚È‚¢
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒé¸æŠã•ã‚Œã¦ã„ãªã‘ã‚Œã°å‡¦ç†ã—ãªã„
         if (targetObject == null) { return; }
 
-        //ƒ}ƒEƒXƒ|ƒCƒ“ƒ^‚Ìæ“¾
+        //ãƒã‚¦ã‚¹ãƒã‚¤ãƒ³ã‚¿ã®å–å¾—
         Vector3 mousePosition = Input.mousePosition;
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector2(mousePosition.x, mousePosition.y));
 
-        //ƒIƒuƒWƒFƒNƒg‚Ì‚Ç‚±‚ğ’Í‚ñ‚Å‚à—Ç‚¢‚æ‚¤‚É‚·‚éA‰æ–Ê‚ÌŠO‚Éo‚È‚¢‚æ‚¤‚É‚·‚é
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã©ã“ã‚’æ´ã‚“ã§ã‚‚è‰¯ã„ã‚ˆã†ã«ã™ã‚‹ã€ç”»é¢ã®å¤–ã«å‡ºãªã„ã‚ˆã†ã«ã™ã‚‹
         targetObject.position = new Vector2(Mathf.Clamp(worldPosition.x + m_offset.x, -8.0f, 8.0f), Mathf.Clamp(worldPosition.y + m_offset.y, -4.0f, 4.0f));
 
     }
 
-    //ƒ}ƒEƒX‚ª—£‚³‚ê‚½
+    //ãƒã‚¦ã‚¹ãŒé›¢ã•ã‚ŒãŸ
     private void OnMouseUp()
     {
-        // UI‚Ìã‚ÉƒJ[ƒ\ƒ‹‚ª‚ ‚Á‚½‚çA“ü—Í‚ğó‚¯•t‚¯‚È‚¢
+        // UIã®ä¸Šã«ã‚«ãƒ¼ã‚½ãƒ«ãŒã‚ã£ãŸã‚‰ã€å…¥åŠ›ã‚’å—ã‘ä»˜ã‘ãªã„
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        //ƒIƒuƒWƒFƒNƒg‚ª‘I‘ğ‚³‚ê‚Ä‚¢‚È‚¯‚ê‚Îˆ—‚µ‚È‚¢
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒé¸æŠã•ã‚Œã¦ã„ãªã‘ã‚Œã°å‡¦ç†ã—ãªã„
         if (targetObject == null) return;
 
-        //ƒV[ƒ‹•ÒWƒGƒŠƒA‚Ì’†‚ÉŒ»İˆÊ’u‚ª‚ ‚é‚©H
+        //ã‚·ãƒ¼ãƒ«ç·¨é›†ã‚¨ãƒªã‚¢ã®ä¸­ã«ç¾åœ¨ä½ç½®ãŒã‚ã‚‹ã‹ï¼Ÿ
         bool isInsideArea = StickerArea.OverlapPoint(targetObject.position);
 
-        // ˜g“à‚È‚ç‰½‚à‚µ‚È‚¢
+        // æ å†…ãªã‚‰ä½•ã‚‚ã—ãªã„
         if (isInsideArea) { return; }
 
         else
         {
-            // ˜gŠO‚È‚çŒ³‚ÌˆÊ’u‚É–ß‚·
+            // æ å¤–ãªã‚‰å…ƒã®ä½ç½®ã«æˆ»ã™
             targetObject.position = originalPosition;
         }
     }

@@ -5,8 +5,8 @@ using UnityEngine.Rendering;
 
 public class LayerUpTool : MonoBehaviour
 {
-    public string targetSortingLayer = "Default"; // 手前にしたいSorting Layer名
-    public int orderInLayerOffset = 1; // 現在のOrder In Layerに加算する値
+    //public string targetSortingLayer = "Default"; // 手前にしたいSorting Layer名
+    //public int orderInLayerOffset = 1; // 現在のOrder In Layerに加算する値
 
     public void LayerUp()
     {
