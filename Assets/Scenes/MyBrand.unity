@@ -2889,12 +2889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580b2c9a1c3e545b1a6a5d5e0c794b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  targetSortingLayer: Default
-  orderInLayerOffset: 1
-=======
   objectToBringToFront: {fileID: 230099111}
->>>>>>> main
 --- !u!1 &1438594604
 GameObject:
   m_ObjectHideFlags: 0
