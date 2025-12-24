@@ -1,73 +1,93 @@
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class RequestTask : MonoBehaviour
 {
-    //文字を表示
-    private TMP_Text TaskText;
+    [SerializeField] private TMP_Text taskText;
 
-    //依頼の数
-    int TaskCount = 3;
+    // 実行する依頼の回数
+    [NonSerialized] public int taskCount = 3;
 
-    //依頼をリストに入れる
-    List<int> taskList = new List<int>() { 1, 2, 3, 4, 5, 6 };
+    // 文字サイズ
+    [SerializeField] private int fontSize;
 
-    //文字サイズ指定
-    [SerializeField] private int FontSize;
+    // タスク候補（重複なし）
+    private List<int> taskList = new List<int>() { 1, 2, 3, 4, 5, 6 };
 
-    //依頼内容を表示させる
+    // 今表示している依頼
+    private int currentTask = -1;
+
     private void Start()
     {
-        TaskText = GetComponent<TMP_Text>();
+        //文字のサイズを設定
+        taskText.fontSize = fontSize;
+        taskText.text = "";
 
-        //文字サイズ
-        TaskText.fontSize = FontSize;
-
-
-        
-        //依頼の数（3つ）だけ値を取得
-        for(int i = 0; i < TaskCount; i++)
-        {
-            // 残っている中からランダムで選ぶ
-            int index = Random.Range(0, taskList.Count);
-            int randomTask = taskList[index];
-
-            SetTask(randomTask);
-
-            //重複しないように使ったタスクを削除する
-            taskList.RemoveAt(index);
-        }
-        
+        //初めの依頼を表示
+        ShowTask();
     }
 
-    //選ばれた値に応じた依頼を表示させる関数
-    private void SetTask(int randomTask)
+    ///タスクをランダムで表示
+    private void ShowTask()
     {
-        switch (randomTask)
+
+        //リストからランダムに選択
+        int index = UnityEngine.Random.Range(0, taskList.Count);
+        currentTask = taskList[index];
+
+        //重複しないようにリストから削除する
+        taskList.RemoveAt(index);
+
+        taskText.text = GetTaskText(currentTask);
+    }
+
+    /// タスク内容を文字列で返す
+    private string GetTaskText(int task)
+    {
+        switch (task)
         {
             case 1:
-                TaskText.text += "・まるの\n　シールをつかって！\n\n";
-                break;
-
+                return "・まるの\n　シールをつかって！";
             case 2:
-                TaskText.text += "・さんかくの\n　シールをつかって！\n\n";
-                break;
-
+                return "・さんかくの\n　シールをつかって！";
             case 3:
-                TaskText.text += "・くまのシールを\n　つかって！\n\n";
-                break;
+                return "・くまのシールを\n　つかって！";
             case 4:
-                TaskText.text += "・ネコのシールを\n　つかって！\n\n";
-
-                break;
+                return "・ネコのシールを\n　つかって！";
             case 5:
-                TaskText.text += "・2しゅるいのシールを\n　つかって！\n\n";
-                break;
+                return "・2しゅるいのシールを\n　つかって！";
             case 6:
-                TaskText.text += "・3しゅるいのシールを\n　つかって！\n\n";
-                break;
-
+                return "・3しゅるいのシールを\n　つかって！";
         }
+        return "";
+    }
+
+    ///発送ボタンが押されたら呼ばれる
+    public void CompleteTask()
+    {
+        // 依頼の数を減らす
+        taskCount--;
+
+        // 指定回数終わったら報酬画面へシーン遷移
+        if (taskCount <= 0)
+        {
+            RewardScene();
+
+            return;
+        }
+
+        // 表示を消す
+        taskText.text = "";
+
+        // 次のタスクへ
+        ShowTask();
+    }
+
+    //報酬画面へシーン遷移(現在はタイトル画面に戻るようになっている)
+    private void RewardScene()
+    {
+        GameManager.instance.ChangeScene("MainMenu");
     }
 }
