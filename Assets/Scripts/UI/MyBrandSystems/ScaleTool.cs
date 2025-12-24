@@ -40,22 +40,19 @@ public class ScaleTool : MonoBehaviour
         //選択状態でなければ処理しない
         if (select.targetObject == null) { return; }
 
-        //デフォルトサイズがゼロならデフォルトサイズを設定
-        if (defaultSize == Vector2.zero)
-        {
-            SetTarget(select.targetObject);
-        }
+        Transform t = select.targetObject;
 
-        //段階が最大でない場合、拡大
-        if (scaleStep < maxStep)
-        {
-            //段階を1増やす
-            scaleStep++;
+        float factor = 1f + changeScale;
 
-            //デフォルトのサイズを基準にサイズ変更
-            select.targetObject.transform.localScale = defaultSize * (1 + scaleStep * changeScale);
+        Vector3 nextScale = t.localScale * factor;
 
-        }
+        float maxScale = 1.7f;
+
+        nextScale.x = Mathf.Min(nextScale.x, maxScale);
+        nextScale.y = Mathf.Min(nextScale.y, maxScale);
+        nextScale.z = Mathf.Min(nextScale.z, maxScale);
+
+        t.localScale = nextScale;
 
     }
 
@@ -65,23 +62,19 @@ public class ScaleTool : MonoBehaviour
         //選択状態でなければ処理しない
         if (select.targetObject == null) { return; }
 
-        //デフォルトサイズがゼロならデフォルトサイズを設定
-        if (defaultSize == Vector2.zero)
-        {
-            SetTarget(select.targetObject);
-        }
+        Transform t = select.targetObject;
 
-        //段階が最小でない場合、縮小
-        if (scaleStep > minStep)
-        {
-            //段階を1減らす
-            scaleStep--;
+        float factor = 1.0f + changeScale;
 
-            //デフォルトのサイズを基準にサイズ変更
-            select.targetObject.transform.localScale = defaultSize * (1 + scaleStep * changeScale);
+        Vector3 nextScale = t.localScale / factor;
 
+        float minScale = 0.1f;
 
-        }
+        nextScale.x = Mathf.Max(nextScale.x, minScale);
+        nextScale.y = Mathf.Max(nextScale.y, minScale);
+        nextScale.z = Mathf.Max(nextScale.z, minScale);
+
+        t.localScale = nextScale;
 
     }
 
