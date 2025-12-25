@@ -7,16 +7,16 @@ public class RequestTask : MonoBehaviour
 {
     [SerializeField] private TMP_Text taskText;
 
-    // 実行する依頼の回数
-    [NonSerialized] public int taskCount = 3;
+    //こなした依頼の数
+    [NonSerialized] public int taskCount = 0;
 
-    // 文字サイズ
+    //文字サイズ
     [SerializeField] private int fontSize;
 
-    // タスク候補（重複なし）
+    //依頼リスト
     private List<int> taskList = new List<int>() { 1, 2, 3, 4, 5, 6 };
 
-    // 今表示している依頼
+    //今表示している依頼
     private int currentTask = -1;
 
     private void Start()
@@ -29,7 +29,7 @@ public class RequestTask : MonoBehaviour
         ShowTask();
     }
 
-    ///タスクをランダムで表示
+    //タスクをランダムで表示
     private void ShowTask()
     {
 
@@ -43,7 +43,7 @@ public class RequestTask : MonoBehaviour
         taskText.text = GetTaskText(currentTask);
     }
 
-    /// タスク内容を文字列で返す
+    //タスク内容を文字列で返す
     private string GetTaskText(int task)
     {
         switch (task)
@@ -64,24 +64,24 @@ public class RequestTask : MonoBehaviour
         return "";
     }
 
-    ///発送ボタンが押されたら呼ばれる
+    //発送ボタンが押されたら呼ばれる
     public void CompleteTask()
     {
-        // 依頼の数を減らす
-        taskCount--;
+        //依頼の数を増やす
+        taskCount++ ;
 
-        // 指定回数終わったら報酬画面へシーン遷移
-        if (taskCount <= 0)
+        //指定回数終わったら報酬画面へシーン遷移
+        if (taskCount >= 3)
         {
             RewardScene();
 
             return;
         }
 
-        // 表示を消す
+        //表示を消す
         taskText.text = "";
 
-        // 次のタスクへ
+        //次のタスクへ
         ShowTask();
     }
 
