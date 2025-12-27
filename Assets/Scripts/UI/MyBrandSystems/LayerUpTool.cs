@@ -2,12 +2,7 @@ using UnityEngine;
 
 public class LayerUpTool : MonoBehaviour
 {
-    private SpriteRenderer sr;
-
-    void Awake()
-    {
-        sr = GetComponent<SpriteRenderer>();
-    }
+    [SerializeField] private Select select;
 
     public void LayerUp()
     {
