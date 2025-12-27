@@ -36,7 +36,7 @@ public class Timer:MonoBehaviour
         int minutes = (int)TotalTime / 60;
         int seconds = (int)TotalTime % 60;
 
-        //分と秒を分けて表示（:00は2桁）（$"は変数を文字列に組み込む）
+        //分と秒を分けて表示（:00は2桁）（$は変数を文字列に組み込む）
         TimeText.text = $"{minutes:00}:{seconds:00}";
 
         //カウントダウンタイマーがゼロになったときの処理

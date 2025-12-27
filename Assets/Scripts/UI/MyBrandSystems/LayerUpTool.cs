@@ -8,7 +8,7 @@ public class LayerUpTool : MonoBehaviour
     {
         Debug.Log(gameObject.name + " BringToFront");
         LayerUpToolManager.CurrentFrontOrder++;
-        sr.sortingOrder = LayerUpToolManager.CurrentFrontOrder;
+        //sr.sortingOrder = LayerUpToolManager.CurrentFrontOrder;
     }
 
 }

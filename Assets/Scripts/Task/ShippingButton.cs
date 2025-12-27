@@ -6,6 +6,9 @@ public class ShippingButton:MonoBehaviour
     //依頼の数を取得
     [SerializeField] private RequestTask requestTask;
 
+    //残りの依頼の数を取得
+    [SerializeField] private RemainingTask remainingTask;
+
     //タスク成功数
     private int SuccessTask = 0;
 
@@ -25,6 +28,9 @@ public class ShippingButton:MonoBehaviour
 
         //依頼の内容を変更する
         requestTask.CompleteTask();
+
+        //残りの依頼の数を減らす
+        remainingTask.RemainingTaskCount();
 
         //成功か失敗か判断して対応するカウントを増やす（未実装）
         SuccessTask++;
