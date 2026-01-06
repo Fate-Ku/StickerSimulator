@@ -5,17 +5,12 @@ public class Evaluation:MonoBehaviour
 {
     [SerializeField] private TMP_Text evaluationText;
 
-    //初めはD評価にしておく
-    private void Start()
-    {
-        evaluationText.text = "D";
-    }
+    //文字サイズ
+    [SerializeField] private int fontSize; 
 
-    //評価の計算を行う
-    public void EvaluationCalculation()
-    {
- 
-    }
+    //初めはD評価にしておく
+    private void Start() { evaluationText.text = "D"; }
+
 
     //評価に対する表示を行う
     private string EvaluationText(int evaluation)
@@ -30,8 +25,6 @@ public class Evaluation:MonoBehaviour
                 return "B";
             case 4:
                 return "C";
-            case 5:
-                return "D";
         }
         return "";
     }

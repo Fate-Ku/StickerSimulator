@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ShippingButton:MonoBehaviour
@@ -18,6 +19,8 @@ public class ShippingButton:MonoBehaviour
     //シール編集エリア
     [SerializeField] private Collider2D StickerArea;
 
+    [SerializeField] private StarGauge starGauge;
+
     //発送ボタンが押された
     public void OnShippingButton()
     {
@@ -35,6 +38,9 @@ public class ShippingButton:MonoBehaviour
         //成功か失敗か判断して対応するカウントを増やす（未実装）
         SuccessTask++;
         FailureTask++;
+
+        //星のゲージを増やす
+        starGauge.OnTaskSuccess();
     }
 
     //シール編集エリアにあるシールを全て削除する
