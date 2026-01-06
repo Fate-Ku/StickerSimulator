@@ -3,8 +3,14 @@ using UnityEngine;
 
 public class Evaluation:MonoBehaviour
 {
+    [SerializeField] private TMP_Text evaluationText;
 
-    
+    //文字サイズ
+    [SerializeField] private int fontSize; 
+
+    //初めはD評価にしておく
+    private void Start() { evaluationText.text = "D"; }
+
 
     //評価に対する表示を行う
     private string EvaluationText(int evaluation)

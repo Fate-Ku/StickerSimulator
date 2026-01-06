@@ -40,10 +40,10 @@ public class Timer:MonoBehaviour
         TimeText.text = $"{minutes:00}:{seconds:00}";
 
         //カウントダウンタイマーがゼロになったときの処理
-        if (CountDownSeconds <= 0)
+        if (TotalTime <= 0)
         {
-            //シーン遷移(未実装よりコメントアウト)
-            //SceneManager.LoadScene("報酬画面スクリプト名");
+            //シーン遷移(現在はタイトル画面に遷移)
+            GameManager.instance.ChangeScene("MainMenu");
 
             //一度だけ実行
             enabled = false;
