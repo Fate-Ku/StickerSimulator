@@ -2,13 +2,24 @@ using UnityEngine;
 
 public class LayerUpTool : MonoBehaviour
 {
-    [SerializeField] private Select select;
+    private SpriteRenderer spriteRenderer;
+
+    void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public void LayerUp()
     {
-        Debug.Log(gameObject.name + " BringToFront");
-        LayerUpToolManager.CurrentFrontOrder++;
-        //sr.sortingOrder = LayerUpToolManager.CurrentFrontOrder;
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.sortingOrder += 1;
+            Debug.Log("Layer Up! Current Order: " + spriteRenderer.sortingOrder);
+        }
+        else
+        {
+            Debug.LogWarning("SpriteRenderer not found");
+        }
     }
 
 }
