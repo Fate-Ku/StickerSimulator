@@ -23,6 +23,9 @@ public class Select : MonoBehaviour
     //LayerUpToolを使うための変数を宣言
     private LayerUpTool layerUpTool;
 
+    //LayerUpDelectManagerで使うための変数宣言
+    public LayerUpTool targetobject;
+
 
     // 元の色を保存する変数
     [NonSerialized] public Color defaultColor;
@@ -173,11 +176,8 @@ public class Select : MonoBehaviour
             originalPosition = targetObject.position;
 
             //レイヤーアップ対象に設定
-            if (layerUpTool != null)
-            {
-                LayerUpSelectManager.Instance.currentTarget = layerUpTool;
-                Debug.Log(gameObject.name + " selected");
-            }
+            LayerUpSelectManager.Instance.currentTarget = GetComponent<LayerUpTool>();
+            Debug.Log("Selected: " + gameObject.name);
 
         }
 
