@@ -5,8 +5,7 @@ public class StarGauge:MonoBehaviour
 {
     [SerializeField] private int maxTaskCount;   // このステージのタスク総数
 
-    [SerializeField] private Slider gaugeSlider; // 0?1
-
+    [SerializeField] private Slider gaugeSlider;
     private int successTaskCount = 0;
 
     // タスク成功時に呼ぶ
