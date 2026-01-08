@@ -10,5 +10,24 @@ public class StickerData : ScriptableObject
     [TextArea] public string getMethod;
     public bool isUnlocked = false;
 
+    //シールのデータを格納（塚田）
+
+    //形
+    public enum SealShape
+    {
+        Circle,
+        Triangle,
+        Star
+    }
+
+    //色
+
+    public enum SealColor
+    {
+        Red,
+        Blue,
+        Yellow
+    }
+
 
 }
