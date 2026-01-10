@@ -29,7 +29,7 @@ public class ColorChangePanel:MonoBehaviour
         {
             case 0:
                 //オブジェクトの色を赤に変更
-                renderer.material.color = new Color32(255, 190, 190, 255);
+                renderer.material.color = new Color32(255, 126, 126, 255);
                 break;
 
             case 1:
@@ -45,6 +45,21 @@ public class ColorChangePanel:MonoBehaviour
             case 3:
                 //オブジェクトの色を黄緑に変更
                 renderer.material.color = new Color32(190, 255, 200, 255);
+                break;
+
+            case 4:
+                //オブジェクトの色をデフォルトに変更
+                DefaultColorChange info = select.targetObject.GetComponent<DefaultColorChange>();
+                if (info == null) return;
+
+                if (info.type == StickerType.Shape)
+                {
+                    renderer.material.color = new Color32(254, 144, 231, 255); // ピンク
+                }
+                else if (info.type == StickerType.Animal)
+                {
+                    renderer.material.color = Color.white;
+                }
                 break;
         }
     }
