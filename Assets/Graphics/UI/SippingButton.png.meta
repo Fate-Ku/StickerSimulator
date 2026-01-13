@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6bab5d8d1d95f434aa70794731fc4270
+guid: 9b288be89545b5f46920225d508242b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2561102230545748629
-    second: SelectSticker_0
+      213: 1543492206690860853
+    second: SippingButton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SelectSticker_0
+      name: SippingButton_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 38
-        width: 315
-        height: 315
+        x: 510
+        y: 546
+        width: 2806
+        height: 1473
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6d2cd23713257cd0800000000000000
-      internalID: -2561102230545748629
+      spriteID: 53f7465fbf59b6510800000000000000
+      internalID: 1543492206690860853
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SelectSticker_0: -2561102230545748629
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
