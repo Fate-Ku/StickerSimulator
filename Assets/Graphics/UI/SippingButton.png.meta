@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SippingButton_0: 1543492206690860853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
