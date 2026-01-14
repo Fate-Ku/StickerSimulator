@@ -2599,7 +2599,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c191130c9d96e4cce81ca2441729a261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   select: {fileID: 1382962249}
+=======
+  select: {fileID: 0}
+>>>>>>> 3e4a72bfb655a3e6383a6a9b426a499dd4f64309
   objectToDestroy: {fileID: 2083599922}
 --- !u!1 &2083011218
 GameObject:
@@ -2649,7 +2653,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c191130c9d96e4cce81ca2441729a261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   select: {fileID: 1382962249}
+=======
+  select: {fileID: 0}
+>>>>>>> 3e4a72bfb655a3e6383a6a9b426a499dd4f64309
   objectToDestroy: {fileID: 1267376010}
 --- !u!1 &2083599922 stripped
 GameObject:
