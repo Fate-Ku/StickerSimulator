@@ -14,21 +14,27 @@ public class Select : MonoBehaviour
     [NonSerialized] public  Transform targetObject;
     [NonSerialized] public  SpriteRenderer targetRenderer;
 
+    //選択枠
+    private GameObject selectionFrame;
+
     //シール編集エリア
     public Collider2D StickerArea;
 
     // 選択オブジェクトの元の位置を保存
     private Vector3 originalPosition;
 
+    //LayerUpToolを使うための変数を宣言
+    private LayerUpTool layerUpTool;
 
-    // 元の色を保存する変数
-    [NonSerialized] public Color defaultColor;
+    //LayerUpDelectManagerで使うための変数宣言
+    public LayerUpTool targetobject;
 
     //選択状態をオフにしておく
     public void Start()
     {
         targetRenderer = null;
         targetObject = null;
+        selectionFrame = null;
     }
 
     void Update()
@@ -62,14 +68,8 @@ public class Select : MonoBehaviour
             //選択モード・選択オブジェクトの解除
             case true:
 
-                // 以前の選択オブジェクトがあれば色を戻し、選択解除
-                if (targetRenderer != null)
-                {
-                    targetRenderer.color = defaultColor;
-
-                    targetRenderer = null;
-                    targetObject = null;
-                }
+                // 以前の選択オブジェクトがあれば選択枠を非表示にし、選択解除
+                Deselect();
 
                 //オブジェクト選択モード解除
                 IsSelectMode = false;
@@ -84,19 +84,14 @@ public class Select : MonoBehaviour
         }
     }
 
-
-
-
     //マウスが押された
     public void OnMouseDown()
     {
-
         // UIの上にカーソルがあったら、入力を受け付けない
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
         //オブジェクト選択モードでなければ処理しない
         if (!IsSelectMode) { return; }
-
 
         //マウスポインタの取得
         Vector3 mousePosition = Input.mousePosition;
@@ -106,16 +101,8 @@ public class Select : MonoBehaviour
         //当たり判定
         RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
 
-
-
-        // 以前の選択オブジェクトがあれば色を戻し、選択解除
-        if (targetRenderer != null)
-        {
-            targetRenderer.color = defaultColor;
-
-            targetRenderer = null;
-            targetObject = null;
-        }
+        // 既存選択を解除
+        Deselect();
 
         // 2025.12.12 added by ko
         // Cloneable タグなら「複製」して Sticker に変える
@@ -131,17 +118,14 @@ public class Select : MonoBehaviour
             targetObject = clone.transform;
             targetRenderer = clone.GetComponent<SpriteRenderer>();
 
-            //元の色を保存
-            defaultColor = targetRenderer.color;
-
-            //色の変更
-            targetRenderer.color = new Color(0.8f, 0.8f, 0.8f);
 
             //座標のずれを計算
             m_offset = targetObject.position - worldPosition;
 
             // 元の位置も保存
             originalPosition = targetObject.position;
+
+            SelectSticker(clone.transform, worldPosition);
 
             return; // Sticker 選択処理に進まない
         }
@@ -151,17 +135,12 @@ public class Select : MonoBehaviour
         // オブジェクトが選択されているかつそのオブジェクトがStickerタグを持っている場合
         if (hit.collider != null && hit.collider.CompareTag("Sticker"))
         {
+            //選択枠を呼ぶ
+            SelectSticker(hit.transform, worldPosition);
 
             //クリックしたオブジェクトを選択対象として登録
             targetObject = hit.transform;
             targetRenderer = targetObject.GetComponent<SpriteRenderer>();
-
-
-            //元の色を保存
-            defaultColor = targetRenderer.color;
-
-            //色の変更
-            targetRenderer.color = new Color(0.8f, 0.8f, 0.8f);
 
             //座標のずれを計算
             m_offset = targetObject.position - worldPosition;
@@ -169,10 +148,41 @@ public class Select : MonoBehaviour
             // 元の位置も保存
             originalPosition = targetObject.position;
 
+            //レイヤーアップ対象に設定
+            LayerUpSelectManager.Instance.currentTarget = GetComponent<LayerUpTool>();
+            Debug.Log("Selected: " + gameObject.name);
+
         }
 
-
     }
+
+    private void SelectSticker(Transform sticker, Vector3 worldPosition)
+    {
+        targetObject = sticker;
+        targetRenderer = sticker.GetComponent<SpriteRenderer>();
+
+        // 選択枠を取得
+        selectionFrame = sticker.Find("SelectSticker")?.gameObject;
+        
+        if (selectionFrame != null)
+            selectionFrame.SetActive(true);
+
+        // 位置情報
+        m_offset = targetObject.position - worldPosition;
+        originalPosition = targetObject.position;
+    }
+
+    // 選択解除
+    private void Deselect()
+    {
+        if (selectionFrame != null)
+            selectionFrame.SetActive(false);
+
+        targetObject = null;
+        targetRenderer = null;
+        selectionFrame = null;
+    }
+
     //マウスがドラッグされた
     private void OnMouseDrag()
     {
@@ -213,4 +223,6 @@ public class Select : MonoBehaviour
             targetObject.position = originalPosition;
         }
     }
+
+
 }

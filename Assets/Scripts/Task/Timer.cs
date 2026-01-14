@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class Timer:MonoBehaviour
 {
@@ -38,14 +36,14 @@ public class Timer:MonoBehaviour
         int minutes = (int)TotalTime / 60;
         int seconds = (int)TotalTime % 60;
 
-        //分と秒を分けて表示（:00は2桁）（$"は変数を文字列に組み込む）
+        //分と秒を分けて表示（:00は2桁）（$は変数を文字列に組み込む）
         TimeText.text = $"{minutes:00}:{seconds:00}";
 
         //カウントダウンタイマーがゼロになったときの処理
-        if (CountDownSeconds <= 0)
+        if (TotalTime <= 0)
         {
-            //シーン遷移
-            //SceneManager.LoadScene("報酬画面スクリプト名");
+            //シーン遷移(現在はタイトル画面に遷移)
+            GameManager.instance.ChangeScene("MainMenu");
 
             //一度だけ実行
             enabled = false;

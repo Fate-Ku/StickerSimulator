@@ -4,7 +4,7 @@ public class SceneChange : MonoBehaviour
 {
     public void TaskBTN()
     {
-        //GameManager.instance.ChangeScene("Task");
+        GameManager.instance.ChangeScene("Task");
     }
 
     public void MyBrandBTN()

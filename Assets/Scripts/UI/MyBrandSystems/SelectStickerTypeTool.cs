@@ -30,9 +30,6 @@ public class SelectStickerTypeTool : MonoBehaviour
     //形状シールボタンが押された
     public void OnShapeButton()
     {
-        //選択していたシールの選択状態（色）を基に戻す
-        if (select.targetRenderer != null)
-            select.targetRenderer.color = select.defaultColor;
 
         //選択状態解除
         select.targetObject = null;
@@ -46,10 +43,6 @@ public class SelectStickerTypeTool : MonoBehaviour
     // 動物ボタンが押された
     public void OnAnimalButton()
     {
-        //選択していたシールの選択状態（色）を基に戻す
-        if (select.targetRenderer != null)
-            select.targetRenderer.color = select.defaultColor;
-
         //選択状態解除
         select.targetObject = null;
         select.targetRenderer = null;
@@ -79,7 +72,6 @@ public class SelectStickerTypeTool : MonoBehaviour
             //選択状態なら解除する・色を戻す
             if (select.targetObject == sticker.transform)
             {
-                select.targetRenderer.color = select.defaultColor;
                 select.targetObject = null;
                 select.targetRenderer = null;
               
