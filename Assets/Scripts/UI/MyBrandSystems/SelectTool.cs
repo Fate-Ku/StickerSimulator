@@ -148,9 +148,7 @@ public class Select : MonoBehaviour
             // 元の位置も保存
             originalPosition = targetObject.position;
 
-            //レイヤーアップ対象に設定
-            LayerUpSelectManager.Instance.currentTarget = GetComponent<LayerUpTool>();
-            Debug.Log("Selected: " + gameObject.name);
+            
 
         }
 
