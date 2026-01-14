@@ -13,6 +13,11 @@ public class RequestTask : MonoBehaviour
     //文字サイズ
     [SerializeField] private int fontSize;
 
+    //シール編集エリア
+    [SerializeField] private Collider2D stickerArea;
+
+    [SerializeField] private GameObject sticker;
+
     //依頼リスト
     private List<int> taskList = new List<int>() { 1, 2, 3, 4, 5, 6 };
 
@@ -89,5 +94,20 @@ public class RequestTask : MonoBehaviour
     private void RewardScene()
     {
         GameManager.instance.ChangeScene("MainMenu");
+    }
+
+    //依頼内容に沿っているか？
+    bool IsCompletedTask(int task)
+    {
+
+        //シール編集エリア内にオブジェクトがある
+        if (stickerArea.OverlapPoint(sticker.transform.position))
+        {
+            //if(task ==1&&)
+
+        }
+        return true;
+        return false;
+
     }
 }
