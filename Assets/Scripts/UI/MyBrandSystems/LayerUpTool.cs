@@ -1,25 +1,35 @@
 using UnityEngine;
+using UnityEditor;
 
 public class LayerUpTool : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-
-    void Awake()
+    static void LayerUp()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+        // 選択中のすべてのGameObjectを対象にする
+        GameObject[] selectedObjects = Selection.gameObjects;
 
-    public void LayerUp()
-    {
-        if (spriteRenderer != null)
+        if (selectedObjects.Length == 0) return;
+
+        foreach (GameObject go in selectedObjects)
         {
-            spriteRenderer.sortingOrder += 1;
-            Debug.Log("Layer Up! Current Order: " + spriteRenderer.sortingOrder);
+            // Rendererコンポーネント（SpriteRenderer, TilemapRendererなど）を取得
+            Renderer renderer = go.GetComponent<Renderer>();
+
+            if (renderer != null)
+            {
+                // Order in Layer の値を1増やす
+                renderer.sortingOrder += 1;
+
+                Debug.Log("Layer Up");
+
+            }
+
+            else
+            {
+                Debug.LogWarning("SpriteRenderer not found");
+            }
         }
-        else
-        {
-            Debug.LogWarning("SpriteRenderer not found");
-        }
+
     }
 
 }
