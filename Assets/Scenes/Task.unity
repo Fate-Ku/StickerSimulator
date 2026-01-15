@@ -3542,8 +3542,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u2190"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
+  m_sharedMaterial: {fileID: -7786892333198751292, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4930,6 +4930,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskText: {fileID: 1908048319}
   fontSize: 32
+  stickerArea: {fileID: 0}
+  sticker: {fileID: 0}
 --- !u!1 &1269270885
 GameObject:
   m_ObjectHideFlags: 0
@@ -7252,6 +7254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskText: {fileID: 1908048319}
   fontSize: 32
+  stickerArea: {fileID: 0}
+  sticker: {fileID: 0}
 --- !u!1 &1955885161
 GameObject:
   m_ObjectHideFlags: 0
@@ -7704,7 +7708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.000045, y: 0}
+  m_AnchoredPosition: {x: 4.000046, y: 0}
   m_SizeDelta: {x: -7.9999094, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2076242230

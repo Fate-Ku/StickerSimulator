@@ -24,10 +24,10 @@ public class Select : MonoBehaviour
     private Vector3 originalPosition;
 
     //LayerUpToolを使うための変数を宣言
-    private LayerUpTool layerUpTool;
+    //private LayerUpTool layerUpTool;
 
     //LayerUpDelectManagerで使うための変数宣言
-    public LayerUpTool targetobject;
+    //public LayerUpTool targetobject;
 
     //選択状態をオフにしておく
     public void Start()
