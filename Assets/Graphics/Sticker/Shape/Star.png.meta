@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 146135437b5e75d4da08b18db1d2784d
+guid: 991b132e1bc62904599d4bb65725c69b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 472301826965493738
-    second: StickerTypeFrame2_0
+      213: 5199979006384268662
+    second: Star_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StickerTypeFrame2_0
+      name: Star_0
       rect:
         serializedVersion: 2
-        x: 623
-        y: 104
-        width: 590
-        height: 2168
+        x: 1565
+        y: 1101
+        width: 675
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae7db0f5204fd8600800000000000000
-      internalID: 472301826965493738
+      spriteID: 675e50b0b590a2840800000000000000
+      internalID: 5199979006384268662
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      StickerTypeFrame2_0: 472301826965493738
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
