@@ -1,37 +1,34 @@
-/*
 using UnityEngine;
-using UnityEditor;
+using UnityEngine.UIElements;
 
 public class LayerUpTool : MonoBehaviour
 {
+    [SerializeField] private Select select;
+
     static void LayerUp()
     {
-        // 選択中のすべてのGameObjectを対象にする
-        GameObject[] selectedObjects = Selection.gameObjects;
+        if (select == null) return;
+        if (select.targetObject == null) return;
 
-        if (selectedObjects.Length == 0) return;
+        Transform target = select.targetObject;
 
-        foreach (GameObject go in selectedObjects)
+        // Rendererコンポーネント（SpriteRenderer, TilemapRendererなど）を取得
+        Renderer renderer = GetComponent<Renderer>();
+
+        if (renderer != null)
         {
-            // Rendererコンポーネント（SpriteRenderer, TilemapRendererなど）を取得
-            Renderer renderer = go.GetComponent<Renderer>();
+            // Order in Layer の値を1増やす
+            renderer.sortingOrder += 1;
 
-            if (renderer != null)
-            {
-                // Order in Layer の値を1増やす
-                renderer.sortingOrder += 1;
+            Debug.Log("Layer Up");
 
-                Debug.Log("Layer Up");
+        }
 
-            }
-
-            else
-            {
-                Debug.LogWarning("SpriteRenderer not found");
-            }
+        else
+        {
+            Debug.LogWarning("SpriteRenderer not found");
         }
 
     }
 
 }
-*/
