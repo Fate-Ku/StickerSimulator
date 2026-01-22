@@ -1,14 +1,17 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
-public class StarGauge:MonoBehaviour
+public class StarGauge : MonoBehaviour
 {
-    [SerializeField] private int maxTaskCount;   // ‚±‚ÌƒXƒe[ƒW‚Ìƒ^ƒXƒN‘”
+    [SerializeField] private int maxTaskCount;   // ã“ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã®ã‚¿ã‚¹ã‚¯ç·æ•°
 
     [SerializeField] private Slider gaugeSlider;
+
+    [SerializeField] private StarAnimator starAnimator; //  2026.1.23 added by Fate
+
     private int successTaskCount = 0;
 
-    // ƒ^ƒXƒN¬Œ÷‚ÉŒÄ‚Ô
+    // ã‚¿ã‚¹ã‚¯æˆåŠŸæ™‚ã«å‘¼ã¶
     public void OnTaskSuccess()
     {
         successTaskCount++;
@@ -17,11 +20,39 @@ public class StarGauge:MonoBehaviour
         progress = Mathf.Clamp01(progress);
 
         UpdateGauge(progress);
+
+        CalculateStarCount(successTaskCount); //  2026.1.23 added by Fate
     }
 
     void UpdateGauge(float progress)
     {
         gaugeSlider.value = progress;
     }
+
+    //  2026.1.23 added by Fate
+    public void ShowResultStars(int starCount)
+    {
+        starAnimator.SetStarCount(starCount);
+    }
+
+    // count star  
+    int CalculateStarCount(int taskCount)
+    {
+        int starCount = 0;
+
+        // judge star ( max : 3 star)
+        if (taskCount >= maxTaskCount)          // all task completed
+            starCount = 3;
+        else if (taskCount >= maxTaskCount * 2 / 3)
+            starCount = 2;
+        else if (taskCount >= maxTaskCount / 3)
+            starCount = 1;
+        else
+            starCount = 0;
+
+  
+        return starCount;
+    }
+    //  2026.1.23 added by Fate
 
 }

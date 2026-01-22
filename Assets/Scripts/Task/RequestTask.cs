@@ -93,7 +93,7 @@ public class RequestTask : MonoBehaviour
     //報酬画面へシーン遷移(現在はタイトル画面に戻るようになっている)
     private void RewardScene()
     {
-        GameManager.instance.ChangeScene("MainMenu");
+        GameManager.instance.ChangeScene("Reward");
     }
 
     //依頼内容に沿っているか？
