@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using System;
@@ -7,75 +7,75 @@ public class RequestTask : MonoBehaviour
 {
     [SerializeField] private TMP_Text taskText;
 
-    //‚±‚È‚µ‚½ˆË—Š‚Ì”
+    //ã“ãªã—ãŸä¾é ¼ã®æ•°
     [NonSerialized] public int taskCount = 0;
 
-    //•¶šƒTƒCƒY
+    //æ–‡å­—ã‚µã‚¤ã‚º
     [SerializeField] private int fontSize;
 
-    //ƒV[ƒ‹•ÒWƒGƒŠƒA
+    //ã‚·ãƒ¼ãƒ«ç·¨é›†ã‚¨ãƒªã‚¢
     [SerializeField] private Collider2D stickerArea;
 
     [SerializeField] private GameObject sticker;
 
-    //ˆË—ŠƒŠƒXƒg
+    //ä¾é ¼ãƒªã‚¹ãƒˆ
     private List<int> taskList = new List<int>() { 1, 2, 3, 4, 5, 6 };
 
-    //¡•\¦‚µ‚Ä‚¢‚éˆË—Š
+    //ä»Šè¡¨ç¤ºã—ã¦ã„ã‚‹ä¾é ¼
     private int currentTask = -1;
 
     private void Start()
     {
-        //•¶š‚ÌƒTƒCƒY‚ğİ’è
+        //æ–‡å­—ã®ã‚µã‚¤ã‚ºã‚’è¨­å®š
         taskText.fontSize = fontSize;
         taskText.text = "";
 
-        //‰‚ß‚ÌˆË—Š‚ğ•\¦
+        //åˆã‚ã®ä¾é ¼ã‚’è¡¨ç¤º
         ShowTask();
     }
 
-    //ƒ^ƒXƒN‚ğƒ‰ƒ“ƒ_ƒ€‚Å•\¦
+    //ã‚¿ã‚¹ã‚¯ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã§è¡¨ç¤º
     private void ShowTask()
     {
 
-        //ƒŠƒXƒg‚©‚çƒ‰ƒ“ƒ_ƒ€‚É‘I‘ğ
+        //ãƒªã‚¹ãƒˆã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã«é¸æŠ
         int index = UnityEngine.Random.Range(0, taskList.Count);
         currentTask = taskList[index];
 
-        //d•¡‚µ‚È‚¢‚æ‚¤‚ÉƒŠƒXƒg‚©‚çíœ‚·‚é
+        //é‡è¤‡ã—ãªã„ã‚ˆã†ã«ãƒªã‚¹ãƒˆã‹ã‚‰å‰Šé™¤ã™ã‚‹
         taskList.RemoveAt(index);
 
         taskText.text = GetTaskText(currentTask);
     }
 
-    //ƒ^ƒXƒN“à—e‚ğ•¶š—ñ‚Å•Ô‚·
+    //ã‚¿ã‚¹ã‚¯å†…å®¹ã‚’æ–‡å­—åˆ—ã§è¿”ã™
     private string GetTaskText(int task)
     {
         switch (task)
         {
             case 1:
-                return "E‚Ü‚é‚Ì\n@ƒV[ƒ‹‚ğ‚Â‚©‚Á‚ÄI";
+                return "ãƒ»ã¾ã‚‹ã®\nã€€ã‚·ãƒ¼ãƒ«ã‚’ã¤ã‹ã£ã¦ï¼";
             case 2:
-                return "E‚³‚ñ‚©‚­‚Ì\n@ƒV[ƒ‹‚ğ‚Â‚©‚Á‚ÄI";
+                return "ãƒ»ã•ã‚“ã‹ãã®\nã€€ã‚·ãƒ¼ãƒ«ã‚’ã¤ã‹ã£ã¦ï¼";
             case 3:
-                return "E‚­‚Ü‚ÌƒV[ƒ‹‚ğ\n@‚Â‚©‚Á‚ÄI";
+                return "ãƒ»ãã¾ã®ã‚·ãƒ¼ãƒ«ã‚’\nã€€ã¤ã‹ã£ã¦ï¼";
             case 4:
-                return "EƒlƒR‚ÌƒV[ƒ‹‚ğ\n@‚Â‚©‚Á‚ÄI";
+                return "ãƒ»ãƒã‚³ã®ã‚·ãƒ¼ãƒ«ã‚’\nã€€ã¤ã‹ã£ã¦ï¼";
             case 5:
-                return "E2‚µ‚ã‚é‚¢‚ÌƒV[ƒ‹‚ğ\n@‚Â‚©‚Á‚ÄI";
+                return "ãƒ»2ã—ã‚…ã‚‹ã„ã®ã‚·ãƒ¼ãƒ«ã‚’\nã€€ã¤ã‹ã£ã¦ï¼";
             case 6:
-                return "E3‚µ‚ã‚é‚¢‚ÌƒV[ƒ‹‚ğ\n@‚Â‚©‚Á‚ÄI";
+                return "ãƒ»3ã—ã‚…ã‚‹ã„ã®ã‚·ãƒ¼ãƒ«ã‚’\nã€€ã¤ã‹ã£ã¦ï¼";
         }
         return "";
     }
 
-    //”­‘—ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚çŒÄ‚Î‚ê‚é
+    //ç™ºé€ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸã‚‰å‘¼ã°ã‚Œã‚‹
     public void CompleteTask()
     {
-        //ˆË—Š‚Ì”‚ğ‘‚â‚·
-        taskCount++ ;
+        //ä¾é ¼ã®æ•°ã‚’å¢—ã‚„ã™
+        taskCount++;
 
-        //w’è‰ñ”I‚í‚Á‚½‚ç•ñV‰æ–Ê‚ÖƒV[ƒ“‘JˆÚ
+        //æŒ‡å®šå›æ•°çµ‚ã‚ã£ãŸã‚‰å ±é…¬ç”»é¢ã¸ã‚·ãƒ¼ãƒ³é·ç§»
         if (taskCount >= 3)
         {
             RewardScene();
@@ -83,24 +83,24 @@ public class RequestTask : MonoBehaviour
             return;
         }
 
-        //•\¦‚ğÁ‚·
+        //è¡¨ç¤ºã‚’æ¶ˆã™
         taskText.text = "";
 
-        //Ÿ‚Ìƒ^ƒXƒN‚Ö
+        //æ¬¡ã®ã‚¿ã‚¹ã‚¯ã¸
         ShowTask();
     }
 
-    //•ñV‰æ–Ê‚ÖƒV[ƒ“‘JˆÚ(Œ»İ‚Íƒ^ƒCƒgƒ‹‰æ–Ê‚É–ß‚é‚æ‚¤‚É‚È‚Á‚Ä‚¢‚é)
+    //å ±é…¬ç”»é¢ã¸ã‚·ãƒ¼ãƒ³é·ç§»(ç¾åœ¨ã¯ã‚¿ã‚¤ãƒˆãƒ«ç”»é¢ã«æˆ»ã‚‹ã‚ˆã†ã«ãªã£ã¦ã„ã‚‹)
     private void RewardScene()
     {
         GameManager.instance.ChangeScene("MainMenu");
     }
 
-    //ˆË—Š“à—e‚É‰ˆ‚Á‚Ä‚¢‚é‚©H
+    //ä¾é ¼å†…å®¹ã«æ²¿ã£ã¦ã„ã‚‹ã‹ï¼Ÿ
     bool IsCompletedTask(int task)
     {
 
-        //ƒV[ƒ‹•ÒWƒGƒŠƒA“à‚ÉƒIƒuƒWƒFƒNƒg‚ª‚ ‚é
+        //ã‚·ãƒ¼ãƒ«ç·¨é›†ã‚¨ãƒªã‚¢å†…ã«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒã‚ã‚‹
         if (stickerArea.OverlapPoint(sticker.transform.position))
         {
             //if(task ==1&&)
