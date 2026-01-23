@@ -1186,6 +1186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &218586351
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1681,6 +1682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!70 &289944223
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2357,6 +2359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &490298713
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2885,6 +2888,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543525313}
+  m_CullTransparentMesh: 1
+--- !u!1 &557312482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557312483}
+  - component: {fileID: 557312486}
+  - component: {fileID: 557312485}
+  m_Layer: 5
+  m_Name: StickerBook
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &557312483
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557312482}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 685307399916951778}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -246, y: -72}
+  m_SizeDelta: {x: 1707.77, y: 962.42}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &557312485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557312482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d7e13d7833395d44984065b2625bcda8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &557312486
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557312482}
   m_CullTransparentMesh: 1
 --- !u!1 &574717258
 GameObject:
@@ -3708,6 +3786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &718969968
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4094,6 +4173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &780730801
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4537,6 +4617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &791996425
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5604,6 +5685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &1177565696
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6068,6 +6150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!114 &1267376034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6291,6 +6374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!114 &1360366899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6619,6 +6703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &1410406304
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6930,6 +7015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!114 &1437229763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6942,6 +7028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!1 &1438594604
 GameObject:
   m_ObjectHideFlags: 0
@@ -7046,6 +7133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!114 &1442472718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7351,6 +7439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &1469813247
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7878,6 +7967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &1480608714
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8576,6 +8666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &1668288917
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8935,6 +9026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &1736299291
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9202,6 +9294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &1823157266
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9841,6 +9934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!114 &2083599947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10130,6 +10224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!60 &2093543711
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10610,6 +10705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7866819f6f44a029d0316b82b0ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select: {fileID: 0}
 --- !u!61 &2119305617
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10944,6 +11040,7 @@ RectTransform:
   - {fileID: 1729103781}
   - {fileID: 763316407}
   - {fileID: 1829398689224863330}
+  - {fileID: 557312483}
   - {fileID: 40667255}
   - {fileID: 1086264487}
   - {fileID: 1185996808}
@@ -11015,8 +11112,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -246, y: -72}
-  m_SizeDelta: {x: 1707.77, y: 962.42}
+  m_AnchoredPosition: {x: -247.56, y: -32.52}
+  m_SizeDelta: {x: 1133.85, y: 825}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933997543854440215
 MonoBehaviour:
@@ -11477,7 +11574,7 @@ PrefabInstance:
     - target: {fileID: 5087573393303492933, guid: 10afce27601218242ad77e35e5a80721, type: 3}
       propertyPath: StickerArea
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8498600587512242508}
     - target: {fileID: 7365416575275242920, guid: 10afce27601218242ad77e35e5a80721, type: 3}
       propertyPath: CatSticker
       value: 
@@ -11910,14 +12007,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
+  m_Color: {r: 0.9960785, g: 0.8862746, b: 0.9960785, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d7e13d7833395d44984065b2625bcda8, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

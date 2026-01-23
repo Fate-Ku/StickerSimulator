@@ -217,8 +217,8 @@ public class Select : MonoBehaviour
 
         else
         {
-            // 枠外なら元の位置に戻す
-            targetObject.position = originalPosition;
+            // 枠外なら削除する
+            Destroy(targetObject.gameObject); 
         }
     }
 
