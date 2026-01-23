@@ -7,27 +7,24 @@ public class LayerUpTool : MonoBehaviour
 
     static void LayerUp()
     {
-        if (select == null) return;
-        if (select.targetObject == null) return;
-
-        Transform target = select.targetObject;
+        
 
         // Rendererコンポーネント（SpriteRenderer, TilemapRendererなど）を取得
-        Renderer renderer = GetComponent<Renderer>();
+        //Renderer renderer = GetComponent<Renderer>();
 
-        if (renderer != null)
-        {
+        //if (GetComponent<Renderer>() != null)
+        //{
             // Order in Layer の値を1増やす
-            renderer.sortingOrder += 1;
+            //GetComponent<Renderer>().sortingOrder += 1;
 
-            Debug.Log("Layer Up");
+            //Debug.Log("Layer Up");
 
-        }
+        //}
 
-        else
-        {
-            Debug.LogWarning("SpriteRenderer not found");
-        }
+        //else
+        //{
+            //Debug.LogWarning("SpriteRenderer not found");
+        //}
 
     }
 
