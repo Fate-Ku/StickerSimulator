@@ -1707,7 +1707,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4515819217016439336}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
-        m_MethodName: StickerBookMenuBTN
+        m_MethodName: MainMenuBTN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
