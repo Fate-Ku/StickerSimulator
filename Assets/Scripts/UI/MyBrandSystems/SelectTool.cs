@@ -10,6 +10,9 @@ public class Select : MonoBehaviour
     //オブジェクト選択モードか？デフォルトはtrue
     private bool IsSelectMode = true;
 
+    //シールドラッグ状態か？
+    private bool isDraggingSticker = false;
+
     // 現在選択しているオブジェクト
     [NonSerialized] public  Transform targetObject;
     [NonSerialized] public  SpriteRenderer targetRenderer;
@@ -127,6 +130,9 @@ public class Select : MonoBehaviour
 
             SelectSticker(clone.transform, worldPosition);
 
+            //シール選択状態にする
+            isDraggingSticker = true;
+
             return; // Sticker 選択処理に進まない
         }
         // 2025.12.12 added by ko
@@ -148,7 +154,8 @@ public class Select : MonoBehaviour
             // 元の位置も保存
             originalPosition = targetObject.position;
 
-            
+            //シールドラッグ状態にする
+            isDraggingSticker = true;
 
         }
 
@@ -184,6 +191,7 @@ public class Select : MonoBehaviour
     //マウスがドラッグされた
     private void OnMouseDrag()
     {
+        if (!isDraggingSticker) return;
 
         // UIの上にカーソルがあったら、入力を受け付けない
         if (EventSystem.current.IsPointerOverGameObject()) return;
@@ -203,6 +211,9 @@ public class Select : MonoBehaviour
     //マウスが離された
     private void OnMouseUp()
     {
+        //シール選択状態解除
+        isDraggingSticker = false;
+
         // UIの上にカーソルがあったら、入力を受け付けない
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
