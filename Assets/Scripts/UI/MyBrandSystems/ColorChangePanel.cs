@@ -28,17 +28,17 @@ public class ColorChangePanel:MonoBehaviour
         switch (ButtonType)
         {
             case 0:
-                //オブジェクトの色を赤に変更
+                //オブジェクトの色をパステルレッドに変更
                 renderer.material.color = new Color32(255, 126, 126, 255);
                 break;
 
             case 1:
-                //オブジェクトの色を水色に変更
+                //オブジェクトの色をパステル水色に変更
                 renderer.material.color = new Color32(180, 250, 255, 255);
                 break;
 
             case 2:
-                //オブジェクトの色を黄色に変更
+                //オブジェクトの色をパステルイエローに変更
                 renderer.material.color = new Color32(255, 255, 180, 255);
                 break;
 
@@ -48,6 +48,26 @@ public class ColorChangePanel:MonoBehaviour
                 break;
 
             case 4:
+                //オブジェクトの色をパステルピンクに変更
+                renderer.material.color = new Color32(255, 157, 235, 255); 
+                break;
+
+            case 5:
+                //オブジェクトの色をパステルパープルに変更
+                renderer.material.color = new Color32(206, 150, 255, 255);
+                break;
+
+            case 6:
+                //オブジェクトの色をパステルブルーに変更
+                renderer.material.color = new Color32(172, 184, 255, 255);
+                break;
+
+            case 7:
+                //オブジェクトの色をパステルオレンジに変更
+                renderer.material.color = new Color32(255, 191, 153, 255);
+                break;
+
+            case 8:
                 //オブジェクトの色をデフォルトに変更
                 DefaultColorChange info = select.targetObject.GetComponent<DefaultColorChange>();
                 if (info == null) return;
@@ -61,6 +81,63 @@ public class ColorChangePanel:MonoBehaviour
                     renderer.material.color = Color.white;
                 }
                 break;
+
+            case 9:
+                //オブジェクトの色を赤に変更
+                renderer.material.color = new Color32(255, 73, 70, 255);
+                break;
+
+            case 10:
+                //オブジェクトの色をオレンジに変更
+                renderer.material.color = new Color32(255, 160, 37, 255);
+                break;
+
+            case 11:
+                //オブジェクトの色を黄色に変更
+                renderer.material.color = new Color32(255, 250, 36, 255);
+                break;
+
+            case 12:
+                //オブジェクトの色を黄緑に変更
+                renderer.material.color = new Color32(100, 255, 92, 255);
+                break;
+
+            case 13:
+                //オブジェクトの色を青に変更
+                renderer.material.color = new Color32(60, 96, 255, 255);
+                break;
+
+            case 14:
+                //オブジェクトの色を紫に変更
+                renderer.material.color = new Color32(194, 60, 255, 255);
+                break;
+
+            case 15:
+                //オブジェクトの色をマゼンタに変更
+                renderer.material.color = new Color32(255, 60, 238, 255);
+                break;
+
+            case 16:
+                //オブジェクトの色をパステルグレーに変更
+                renderer.material.color = new Color32(186, 186, 186, 255);
+                break;
+
+            case 17:
+                //オブジェクトの色を白に変更
+                renderer.material.color = new Color32(255, 255, 255, 255);
+                break;
+
+            case 18:
+                //オブジェクトの色を水色に変更
+                renderer.material.color = new Color32(92, 255, 249, 255);
+                break;
+
+            case 19:
+                //オブジェクトの色を黒に変更
+                renderer.material.color = new Color32(42, 42, 42, 255);
+                break;
+
+
         }
     }
 
