@@ -5128,6 +5128,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed58e6cf414f448dbaa5234ef2b1033a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &912223216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912223217}
+  - component: {fileID: 912223218}
+  m_Layer: 5
+  m_Name: StickerFileSaveGameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &912223217
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912223216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 685307399916951778}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &912223218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912223216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3fb53bb350204df18c57bd16c761a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stickerPrefabs:
+  - {fileID: 2083599922}
+  - {fileID: 1267376010}
+  - {fileID: 2119305612}
+  - {fileID: 780730795}
+  - {fileID: 490298707}
+  - {fileID: 289944217}
+  - {fileID: 2093543705}
+  - {fileID: 1410406298}
+  - {fileID: 1823157261}
+  - {fileID: 1469813241}
+  - {fileID: 1442472702}
+  - {fileID: 1360366883}
+  - {fileID: 1668288906}
+  - {fileID: 791996414}
+  - {fileID: 218586340}
+  - {fileID: 1480608703}
+  - {fileID: 1177565685}
+  - {fileID: 1736299285}
+  - {fileID: 718969961}
+  sceneName: MyBrand
 --- !u!1 &937385164
 GameObject:
   m_ObjectHideFlags: 0
@@ -8123,8 +8192,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 165214314}
   m_HandleRect: {fileID: 165214313}
   m_Direction: 0
-  m_Value: 0.00000008259154
-  m_Size: 0.47156155
+  m_Value: 0.000000082591534
+  m_Size: 0.47156152
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12535,6 +12604,7 @@ RectTransform:
   - {fileID: 2039188196}
   - {fileID: 148608028}
   - {fileID: 1827811449}
+  - {fileID: 912223217}
   m_Father: {fileID: 1974088520861275541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -12884,12 +12954,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8803550920599283521, guid: a7106b5b097e5cf45a2e5ba3a513ba57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8803550920599283521, guid: a7106b5b097e5cf45a2e5ba3a513ba57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4515819217016439336}
+      objectReference: {fileID: 912223218}
+    - target: {fileID: 8803550920599283521, guid: a7106b5b097e5cf45a2e5ba3a513ba57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveToFile
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803550920599283521, guid: a7106b5b097e5cf45a2e5ba3a513ba57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StickerFileSave, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803550920599283521, guid: a7106b5b097e5cf45a2e5ba3a513ba57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
