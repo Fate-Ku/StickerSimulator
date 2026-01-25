@@ -5,10 +5,28 @@ public class LayerUpTool : MonoBehaviour
 {
     [SerializeField] private Select select;
 
-    static void LayerUp()
+    public void LayerUp()
     {
-        
+        if (select.targetObject == null) { return; }
 
+        Renderer renderer = select.targetObject.GetComponent<SpriteRenderer>();
+        if (renderer == null) return;
+
+        SpriteRenderer[] allSprites = FindObjectsOfType<SpriteRenderer>();
+
+        int maxOrder = renderer.sortingOrder;
+
+        foreach (var sr in allSprites)
+        {
+            //同じSorting Layerの中だけで、
+            if (sr.sortingLayerID == renderer.sortingLayerID)
+            {
+                if (sr.sortingOrder > maxOrder)
+                maxOrder = sr.sortingOrder;
+            }
+        }
+
+        renderer.sortingOrder = maxOrder + 1;
         // Rendererコンポーネント（SpriteRenderer, TilemapRendererなど）を取得
         //Renderer renderer = GetComponent<Renderer>();
 
