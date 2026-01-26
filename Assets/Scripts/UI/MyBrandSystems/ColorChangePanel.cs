@@ -129,7 +129,7 @@ public class ColorChangePanel:MonoBehaviour
 
             case 18:
                 //オブジェクトの色を水色に変更
-                renderer.material.color = new Color32(92, 255, 249, 255);
+                renderer.material.color = new Color32(0, 240, 255, 255);
                 break;
 
             case 19:
@@ -137,7 +137,62 @@ public class ColorChangePanel:MonoBehaviour
                 renderer.material.color = new Color32(42, 42, 42, 255);
                 break;
 
+            case 20:
+                //オブジェクトの色をパステルブラウンに変更
+                renderer.material.color = new Color32(127, 98, 68, 255);
+                break;
 
+            case 21:
+                //オブジェクトの色を橙色に変更
+                renderer.material.color = new Color32(255, 220, 184, 255);
+                break;
+
+            case 22:
+                //オブジェクトの色を紫色に変更
+                renderer.material.color = new Color32(103, 45, 184, 255);
+                break;
+
+            case 23:
+                //オブジェクトの色をブラウンに変更
+                renderer.material.color = new Color32(103, 45, 0, 255);
+                break;
+
+
+            case 24:
+                //オブジェクトの色を深緑に変更
+                renderer.material.color = new Color32(42,111, 0, 255);
+                break;
+
+            case 25:
+                //オブジェクトの色を深緑に変更
+                renderer.material.color = new Color32(103, 45, 184, 255);
+                break;
+
+            case 26:
+                //オブジェクトの色を深青に変更
+                renderer.material.color = new Color32(0, 30, 156, 255);
+                break;
+
+            case 27:
+                //オブジェクトの色を深赤に変更
+                renderer.material.color = new Color32(112, 4, 0, 255);
+                break;
+
+
+            case 28:
+                //オブジェクトの色を深オレンジに変更
+                renderer.material.color = new Color32(184, 99, 0, 255);
+                break;
+
+            case 29:
+                //オブジェクトの色を深黄色に変更
+                renderer.material.color = new Color32(184, 177, 0, 255);
+                break;
+
+            case 30:
+                //オブジェクトの色を深黄水色に変更
+                renderer.material.color = new Color32(0, 111, 111, 255);
+                break;
         }
     }
 
