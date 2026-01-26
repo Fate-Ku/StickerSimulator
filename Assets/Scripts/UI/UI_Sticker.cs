@@ -22,7 +22,8 @@ public class UI_Sticker : MonoBehaviour
         stickerName.text = data.isUnlocked ? data.stickerName : "???";
 
         // getStickerMethod：show always
-        getStickerMethod.text = data.getMethod +"で入手できる";
+        //getStickerMethod.text = data.getMethod +"で入手できる";
+        getStickerMethod.text = data.getMethod +"";
 
     }
 

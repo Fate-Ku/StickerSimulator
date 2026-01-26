@@ -20,7 +20,7 @@ public class StickerBookDetail : MonoBehaviour
     private void Start()
     {
         UpdateTotalPercent();
-        ShowCategory("Animal");
+        ShowCategory("Shape");
     }
 
     // call this when a category button clicked
