@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SnowManColor_0: 214461216386453120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
