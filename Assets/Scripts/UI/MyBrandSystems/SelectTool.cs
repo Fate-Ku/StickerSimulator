@@ -121,6 +121,8 @@ public class Select : MonoBehaviour
             targetObject = clone.transform;
             targetRenderer = clone.GetComponent<SpriteRenderer>();
 
+            // default layer = 25
+            targetRenderer.sortingOrder = 25;
 
             //座標のずれを計算
             m_offset = targetObject.position - worldPosition;

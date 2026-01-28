@@ -83,6 +83,10 @@ public class StickerFileSaveManager : MonoBehaviour
     // ─────────────────────────────
     public void LoadFromFile()
     {
+        // 既存のステッカーを全削除してからロード
+        GameObject[] oldStickers = GameObject.FindGameObjectsWithTag("Sticker");
+        foreach (var s in oldStickers) Destroy(s);
+
         if (!File.Exists(SavePath))
         {
             Debug.Log("保存ファイルがありません: " + SavePath);
