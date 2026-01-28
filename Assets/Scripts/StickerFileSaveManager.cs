@@ -114,7 +114,8 @@ public class StickerFileSaveManager : MonoBehaviour
             // JSONから読み込んだ名前を出力
             Debug.Log($"ロードを試行: JSONのprefabNameは '{data.prefabName}' です。");
 
-            GameObject prefab = stickerPrefabs.Find(p => p.name == data.prefabName);
+            //GameObject prefab = stickerPrefabs.Find(p => p.name == data.prefabName);
+            GameObject prefab = Resources.Load<GameObject>("Stickers/" + data.prefabName);
 
             // プレハブが見つかったかチェック
             if (prefab == null)
@@ -159,6 +160,12 @@ public class StickerFileSaveManager : MonoBehaviour
         {
             Debug.Log("削除対象の保存ファイルが存在しません: " + SavePath);
         }
+    }
+
+    // for testing
+    public void OpenSaveFile()
+    {
+        Application.OpenURL(Application.persistentDataPath);
     }
 
 
