@@ -9070,6 +9070,14 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3310568129409781038, guid: db599a95bd736414491c80c86943abed, type: 3}
+      propertyPath: 'stickerPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1442472702}
+    - target: {fileID: 3310568129409781038, guid: db599a95bd736414491c80c86943abed, type: 3}
+      propertyPath: 'stickerPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2083599922}
+    - target: {fileID: 3310568129409781038, guid: db599a95bd736414491c80c86943abed, type: 3}
       propertyPath: 'stickerPrefabs.Array.data[4]'
       value: 
       objectReference: {fileID: 2119305612}
