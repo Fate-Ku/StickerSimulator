@@ -12,9 +12,13 @@ public class SelectStickerTypeTool : MonoBehaviour
     [Header("AnimalSticker")]
     public GameObject[] animalStickers;
 
-    //動物シールのグループを入れる配列
+    //花シールのグループを入れる配列
     [Header("FlowerSticker")]
     public GameObject[] flowerStickers;
+
+    //天気シールのグループを入れる配列
+    [Header("WeatherSticker")]
+    public GameObject[] weatherStickers;
 
     //シール編集エリア
     [SerializeField] private Collider2D stickerArea; 
@@ -35,6 +39,11 @@ public class SelectStickerTypeTool : MonoBehaviour
         foreach (var sticker in flowerStickers)
             if (sticker != null)
                 sticker.SetActive(false);
+
+        //天気シールは非表示にする
+        foreach (var sticker in weatherStickers)
+            if (sticker != null)
+                sticker.SetActive(false);
     }
 
     //形状シールボタンが押された
@@ -49,6 +58,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         ShowGroup(shapeStickers);
         HideGroup(animalStickers);
         HideGroup(flowerStickers);
+        HideGroup(weatherStickers);
     }
 
     // 動物ボタンが押された
@@ -62,6 +72,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         ShowGroup(animalStickers);
         HideGroup(shapeStickers);
         HideGroup(flowerStickers);
+        HideGroup(weatherStickers);
     }
 
     // 花ボタンが押された
@@ -75,6 +86,21 @@ public class SelectStickerTypeTool : MonoBehaviour
         ShowGroup(flowerStickers);
         HideGroup(shapeStickers);
         HideGroup(animalStickers);
+        HideGroup(weatherStickers);
+    }
+
+    // 天気ボタンが押された
+    public void OnWeatherButton()
+    {
+        //選択状態解除
+        select.targetObject = null;
+        select.targetRenderer = null;
+
+        //動物シールを表示し、別のシールを非表示にする
+        ShowGroup(weatherStickers);
+        HideGroup(shapeStickers);
+        HideGroup(animalStickers);
+        HideGroup(flowerStickers);
     }
 
     //特定グループだけを表示・非表示切り替え

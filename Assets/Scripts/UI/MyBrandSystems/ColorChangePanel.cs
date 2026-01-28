@@ -99,7 +99,7 @@ public class ColorChangePanel:MonoBehaviour
 
             case 12:
                 //オブジェクトの色を黄緑に変更
-                renderer.material.color = new Color32(100, 255, 92, 255);
+                renderer.material.color = new Color32(163, 255, 0, 255);
                 break;
 
             case 13:
@@ -139,7 +139,7 @@ public class ColorChangePanel:MonoBehaviour
 
             case 20:
                 //オブジェクトの色をパステルブラウンに変更
-                renderer.material.color = new Color32(127, 98, 68, 255);
+                renderer.material.color = new Color32(162, 115, 97, 255);
                 break;
 
             case 21:
@@ -190,7 +190,7 @@ public class ColorChangePanel:MonoBehaviour
                 break;
 
             case 30:
-                //オブジェクトの色を深黄水色に変更
+                //オブジェクトの色を深水色に変更
                 renderer.material.color = new Color32(0, 111, 111, 255);
                 break;
         }

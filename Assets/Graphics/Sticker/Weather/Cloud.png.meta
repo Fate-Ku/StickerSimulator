@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 33c9f874afaf24242bc98e9ba9901ae7
+guid: 66cc2d5ab819a804f97d8a9fe1120655
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7699978436774145253
-    second: Moon_0
+      213: 3349391187094723686
+    second: Cloud_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Moon_0
+      name: Cloud_0
       rect:
         serializedVersion: 2
-        x: 804
-        y: 75
-        width: 2204
-        height: 2327
+        x: 382
+        y: 364
+        width: 2692
+        height: 1420
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ec271e8791dbda60800000000000000
-      internalID: 7699978436774145253
+      spriteID: 66cda90f98d6b7e20800000000000000
+      internalID: 3349391187094723686
       vertices: []
       indices: 
       edges: []
