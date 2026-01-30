@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TeruteruColor_0: 1430162171993287987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
