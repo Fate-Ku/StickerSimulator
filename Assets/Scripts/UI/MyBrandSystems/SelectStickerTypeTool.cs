@@ -28,6 +28,10 @@ public class SelectStickerTypeTool : MonoBehaviour
     [Header("MusicSticker")]
     public GameObject[] musicStickers;
 
+    //食べ物シールのグループを入れる配列
+    [Header("MusicSticker")]
+    public GameObject[] foodStickers;
+
     //シール編集エリア
     [SerializeField] private Collider2D stickerArea; 
 
@@ -62,6 +66,11 @@ public class SelectStickerTypeTool : MonoBehaviour
         foreach (var sticker in musicStickers)
             if (sticker != null)
                 sticker.SetActive(false);
+
+        //食べ物シールは非表示にする
+        foreach (var sticker in foodStickers)
+            if (sticker != null)
+                sticker.SetActive(false);
     }
 
     //形状シールボタンが押された
@@ -79,6 +88,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(weatherStickers);
         HideGroup(textStickers);
         HideGroup(musicStickers);
+        HideGroup(foodStickers);
     }
 
     // 動物ボタンが押された
@@ -95,6 +105,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(weatherStickers);
         HideGroup(textStickers);
         HideGroup(musicStickers);
+        HideGroup(foodStickers);
     }
 
     // 花ボタンが押された
@@ -111,6 +122,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(weatherStickers);
         HideGroup(textStickers);
         HideGroup(musicStickers);
+        HideGroup(foodStickers);
     }
 
     // 天気ボタンが押された
@@ -127,6 +139,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(flowerStickers);
         HideGroup(textStickers);
         HideGroup(musicStickers);
+        HideGroup(foodStickers);
     }
 
 
@@ -145,6 +158,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(flowerStickers);
         HideGroup(weatherStickers);
         HideGroup(musicStickers);
+        HideGroup(foodStickers);
     }
 
 
@@ -163,6 +177,26 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(flowerStickers);
         HideGroup(weatherStickers);
         HideGroup(textStickers);
+        HideGroup(foodStickers);
+    }
+
+
+    //食べ物シールボタンが押された
+    public void OnFoodButton()
+    {
+
+        //選択状態解除
+        select.targetObject = null;
+        select.targetRenderer = null;
+
+        //形状シールを表示し、別のシールを非表示にする
+        ShowGroup(foodStickers);
+        HideGroup(shapeStickers);
+        HideGroup(animalStickers);
+        HideGroup(flowerStickers);
+        HideGroup(weatherStickers);
+        HideGroup(textStickers);
+        HideGroup(musicStickers);
     }
 
     //特定グループだけを表示・非表示切り替え

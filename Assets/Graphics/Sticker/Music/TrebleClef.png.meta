@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TrebleClef_0: -7218936443423622857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
