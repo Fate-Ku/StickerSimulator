@@ -103,10 +103,10 @@ TextureImporter:
       name: Quarter note_0
       rect:
         serializedVersion: 2
-        x: 1230
-        y: 657
-        width: 626
-        height: 1446
+        x: 1441
+        y: 517
+        width: 1714
+        height: 1468
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Quarter note_0: 512597879873809546
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
