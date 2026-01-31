@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 484d1710d1c89314092cdd33e886eb09
+guid: d4b64b3aa95f905458d0c399a63a8172
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2858585488529959849
-    second: teruteruColor_0
+      213: 1430162171993287987
+    second: TeruteruColor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: teruteruColor_0
+      name: TeruteruColor_0
       rect:
         serializedVersion: 2
         x: 1837
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 754d514c4a34458d0800000000000000
-      internalID: -2858585488529959849
+      spriteID: 33d6cd80be4f8d310800000000000000
+      internalID: 1430162171993287987
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TeruteruColor_0: 1430162171993287987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
