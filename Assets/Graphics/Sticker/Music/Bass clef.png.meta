@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 6ce0d0dc3a16d37469893b1dd4a42f01
+guid: dde8c984c3b406e498e5aaa1a5304c54
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1875016362258850332
-    second: IceCream3Color_0
+      213: -8723975687277748551
+    second: Bass clef_0
+  - first:
+      213: -4559606818238462387
+    second: Bass clef_1
+  - first:
+      213: 4793269989438287901
+    second: Bass clef_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IceCream3Color_0
+      name: Bass clef_0
       rect:
         serializedVersion: 2
-        x: 1512
-        y: 786
-        width: 789
-        height: 944
+        x: 1184
+        y: 620
+        width: 895
+        height: 1239
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ed14838d8a9af5e0800000000000000
-      internalID: -1875016362258850332
+      spriteID: 9be5aa285563ee680800000000000000
+      internalID: -8723975687277748551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bass clef_1
+      rect:
+        serializedVersion: 2
+        x: 2146
+        y: 1569
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d468273b1c509b0c0800000000000000
+      internalID: -4559606818238462387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bass clef_2
+      rect:
+        serializedVersion: 2
+        x: 2146
+        y: 1196
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d107209d8ad158240800000000000000
+      internalID: 4793269989438287901
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bass clef_0: -8723975687277748551
+      Bass clef_1: -4559606818238462387
+      Bass clef_2: 4793269989438287901
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

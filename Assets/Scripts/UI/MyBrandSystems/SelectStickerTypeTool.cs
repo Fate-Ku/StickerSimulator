@@ -21,11 +21,11 @@ public class SelectStickerTypeTool : MonoBehaviour
     public GameObject[] weatherStickers;
 
     //音楽シールのグループを入れる配列
-    [Header("WeatherSticker")]
+    [Header("MusicSticker")]
     public GameObject[] musicStickers;
 
     //食べ物シールのグループを入れる配列
-    [Header("WeatherSticker")]
+    [Header("FoodSticker")]
     public GameObject[] foodStickers;
 
     //シール編集エリア
@@ -129,7 +129,6 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(foodStickers);
     }
 
-
     //音楽ボタンが押された
     public void OnMusicButton()
     {
@@ -146,7 +145,6 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(foodStickers);
     }
 
-
     //食べ物ボタンが押された
     public void OnFoodButton()
     {
@@ -161,7 +159,6 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(flowerStickers);
         HideGroup(weatherStickers);
         HideGroup(musicStickers);
-
     }
 
     //特定グループだけを表示・非表示切り替え
