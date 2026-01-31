@@ -5447,7 +5447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 879.7, y: 35.100006}
+  m_AnchoredPosition: {x: 880.72, y: -164.9}
   m_SizeDelta: {x: 91.23, y: 89.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &297000162
@@ -13533,30 +13533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3fb53bb350204df18c57bd16c761a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stickerPrefabs:
-  - {fileID: 2083599922}
-  - {fileID: 1267376010}
-  - {fileID: 2119305612}
-  - {fileID: 780730795}
-  - {fileID: 490298707}
-  - {fileID: 289944217}
-  - {fileID: 2093543705}
-  - {fileID: 1410406298}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1442472702}
-  - {fileID: 1360366883}
-  - {fileID: 1668288906}
-  - {fileID: 791996414}
-  - {fileID: 218586340}
-  - {fileID: 1480608703}
-  - {fileID: 1177565685}
-  - {fileID: 1736299285}
-  - {fileID: 718969961}
-  sceneName: MyBrand
-  boxSize: {x: 3, y: 2}
-  rotation: 0
-  targetTag: Sticker
 --- !u!1 &937385164
 GameObject:
   m_ObjectHideFlags: 0
@@ -20930,7 +20906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 878.69, y: -164.9}
+  m_AnchoredPosition: {x: 878.69, y: -64.9}
   m_SizeDelta: {x: 91.23, y: 89.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1322577190
@@ -23053,8 +23029,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 165214314}
   m_HandleRect: {fileID: 165214313}
   m_Direction: 0
-  m_Value: -0.00000016657152
-  m_Size: 0.4760263
+  m_Value: -0.00000024985732
+  m_Size: 0.47602636
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -25750,7 +25726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 878.69, y: -64.9}
+  m_AnchoredPosition: {x: 880.19995, y: 35.100006}
   m_SizeDelta: {x: 91.23, y: 89.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1691004820
