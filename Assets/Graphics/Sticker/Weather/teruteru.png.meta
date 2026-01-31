@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e60ce76cb162ded45946b9b3efc3995b
+guid: 9c05eb883bb0d0d45a182c035b5d5d2a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8805081494478335897
-    second: MusicButton_0
+      213: 4925186092969787677
+    second: teruteru_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MusicButton_0
+      name: teruteru_0
       rect:
         serializedVersion: 2
-        x: 1441
-        y: 517
-        width: 1714
-        height: 1468
+        x: 1646
+        y: 603
+        width: 797
+        height: 1370
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 760d04738011ec580800000000000000
-      internalID: -8805081494478335897
+      spriteID: d11882428a6c95440800000000000000
+      internalID: 4925186092969787677
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      MusicButton_0: -8805081494478335897
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
