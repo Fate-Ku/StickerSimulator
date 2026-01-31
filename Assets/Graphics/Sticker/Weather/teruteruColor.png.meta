@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6ce0d0dc3a16d37469893b1dd4a42f01
+guid: 484d1710d1c89314092cdd33e886eb09
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1875016362258850332
-    second: IceCream3Color_0
+      213: -2858585488529959849
+    second: teruteruColor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IceCream3Color_0
+      name: teruteruColor_0
       rect:
         serializedVersion: 2
-        x: 1512
-        y: 786
-        width: 789
-        height: 944
+        x: 1837
+        y: 1427
+        width: 392
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ed14838d8a9af5e0800000000000000
-      internalID: -1875016362258850332
+      spriteID: 754d514c4a34458d0800000000000000
+      internalID: -2858585488529959849
       vertices: []
       indices: 
       edges: []

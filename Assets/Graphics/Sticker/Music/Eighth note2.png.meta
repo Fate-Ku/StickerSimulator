@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6ce0d0dc3a16d37469893b1dd4a42f01
+guid: d5ec66a3b7f73fd4c8d14169935a4ca4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1875016362258850332
-    second: IceCream3Color_0
+      213: 4599274643842660061
+    second: Eighth note2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IceCream3Color_0
+      name: Eighth note2_0
       rect:
         serializedVersion: 2
-        x: 1512
-        y: 786
-        width: 789
-        height: 944
+        x: 1441
+        y: 517
+        width: 1714
+        height: 1468
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ed14838d8a9af5e0800000000000000
-      internalID: -1875016362258850332
+      spriteID: dd6f3baabe7e3df30800000000000000
+      internalID: 4599274643842660061
       vertices: []
       indices: 
       edges: []

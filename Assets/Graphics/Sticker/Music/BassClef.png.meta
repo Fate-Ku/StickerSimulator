@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 6ce0d0dc3a16d37469893b1dd4a42f01
+guid: 68a74c268d0fa2c448512dd43156d33d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1875016362258850332
-    second: IceCream3Color_0
+      213: -2081909055545738560
+    second: BassClef_0
+  - first:
+      213: -9063333665754871005
+    second: BassClef_1
+  - first:
+      213: -8621106917696974115
+    second: BassClef_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IceCream3Color_0
+      name: BassClef_0
       rect:
         serializedVersion: 2
-        x: 1512
-        y: 786
-        width: 789
-        height: 944
+        x: 1184
+        y: 620
+        width: 895
+        height: 1239
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ed14838d8a9af5e0800000000000000
-      internalID: -1875016362258850332
+      spriteID: 0caf6819eb29b13e0800000000000000
+      internalID: -2081909055545738560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BassClef_1
+      rect:
+        serializedVersion: 2
+        x: 2146
+        y: 1569
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b87d3fc02983280800000000000000
+      internalID: -9063333665754871005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BassClef_2
+      rect:
+        serializedVersion: 2
+        x: 2146
+        y: 1196
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd252085fecab5880800000000000000
+      internalID: -8621106917696974115
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BassClef_0: -2081909055545738560
+      BassClef_1: -9063333665754871005
+      BassClef_2: -8621106917696974115
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

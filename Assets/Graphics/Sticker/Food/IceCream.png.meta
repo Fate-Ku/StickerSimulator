@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02a2ecfa754851d4c8aef74b4d931bbf
+guid: acc0eedd47e374f4b880ec4d12c3c0ec
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -105,8 +105,8 @@ TextureImporter:
         serializedVersion: 2
         x: 1337
         y: 62
-        width: 1158
-        height: 1939
+        width: 858
+        height: 1220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      IceCream_0: 5018473283827622026
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
