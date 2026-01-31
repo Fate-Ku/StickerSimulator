@@ -20,6 +20,14 @@ public class SelectStickerTypeTool : MonoBehaviour
     [Header("WeatherSticker")]
     public GameObject[] weatherStickers;
 
+    //音楽シールのグループを入れる配列
+    [Header("WeatherSticker")]
+    public GameObject[] musicStickers;
+
+    //食べ物シールのグループを入れる配列
+    [Header("WeatherSticker")]
+    public GameObject[] foodStickers;
+
     //シール編集エリア
     [SerializeField] private Collider2D stickerArea; 
 
@@ -44,6 +52,16 @@ public class SelectStickerTypeTool : MonoBehaviour
         foreach (var sticker in weatherStickers)
             if (sticker != null)
                 sticker.SetActive(false);
+
+        //音楽シールは非表示にする
+        foreach (var sticker in musicStickers)
+            if (sticker != null)
+                sticker.SetActive(false);
+
+        //食べ物シールは非表示にする
+        foreach (var sticker in foodStickers)
+            if (sticker != null)
+                sticker.SetActive(false);
     }
 
     //形状シールボタンが押された
@@ -59,9 +77,11 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(animalStickers);
         HideGroup(flowerStickers);
         HideGroup(weatherStickers);
+        HideGroup(musicStickers);
+        HideGroup(foodStickers);
     }
 
-    // 動物ボタンが押された
+    //動物ボタンが押された
     public void OnAnimalButton()
     {
         //選択状態解除
@@ -73,9 +93,11 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(shapeStickers);
         HideGroup(flowerStickers);
         HideGroup(weatherStickers);
+        HideGroup(musicStickers);
+        HideGroup(foodStickers);
     }
 
-    // 花ボタンが押された
+    //花ボタンが押された
     public void OnFlowerButton()
     {
         //選択状態解除
@@ -87,9 +109,11 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(shapeStickers);
         HideGroup(animalStickers);
         HideGroup(weatherStickers);
+        HideGroup(musicStickers);
+        HideGroup(foodStickers);
     }
 
-    // 天気ボタンが押された
+    //天気ボタンが押された
     public void OnWeatherButton()
     {
         //選択状態解除
@@ -101,6 +125,43 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(shapeStickers);
         HideGroup(animalStickers);
         HideGroup(flowerStickers);
+        HideGroup(musicStickers);
+        HideGroup(foodStickers);
+    }
+
+
+    //音楽ボタンが押された
+    public void OnMusicButton()
+    {
+        //選択状態解除
+        select.targetObject = null;
+        select.targetRenderer = null;
+
+        //動物シールを表示し、別のシールを非表示にする
+        ShowGroup(musicStickers);
+        HideGroup(shapeStickers);
+        HideGroup(animalStickers);
+        HideGroup(flowerStickers);
+        HideGroup(weatherStickers);
+        HideGroup(foodStickers);
+    }
+
+
+    //食べ物ボタンが押された
+    public void OnFoodButton()
+    {
+        //選択状態解除
+        select.targetObject = null;
+        select.targetRenderer = null;
+
+        //動物シールを表示し、別のシールを非表示にする
+        ShowGroup(foodStickers);
+        HideGroup(shapeStickers);
+        HideGroup(animalStickers);
+        HideGroup(flowerStickers);
+        HideGroup(weatherStickers);
+        HideGroup(musicStickers);
+
     }
 
     //特定グループだけを表示・非表示切り替え

@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: 12870f3f28abd3c4788a90cc154939ef
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2569236167131993415
+    second: Donut_0
+  - first:
+      213: -4679137011999025096
+    second: Donut_1
+  - first:
+      213: 4476870113323317140
+    second: Donut_2
+  - first:
+      213: -2691570216170933860
+    second: Donut_3
+  - first:
+      213: -471828966928880493
+    second: Donut_4
+  - first:
+      213: -9084065464734190217
+    second: Donut_5
+  - first:
+      213: 7650678264061166655
+    second: Donut_6
+  - first:
+      213: -8256593588793591246
+    second: Donut_7
+  - first:
+      213: -168995935560133115
+    second: Donut_8
+  - first:
+      213: 6920537387907112494
+    second: Donut_9
+  - first:
+      213: 6144849583044999853
+    second: Donut_10
+  - first:
+      213: -4420070896861752271
+    second: Donut_11
+  - first:
+      213: -6197358895676771871
+    second: Donut_12
+  - first:
+      213: -4609412930323672430
+    second: Donut_13
+  - first:
+      213: -1026753995100785640
+    second: Donut_14
+  - first:
+      213: -2965569905169331305
+    second: Donut_15
+  - first:
+      213: 7401096111993736493
+    second: Donut_16
+  - first:
+      213: 2758312177741989111
+    second: Donut_17
+  - first:
+      213: 7013245558557854618
+    second: Donut_18
+  - first:
+      213: 6616673360493261575
+    second: Donut_19
+  - first:
+      213: -6607230723197124739
+    second: Donut_20
+  - first:
+      213: 8206330168449247626
+    second: Donut_21
+  - first:
+      213: -4816361602514681316
+    second: Donut_22
+  - first:
+      213: 2449727447444230764
+    second: Donut_23
+  - first:
+      213: -3223770292752148780
+    second: Donut_24
+  - first:
+      213: 6942614606776137160
+    second: Donut_25
+  - first:
+      213: 4731746704083703690
+    second: Donut_26
+  - first:
+      213: 8113610813369569834
+    second: Donut_27
+  - first:
+      213: 6545191849138627242
+    second: Donut_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Donut_0
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 1618
+        width: 41
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7451dfd7ea2c7a320800000000000000
+      internalID: 2569236167131993415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_1
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 1677
+        width: 63
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8385a60cdad501fb0800000000000000
+      internalID: -4679137011999025096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_2
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 1669
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 497f23a06a9012e30800000000000000
+      internalID: 4476870113323317140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_3
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 1581
+        width: 66
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c913c11262f95aad0800000000000000
+      internalID: -2691570216170933860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_4
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 1529
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ce67fed0ab379f0800000000000000
+      internalID: -471828966928880493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_5
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 1576
+        width: 69
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 775ff1ad69aeee180800000000000000
+      internalID: -9084065464734190217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_6
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 1410
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f340b2c985bac2a60800000000000000
+      internalID: 7650678264061166655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_7
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 1450
+        width: 69
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ab03550efaa6d80800000000000000
+      internalID: -8256593588793591246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_8
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 1357
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506147c871b97adf0800000000000000
+      internalID: -168995935560133115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_9
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 1346
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2e53057610ba0060800000000000000
+      internalID: 6920537387907112494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_10
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 1340
+        width: 63
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daaba939324e64550800000000000000
+      internalID: 6144849583044999853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_11
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 1364
+        width: 63
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134538610f0c8a2c0800000000000000
+      internalID: -4420070896861752271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_12
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1262
+        width: 69
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e1349d5bee8ef9a0800000000000000
+      internalID: -6197358895676771871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_13
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1153
+        width: 57
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29217f09c531800c0800000000000000
+      internalID: -4609412930323672430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_14
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1150
+        width: 63
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814fd427eac30c1f0800000000000000
+      internalID: -1026753995100785640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_15
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 1182
+        width: 64
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79b0bcd22ed28d6d0800000000000000
+      internalID: -2965569905169331305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_16
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 1015
+        width: 34
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d49ef73b9f5b660800000000000000
+      internalID: 7401096111993736493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_17
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 1079
+        width: 71
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f402fdbf4e774620800000000000000
+      internalID: 2758312177741989111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_18
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 989
+        width: 69
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b4d608dad045160800000000000000
+      internalID: 7013245558557854618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_19
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 949
+        width: 39
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 703bdfe5d5523db50800000000000000
+      internalID: 6616673360493261575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_20
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 936
+        width: 63
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7fb9c2f9a66e44a0800000000000000
+      internalID: -6607230723197124739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_21
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 834
+        width: 69
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a892df72fcdb2e170800000000000000
+      internalID: 8206330168449247626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_22
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 801
+        width: 63
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c12084404a8d82db0800000000000000
+      internalID: -4816361602514681316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_23
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 782
+        width: 34
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62107d522e2ff120800000000000000
+      internalID: 2449727447444230764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_24
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 766
+        width: 47
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d61d0fbffdd243d0800000000000000
+      internalID: -3223770292752148780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_25
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 670
+        width: 32
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c57459833f195060800000000000000
+      internalID: 6942614606776137160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_26
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 617
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87d808be8a8aa140800000000000000
+      internalID: 4731746704083703690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_27
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 607
+        width: 69
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2259a80c06599070800000000000000
+      internalID: 8113610813369569834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_28
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 587
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2a0b21f4135da50800000000000000
+      internalID: 6545191849138627242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Donut_0: 2569236167131993415
+      Donut_1: -4679137011999025096
+      Donut_10: 6144849583044999853
+      Donut_11: -4420070896861752271
+      Donut_12: -6197358895676771871
+      Donut_13: -4609412930323672430
+      Donut_14: -1026753995100785640
+      Donut_15: -2965569905169331305
+      Donut_16: 7401096111993736493
+      Donut_17: 2758312177741989111
+      Donut_18: 7013245558557854618
+      Donut_19: 6616673360493261575
+      Donut_2: 4476870113323317140
+      Donut_20: -6607230723197124739
+      Donut_21: 8206330168449247626
+      Donut_22: -4816361602514681316
+      Donut_23: 2449727447444230764
+      Donut_24: -3223770292752148780
+      Donut_25: 6942614606776137160
+      Donut_26: 4731746704083703690
+      Donut_27: 8113610813369569834
+      Donut_28: 6545191849138627242
+      Donut_3: -2691570216170933860
+      Donut_4: -471828966928880493
+      Donut_5: -9084065464734190217
+      Donut_6: 7650678264061166655
+      Donut_7: -8256593588793591246
+      Donut_8: -168995935560133115
+      Donut_9: 6920537387907112494
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
