@@ -1,125 +1,121 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using System.IO;
 using System.Collections.Generic;
 
 public class StickerBookDetail : MonoBehaviour
 {
-    [Header("Data")]
-    public StickerData[] allStickers;     // all stickers
     [Header("UI")]
-    public UI_Sticker stickerPrefab;       // StickerCard prefab
-    public Transform gridParent;          // Content (GridLayout) transform
-    public TMP_Text page;             // Page X/Y
-    public TMP_Text categoryPercent;  // category percent
-    public TMP_Text totalPercent;     // total percent
+    public RawImage previewImage;     // 画像を表示する RawImage
+    public TMP_Text pageText;         // P X / Y
+    public TMP_Text fileNameText;     // 画像名（拡張子なし）
 
-    private List<StickerData> currentCategoryList = new List<StickerData>();
+
+    private List<string> savedImagePaths = new List<string>();
     private int currentPage = 0;
-    private const int stickersPerPage = 9; // 1 page have 9 stickers
 
     private void Start()
     {
-        UpdateTotalPercent();
-        ShowCategory("Shape");
+        LoadAllSavedStickers();
+        ShowPage(0);
     }
 
-    // call this when a category button clicked
-    public void ShowCategory(string category)
+    // ----------------------------------------
+    // ① 保存された PNG を全部読み込む
+    // ----------------------------------------
+    private void LoadAllSavedStickers()
     {
-        currentPage = 0;
-        currentCategoryList.Clear();
+        string folder = Path.Combine(Application.persistentDataPath, "MyBrandStickersPhoto");
 
-        foreach (var s in allStickers)
+        if (!Directory.Exists(folder))
         {
-            if (s.category == category)
-                currentCategoryList.Add(s);
+            Debug.Log("画像フォルダがありません");
+            return;
         }
 
-        RefreshPage();
-        UpdateCategoryPercent();
+        string[] files = Directory.GetFiles(folder, "*.png");
+
+        savedImagePaths.Clear();
+        savedImagePaths.AddRange(files);
+        // ★ 名前順に並べる
+        savedImagePaths.Sort();
     }
 
+    // ----------------------------------------
+    // ② 指定ページの画像を表示
+    // ----------------------------------------
+    private void ShowPage(int page)
+    {
+        if (savedImagePaths.Count == 0)
+        {
+            pageText.text = "P 0 / 0";
+            previewImage.texture = null;
+            fileNameText.text = "";
+            return;
+        }
+
+        currentPage = Mathf.Clamp(page, 0, savedImagePaths.Count - 1);
+
+        string path = savedImagePaths[currentPage];
+
+        // PNG 読み込み
+        byte[] bytes = File.ReadAllBytes(path);
+        Texture2D tex = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+        tex.LoadImage(bytes);
+
+        // RawImage に表示
+        previewImage.texture = tex;
+        previewImage.color = Color.white;
+
+        // ★ 画像のサイズをそのまま RawImage に反映
+        RectTransform rt = previewImage.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(tex.width, tex.height);
+
+        // ★ ファイル名（拡張子なし）を表示
+        string fileName = Path.GetFileNameWithoutExtension(path);
+        fileNameText.text = fileName;
+
+        // ページ表示更新
+        pageText.text = $"P {currentPage + 1} / {savedImagePaths.Count}";
+
+        Debug.Log($"ShowPage: {currentPage} / {savedImagePaths.Count}");
+        Debug.Log("Path: " + savedImagePaths[currentPage]);
+
+    }
+
+    // ----------------------------------------
+    // ③ 次のページ
+    // ----------------------------------------
     public void NextPage()
     {
-        int maxPage = Mathf.CeilToInt(currentCategoryList.Count / (float)stickersPerPage) - 1;
-        if (currentPage < maxPage)
-        {
-            currentPage++;
-            RefreshPage();
-        }
+        if (currentPage < savedImagePaths.Count - 1)
+            ShowPage(currentPage + 1);
     }
 
+    // ----------------------------------------
+    // ④ 前のページ
+    // ----------------------------------------
     public void PrevPage()
     {
         if (currentPage > 0)
-        {
-            currentPage--;
-            RefreshPage();
-        }
+            ShowPage(currentPage - 1);
     }
 
-    private void RefreshPage()
+    // ----------------------------------------
+    // ⑤ 最初のページへ
+    // ----------------------------------------
+    public void FirstPage()
     {
-        // clean all UI
-        for (int i = gridParent.childCount - 1; i >= 0; i--)
-            Destroy(gridParent.GetChild(i).gameObject);
-
-        // start from which sticker
-        int start = currentPage * stickersPerPage;
-        // create sticker
-        for (int i = start; i < start + stickersPerPage; i++)
-        {
-            if (i >= currentCategoryList.Count) break;
-            var ui = Instantiate(stickerPrefab, gridParent);
-            ui.Setup(currentCategoryList[i]);
-        }
-
-        UpdatePageText();
+        ShowPage(0);
     }
 
-    private void UpdatePageText()
+    // ----------------------------------------
+    // ⑥ 最後のページへ
+    // ----------------------------------------
+    public void LastPage()
     {
-        int maxPage = Mathf.CeilToInt(currentCategoryList.Count / (float)stickersPerPage);
-        if (maxPage == 0) maxPage = 1;
-        page.text = $"P {currentPage + 1} / {maxPage}";
-    }
-
-    private void UpdateCategoryPercent()
-    {
-        if (currentCategoryList.Count == 0)
-        {
-            categoryPercent.text = "種類完成度:0%";
-            return;
-        }
-
-        int unlocked = 0;
-        foreach (var s in currentCategoryList)
-            if (s.isUnlocked) unlocked++;
-
-        float percent = unlocked / (float)currentCategoryList.Count * 100f;
-        categoryPercent.text = $"種類完成度:{percent:F1}%";
-    }
-
-    private void UpdateTotalPercent()
-    {
-        if (allStickers == null || allStickers.Length == 0)
-        {
-            totalPercent.text = "完成度:0%";
-            return;
-        }
-
-        int unlocked = 0;
-        foreach (var s in allStickers)
-            if (s != null && s.isUnlocked) unlocked++;
-
-        float percent = unlocked / (float)allStickers.Length * 100f;
-        totalPercent.text = $"完成度:{percent:F1}%";
-    }
-
-    public void RefreshAllUI()
-    {
-        UpdateTotalPercent();
-        UpdateCategoryPercent();
-        RefreshPage();
+        if (savedImagePaths.Count > 0)
+            ShowPage(savedImagePaths.Count - 1);
     }
 }
