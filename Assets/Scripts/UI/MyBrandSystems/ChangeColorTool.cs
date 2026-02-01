@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class ChangeColorTool : MonoBehaviour
@@ -8,10 +9,10 @@ public class ChangeColorTool : MonoBehaviour
 
     public void OnButtonDown()
     {
-            //ボタンが押されたらカラーパレットを表示する
-            foreach (var panel in ColorPanels)
+        //ボタンが押されたらカラーパレットを表示する
+        for (int i = 0; i < ColorPanels.Length; i++)
         {
-            panel.PressedChangeColorButton();
+            ColorPanels[i].PressedChangeColorButton();
         }
 
     }

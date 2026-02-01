@@ -104,7 +104,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         select.targetObject = null;
         select.targetRenderer = null;
 
-        //動物シールを表示し、別のシールを非表示にする
+        //花シールを表示し、別のシールを非表示にする
         ShowGroup(flowerStickers);
         HideGroup(shapeStickers);
         HideGroup(animalStickers);
@@ -120,7 +120,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         select.targetObject = null;
         select.targetRenderer = null;
 
-        //動物シールを表示し、別のシールを非表示にする
+        //天気シールを表示し、別のシールを非表示にする
         ShowGroup(weatherStickers);
         HideGroup(shapeStickers);
         HideGroup(animalStickers);
@@ -136,7 +136,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         select.targetObject = null;
         select.targetRenderer = null;
 
-        //動物シールを表示し、別のシールを非表示にする
+        //音楽シールを表示し、別のシールを非表示にする
         ShowGroup(musicStickers);
         HideGroup(shapeStickers);
         HideGroup(animalStickers);
@@ -152,7 +152,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         select.targetObject = null;
         select.targetRenderer = null;
 
-        //動物シールを表示し、別のシールを非表示にする
+        //食べ物シールを表示し、別のシールを非表示にする
         ShowGroup(foodStickers);
         HideGroup(shapeStickers);
         HideGroup(animalStickers);
@@ -161,24 +161,21 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(musicStickers);
     }
 
-    //特定グループだけを表示・非表示切り替え
+    //特定グループだけを表示する
     private void ShowGroup(GameObject[] group)
     {
         foreach (var sticker in group)
         {
-            if (sticker != null)
                 sticker.SetActive(true);
         }
     }
 
-    //グループを非表示（シール編集エリア外のシールのみ）
+    //他のグループを非表示にする（シール編集エリア外のシールのみ）
     private void HideGroup(GameObject[] group)
     {
         foreach (var sticker in group)
         {
-            if (sticker == null) continue;
-
-            //選択状態なら解除する・色を戻す
+            //選択状態なら解除する
             if (select.targetObject == sticker.transform)
             {
                 select.targetObject = null;

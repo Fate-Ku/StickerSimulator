@@ -7,31 +7,32 @@ public class ScaleTool : MonoBehaviour
 
     public void ScaleUp()
     {
+        //1.2倍
         Scale(1f + changeScale);
     }
 
     public void ScaleDown()
     {
+        //0.83倍(1f + changeScale)は元の大きさに戻せるようにするため
         Scale(1f / (1f + changeScale));
     }
 
-    private void Scale(float factor)
+    //magnification→倍率
+    private void Scale(float magnification)
     {
         if (select == null) return;
         if (select.targetObject == null) return;
 
         Transform target = select.targetObject;
 
-        // ★ ここで毎回取得する
+        //シールの大小の上限を取得
         ScaleLimit limit = target.GetComponent<ScaleLimit>();
-        if (limit == null)
-        {
-            Debug.LogWarning($"{target.name} に ScaleLimit が付いていません", target);
-            return;
-        }
 
-        Vector3 nextScale = target.localScale * factor;
+        //現在の大きさから倍率をかけて大きさを変化する
+        Vector3 nextScale = target.localScale * magnification;
 
+        //Mathf.Clamp(値, 最小値, 最大値)
+        //値を設定した大小の上限より大きく（小さく）ならないようにする
         target.localScale = new Vector3(
             Mathf.Clamp(nextScale.x, limit.minScale.x, limit.maxScale.x),
             Mathf.Clamp(nextScale.y, limit.minScale.y, limit.maxScale.y),

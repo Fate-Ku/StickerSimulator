@@ -26,12 +26,6 @@ public class Select : MonoBehaviour
     // 選択オブジェクトの元の位置を保存
     private Vector3 originalPosition;
 
-    //LayerUpToolを使うための変数を宣言
-    //private LayerUpTool layerUpTool;
-
-    //LayerUpDelectManagerで使うための変数宣言
-    //public LayerUpTool targetobject;
-
     //選択状態をオフにしておく
     public void Start()
     {
@@ -98,7 +92,6 @@ public class Select : MonoBehaviour
 
         //マウスポインタの取得
         Vector3 mousePosition = Input.mousePosition;
-        //Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector2(mousePosition.x, mousePosition.y));
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         //当たり判定
@@ -163,18 +156,21 @@ public class Select : MonoBehaviour
 
     }
 
+    //シールの選択枠を表示する
     private void SelectSticker(Transform sticker, Vector3 worldPosition)
     {
         targetObject = sticker;
         targetRenderer = sticker.GetComponent<SpriteRenderer>();
 
-        // 選択枠を取得
-        selectionFrame = sticker.Find("SelectSticker")?.gameObject;
-        
+        //選択枠を取得
+        if (sticker.Find("SelectSticker") != null)
+            selectionFrame = sticker.Find("SelectSticker").gameObject;
+
+        //表示
         if (selectionFrame != null)
             selectionFrame.SetActive(true);
 
-        // 位置情報
+        //位置情報
         m_offset = targetObject.position - worldPosition;
         originalPosition = targetObject.position;
     }
