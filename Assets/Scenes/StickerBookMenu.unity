@@ -533,7 +533,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9afb363568f39e44e94b69ceb3c0c9d7, type: 3}
+  m_Sprite: {fileID: 2844158646018086028, guid: 7c298ff37fb6d05438aa2ae342b83bb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -630,8 +630,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 351, y: 5}
-  m_SizeDelta: {x: 678.9872, y: 883.7443}
+  m_AnchoredPosition: {x: 351, y: 15.164}
+  m_SizeDelta: {x: 678.987, y: 912.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118096333
 MonoBehaviour:
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 24ac0c7d56f44734fb19ab2426440029, type: 3}
+  m_Sprite: {fileID: -1023654034635386506, guid: 7532dc2bd1196e047901501198f647e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
