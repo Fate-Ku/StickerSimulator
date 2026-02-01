@@ -24,6 +24,7 @@ public class ColorChangePanel:MonoBehaviour
         //選択中のオブジェクトのRendererを取得
         Renderer renderer = select.targetObject.GetComponent<Renderer>();
 
+
         //それぞれのボタンの色に変更する
         switch (ButtonType)
         {
@@ -49,7 +50,7 @@ public class ColorChangePanel:MonoBehaviour
 
             case 4:
                 //オブジェクトの色をパステルピンクに変更
-                renderer.material.color = new Color32(255, 157, 235, 255); 
+                renderer.material.color = new Color32(255, 157, 235, 255);
                 break;
 
             case 5:
@@ -160,7 +161,7 @@ public class ColorChangePanel:MonoBehaviour
 
             case 24:
                 //オブジェクトの色を深緑に変更
-                renderer.material.color = new Color32(42,111, 0, 255);
+                renderer.material.color = new Color32(42, 111, 0, 255);
                 break;
 
             case 25:
