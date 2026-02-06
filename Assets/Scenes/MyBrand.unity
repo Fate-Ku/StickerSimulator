@@ -4158,7 +4158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 265298262}
   - component: {fileID: 265298263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Donut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4203,7 +4203,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7329,7 +7329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 411466068}
   - component: {fileID: 411466069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Donut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7374,7 +7374,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13004,7 +13004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832040613}
   - component: {fileID: 832040614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IceCream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13049,7 +13049,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19933,7 +19933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273549554}
   - component: {fileID: 1273549555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IceCream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19978,7 +19978,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21437,7 +21437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1338851048}
   - component: {fileID: 1338851049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IceCream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21482,7 +21482,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23689,7 +23689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1523820476}
   - component: {fileID: 1523820477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: teruteru
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23734,7 +23734,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23776,7 +23776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1525353905}
   - component: {fileID: 1525353906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IceCream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23821,7 +23821,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27500,7 +27500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1837493178}
   - component: {fileID: 1837493179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Donut (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27545,7 +27545,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -31871,7 +31871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RequiresOpaqueTextureOption: 1
   m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: -1
@@ -31949,7 +31949,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!1 &2137307803
@@ -33220,6 +33220,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3105104162849803578, guid: 6b56eacc967db1741ad0a198dea0e338, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 3442703458013585404, guid: 6b56eacc967db1741ad0a198dea0e338, type: 3}
       propertyPath: select
       value: 

@@ -108,22 +108,29 @@ public class OutputStickerTool : MonoBehaviour
     {
         Camera cam = pinkFrameCamera;
 
-        // カメラの視野サイズに基づいて RenderTexture サイズを計算
         float heightWorldUnits = cam.orthographicSize * 2f;
         float widthWorldUnits = heightWorldUnits * cam.aspect;
 
-        int pixelsPerUnit = 100; // 解像度の基準（調整可能）
+        int pixelsPerUnit = 100;
         int rtWidth = Mathf.RoundToInt(widthWorldUnits * pixelsPerUnit);
         int rtHeight = Mathf.RoundToInt(heightWorldUnits * pixelsPerUnit);
 
-        RenderTexture rt = new RenderTexture(rtWidth, rtHeight, 24);
-        rt.graphicsFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.R8G8B8A8_UNorm;
+        // --- 修改開始 ---
+        // 讓 Unity 自動根據專案設置處理色彩空間 (使用預設 constructor)
+        RenderTexture rt = new RenderTexture(rtWidth, rtHeight, 24, RenderTextureFormat.ARGB32);
+
+        // 如果專案是 Linear 模式，這會確保顏色正確轉換到 sRGB
+        rt.Create();
+        // --- 修改結束 ---
 
         cam.targetTexture = rt;
         cam.Render();
 
         RenderTexture.active = rt;
-        Texture2D tex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false);
+
+        // 這裡最後一個參數 linear 設為 false (即使用 sRGB)，這是 PNG 圖片的標準格式
+        Texture2D tex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, false);
+
         tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
         tex.Apply();
 
