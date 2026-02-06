@@ -2857,7 +2857,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 696724096}
         m_TargetAssemblyTypeName: LayerControllerTool, Assembly-CSharp
-        m_MethodName: LayerUp
+        m_MethodName: MoveOneLayerUpAmongOverlaps_Collider
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9032,7 +9032,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 696724096}
         m_TargetAssemblyTypeName: LayerControllerTool, Assembly-CSharp
-        m_MethodName: LayerDown
+        m_MethodName: MoveOneLayerDownAmongOverlaps_Collider
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22899,8 +22899,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 165214314}
   m_HandleRect: {fileID: 165214313}
   m_Direction: 0
-  m_Value: -0.0000001665715
-  m_Size: 0.47602627
+  m_Value: -0.00000024985732
+  m_Size: 0.47602636
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -23763,7 +23763,7 @@ SpriteRenderer:
   m_Size: {x: 3.15, y: 3.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1525353904
