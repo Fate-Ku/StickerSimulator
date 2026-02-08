@@ -7,7 +7,7 @@ public class LayerControllerTool : MonoBehaviour
     public Select select;
 
     // ---------------------------------------------------------
-    // ★ 一鍵で最前面へ
+    // ★ 一鍵で最前面へ（親子対応）
     // ---------------------------------------------------------
     public void LayerUpToFront()
     {
@@ -20,17 +20,21 @@ public class LayerControllerTool : MonoBehaviour
         GameObject[] stickers = GameObject.FindGameObjectsWithTag("Sticker");
 
         int maxOrder = stickers
-            .Select(s => s.GetComponent<SpriteRenderer>())
-            .Where(r => r != null)
+            .SelectMany(s => s.GetComponentsInChildren<SpriteRenderer>())
             .Max(r => r.sortingOrder);
 
-        select.targetRenderer.sortingOrder = maxOrder + 1;
+        int newOrder = maxOrder + 1;
 
-        Debug.Log("最前面へ移動 → " + select.targetRenderer.sortingOrder);
+        select.targetRenderer.sortingOrder = newOrder;
+
+        // ★ 親子の sortingOrder を統一
+        NormalizeChildSortingOrderUp(select.targetRenderer.transform.root, newOrder);
+
+        Debug.Log("最前面へ移動 → " + newOrder);
     }
 
     // ---------------------------------------------------------
-    // ★ 一鍵で最背面へ
+    // ★ 一鍵で最背面へ（親子対応）
     // ---------------------------------------------------------
     public void LayerDownToBack()
     {
@@ -43,23 +47,28 @@ public class LayerControllerTool : MonoBehaviour
         GameObject[] stickers = GameObject.FindGameObjectsWithTag("Sticker");
 
         int minOrder = stickers
-            .Select(s => s.GetComponent<SpriteRenderer>())
-            .Where(r => r != null)
+            .SelectMany(s => s.GetComponentsInChildren<SpriteRenderer>())
             .Min(r => r.sortingOrder);
 
-        select.targetRenderer.sortingOrder = minOrder - 1;
+        int newOrder = minOrder - 1;
 
-        Debug.Log("最背面へ移動 → " + select.targetRenderer.sortingOrder);
+        select.targetRenderer.sortingOrder = newOrder;
+
+        // ★ 親子の sortingOrder を統一
+        NormalizeChildSortingOrderDown(select.targetRenderer.transform.root, newOrder);
+
+        Debug.Log("最背面へ移動 → " + newOrder);
     }
 
-    //重なっているステッカーの中で「1つ前へ」移動
+    // ---------------------------------------------------------
+    // ★ 重なりグループ内で「1つ前へ」（親子対応）
+    // ---------------------------------------------------------
     public void MoveOneLayerUpAmongOverlaps_Collider()
     {
         if (select?.targetRenderer == null) return;
 
         SpriteRenderer target = select.targetRenderer;
 
-        // Collider2D を使って重なり取得
         List<SpriteRenderer> overlaps = GetOverlappingStickersByCollider(target);
 
         if (overlaps.Count == 0)
@@ -68,44 +77,45 @@ public class LayerControllerTool : MonoBehaviour
             return;
         }
 
-        // 自分も含める
         overlaps.Add(target);
-
-        // sortingOrder 昇順に並べ替え
         overlaps = overlaps.OrderBy(r => r.sortingOrder).ToList();
 
         int index = overlaps.IndexOf(target);
 
-        // すでに最前面
         if (index == overlaps.Count - 1)
         {
-            // 同じ order があれば調整
             SortingOrderPlus(target);
+
+            // ★ 親子同期
+            NormalizeChildSortingOrderUp(target.transform.root, target.sortingOrder);
+
             Debug.Log("重なりグループ内で既に最前面です");
             return;
         }
 
-        // 1つ上と入れ替え
         SpriteRenderer above = overlaps[index + 1];
 
         int temp = target.sortingOrder;
         target.sortingOrder = above.sortingOrder;
         above.sortingOrder = temp;
 
-        // 同じ order があれば調整
-        SortingOrderPlus(target);
+        //SortingOrderPlus(target);
+
+        // ★ 親子同期
+        NormalizeChildSortingOrderUp(target.transform.root, target.sortingOrder);
 
         Debug.Log("重なりグループ内で1つ前へ移動（Collider 判定）");
     }
 
-    //重なりグループ内で 1 つ後ろへ移動
+    // ---------------------------------------------------------
+    // ★ 重なりグループ内で「1つ後ろへ」（親子対応）
+    // ---------------------------------------------------------
     public void MoveOneLayerDownAmongOverlaps_Collider()
     {
         if (select?.targetRenderer == null) return;
 
         SpriteRenderer target = select.targetRenderer;
 
-        // Collider2D を使って重なり取得
         List<SpriteRenderer> overlaps = GetOverlappingStickersByCollider(target);
 
         if (overlaps.Count == 0)
@@ -114,48 +124,53 @@ public class LayerControllerTool : MonoBehaviour
             return;
         }
 
-        // 自分も含める
         overlaps.Add(target);
-
-        // sortingOrder 昇順に並べ替え
         overlaps = overlaps.OrderBy(r => r.sortingOrder).ToList();
 
         int index = overlaps.IndexOf(target);
 
-        // すでに最後面
         if (index == 0)
         {
-            // 同じ order があれば調整
-            SortingOrderMinus(target);
+            //SortingOrderMinus(target);
+
+            // ★ 親子同期
+            //NormalizeChildSortingOrderDown(target.transform.root, target.sortingOrder);
+
             Debug.Log("重なりグループ内で既に最後面です");
             return;
         }
 
-        // 1つ下と入れ替え
         SpriteRenderer below = overlaps[index - 1];
 
         int temp = target.sortingOrder;
         target.sortingOrder = below.sortingOrder;
         below.sortingOrder = temp;
 
-        // 同じ order があれば調整
-        SortingOrderMinus(target);
+        //SortingOrderMinus(target);
+
+        // ★ 親子同期
+        NormalizeChildSortingOrderDown(target.transform.root, target.sortingOrder);
 
         Debug.Log("重なりグループ内で1つ後ろへ移動（Collider 判定）");
     }
 
-    //重なっているステッカーを取得する関数
+    // ---------------------------------------------------------
+    // ★ Collider2D を使って重なり取得（親子対応）
+    // ---------------------------------------------------------
     public List<SpriteRenderer> GetOverlappingStickersByCollider(SpriteRenderer target)
     {
         List<SpriteRenderer> list = new List<SpriteRenderer>();
 
         Collider2D col = target.GetComponent<Collider2D>();
+        if (col == null) col = target.GetComponentInParent<Collider2D>();
+        if (col == null) col = target.GetComponentInChildren<Collider2D>();
+
         if (col == null) return list;
 
         ContactFilter2D filter = new ContactFilter2D();
         filter.useTriggers = true;
 
-        Collider2D[] results = new Collider2D[20];
+        Collider2D[] results = new Collider2D[50];
         int count = Physics2D.OverlapCollider(col, filter, results);
 
         for (int i = 0; i < count; i++)
@@ -163,10 +178,9 @@ public class LayerControllerTool : MonoBehaviour
             Collider2D hit = results[i];
             if (hit == null) continue;
 
-            // 自分自身は除外
             if (hit.gameObject == target.gameObject) continue;
 
-            var r = hit.GetComponent<SpriteRenderer>();
+            var r = hit.GetComponentInChildren<SpriteRenderer>();
             if (r != null)
                 list.Add(r);
         }
@@ -174,39 +188,79 @@ public class LayerControllerTool : MonoBehaviour
         return list;
     }
 
-    // sortingOrder が同じなら +1
+    // ---------------------------------------------------------
+    // ★ sortingOrder が同じなら +1（親子対応）
+    // ---------------------------------------------------------
     private void SortingOrderPlus(SpriteRenderer target)
     {
         GameObject[] stickers = GameObject.FindGameObjectsWithTag("Sticker");
 
         foreach (var s in stickers)
         {
-            var r = s.GetComponent<SpriteRenderer>();
-            if (r == null || r == target) continue;
+            var renderers = s.GetComponentsInChildren<SpriteRenderer>();
 
-            // ★ 同じ sortingOrder を持つステッカーがいたら
-            if (r.sortingOrder == target.sortingOrder)
+            foreach (var r in renderers)
             {
-                target.sortingOrder += 1; // ★ 選択中だけ +1
+                if (r == target) continue;
+
+                if (r.sortingOrder == target.sortingOrder)
+                    target.sortingOrder += 1;
             }
         }
     }
 
-    // sortingOrder が同じなら -1
+    // ---------------------------------------------------------
+    // ★ sortingOrder が同じなら -1（親子対応）
+    // ---------------------------------------------------------
     private void SortingOrderMinus(SpriteRenderer target)
     {
         GameObject[] stickers = GameObject.FindGameObjectsWithTag("Sticker");
 
         foreach (var s in stickers)
         {
-            var r = s.GetComponent<SpriteRenderer>();
-            if (r == null || r == target) continue;
+            var renderers = s.GetComponentsInChildren<SpriteRenderer>();
 
-            // ★ 同じ sortingOrder を持つステッカーがいたら
-            if (r.sortingOrder == target.sortingOrder)
+            foreach (var r in renderers)
             {
-                target.sortingOrder -= 1; // ★ 選択中だけ +1
+                if (r == target) continue;
+
+                if (r.sortingOrder == target.sortingOrder)
+                    target.sortingOrder -= 1;
             }
         }
     }
+
+    // ---------------------------------------------------------
+    // ★ 子オブジェクトの sortingOrder を親基準で統一
+    // ---------------------------------------------------------
+    public void NormalizeChildSortingOrderUp(Transform stickerRoot, int newBaseOrder)
+    {
+        SpriteRenderer[] renderers = stickerRoot.GetComponentsInChildren<SpriteRenderer>();
+
+        if (renderers.Length == 0) return;
+
+        int minOrder = renderers.Min(r => r.sortingOrder);
+
+        foreach (var r in renderers)
+        {
+            int offset = r.sortingOrder - minOrder;
+            r.sortingOrder = newBaseOrder + offset;
+        }
+    }
+
+    public void NormalizeChildSortingOrderDown(Transform stickerRoot, int newBaseOrder)
+    {
+        SpriteRenderer[] renderers = stickerRoot.GetComponentsInChildren<SpriteRenderer>();
+
+        if (renderers.Length == 0) return;
+
+        int maxOrder = renderers.Max(r => r.sortingOrder);
+
+        foreach (var r in renderers)
+        {
+            int offset = r.sortingOrder - maxOrder;
+            r.sortingOrder = newBaseOrder - offset;
+        }
+    }
+
 }
