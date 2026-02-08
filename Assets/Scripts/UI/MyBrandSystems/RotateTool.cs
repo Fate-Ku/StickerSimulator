@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class RotateTool : MonoBehaviour
 {
-    [SerializeField] private Select select;
+    [SerializeField] public Select select;
 
     //最後に選択していたオブジェクト
     private Transform lastTarget;

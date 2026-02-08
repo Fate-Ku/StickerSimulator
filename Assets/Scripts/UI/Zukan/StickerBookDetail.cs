@@ -11,7 +11,6 @@ public class StickerBookDetail : MonoBehaviour
     public TMP_Text pageText;         // P X / Y
     public TMP_Text fileNameText;     // 画像名（拡張子なし）
 
-
     private List<string> savedImagePaths = new List<string>();
     private int currentPage = 0;
 

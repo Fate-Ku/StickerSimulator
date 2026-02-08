@@ -1,81 +1,81 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
-public class ColorChangePanel:MonoBehaviour
+public class ColorChangePanel : MonoBehaviour
 {
     public GameObject ColorPanel;
     [SerializeField] private Select select;
 
-    //”ñ•\¦‚©H
+    //éè¡¨ç¤ºã‹ï¼Ÿ
     bool Visible;
 
-    //‰‚ß‚Í”ñ•\¦‚É‚µ‚Ä‚¨‚­
+    //åˆã‚ã¯éè¡¨ç¤ºã«ã—ã¦ãŠã
     private void Start()
     {
         ColorPanel.SetActive(false);
         Visible = false;
     }
 
-    //ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½
+    //ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸ
     public void OnButtonDown(int ButtonType)
     {
-        //‘I‘ğó‘Ô‚Å‚È‚¯‚ê‚Îˆ—‚µ‚È‚¢
+        //é¸æŠçŠ¶æ…‹ã§ãªã‘ã‚Œã°å‡¦ç†ã—ãªã„
         if (select.targetObject == null) { return; }
 
-        //‘I‘ğ’†‚ÌƒIƒuƒWƒFƒNƒg‚ÌRenderer‚ğæ“¾
+        //é¸æŠä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®Rendererã‚’å–å¾—
         Renderer renderer = select.targetObject.GetComponent<Renderer>();
 
 
-        //‚»‚ê‚¼‚ê‚Ìƒ{ƒ^ƒ“‚ÌF‚É•ÏX‚·‚é
+        //ãã‚Œãã‚Œã®ãƒœã‚¿ãƒ³ã®è‰²ã«å¤‰æ›´ã™ã‚‹
         switch (ButtonType)
         {
             case 0:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒpƒXƒeƒ‹ƒŒƒbƒh‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ‘ã‚¹ãƒ†ãƒ«ãƒ¬ãƒƒãƒ‰ã«å¤‰æ›´
                 renderer.material.color = new Color32(255, 126, 126, 255);
                 break;
 
             case 1:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒpƒXƒeƒ‹…F‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ‘ã‚¹ãƒ†ãƒ«æ°´è‰²ã«å¤‰æ›´
                 renderer.material.color = new Color32(180, 250, 255, 255);
                 break;
 
             case 2:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒpƒXƒeƒ‹ƒCƒGƒ[‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ‘ã‚¹ãƒ†ãƒ«ã‚¤ã‚¨ãƒ­ãƒ¼ã«å¤‰æ›´
                 renderer.material.color = new Color32(255, 255, 180, 255);
                 break;
 
             case 3:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ‰©—Î‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’é»„ç·‘ã«å¤‰æ›´
                 renderer.material.color = new Color32(190, 255, 200, 255);
                 break;
 
             case 4:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒpƒXƒeƒ‹ƒsƒ“ƒN‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ‘ã‚¹ãƒ†ãƒ«ãƒ”ãƒ³ã‚¯ã«å¤‰æ›´
                 renderer.material.color = new Color32(255, 157, 235, 255);
                 break;
 
             case 5:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒpƒXƒeƒ‹ƒp[ƒvƒ‹‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ‘ã‚¹ãƒ†ãƒ«ãƒ‘ãƒ¼ãƒ—ãƒ«ã«å¤‰æ›´
                 renderer.material.color = new Color32(206, 150, 255, 255);
                 break;
 
             case 6:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒpƒXƒeƒ‹ƒuƒ‹[‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ‘ã‚¹ãƒ†ãƒ«ãƒ–ãƒ«ãƒ¼ã«å¤‰æ›´
                 renderer.material.color = new Color32(172, 184, 255, 255);
                 break;
 
             case 7:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒpƒXƒeƒ‹ƒIƒŒƒ“ƒW‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ‘ã‚¹ãƒ†ãƒ«ã‚ªãƒ¬ãƒ³ã‚¸ã«å¤‰æ›´
                 renderer.material.color = new Color32(255, 191, 153, 255);
                 break;
 
             case 8:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒfƒtƒHƒ‹ƒg‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã«å¤‰æ›´
                 DefaultColorChange info = select.targetObject.GetComponent<DefaultColorChange>();
                 if (info == null) return;
 
                 if (info.type == StickerType.Shape)
                 {
-                    renderer.material.color = new Color32(254, 144, 231, 255); // ƒsƒ“ƒN
+                    renderer.material.color = new Color32(254, 144, 231, 255); // ãƒ”ãƒ³ã‚¯
                 }
                 else if (info.type == StickerType.Animal)
                 {
@@ -84,132 +84,132 @@ public class ColorChangePanel:MonoBehaviour
                 break;
 
             case 9:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğÔ‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’èµ¤ã«å¤‰æ›´
                 renderer.material.color = new Color32(255, 73, 70, 255);
                 break;
 
             case 10:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒIƒŒƒ“ƒW‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ã‚ªãƒ¬ãƒ³ã‚¸ã«å¤‰æ›´
                 renderer.material.color = new Color32(255, 160, 37, 255);
                 break;
 
             case 11:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ‰©F‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’é»„è‰²ã«å¤‰æ›´
                 renderer.material.color = new Color32(255, 250, 36, 255);
                 break;
 
             case 12:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ‰©—Î‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’é»„ç·‘ã«å¤‰æ›´
                 renderer.material.color = new Color32(163, 255, 0, 255);
                 break;
 
             case 13:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğÂ‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’é’ã«å¤‰æ›´
                 renderer.material.color = new Color32(60, 96, 255, 255);
                 break;
 
             case 14:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ‡‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ç´«ã«å¤‰æ›´
                 renderer.material.color = new Color32(194, 60, 255, 255);
                 break;
 
             case 15:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒ}ƒ[ƒ“ƒ^‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒã‚¼ãƒ³ã‚¿ã«å¤‰æ›´
                 renderer.material.color = new Color32(255, 60, 238, 255);
                 break;
 
             case 16:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒpƒXƒeƒ‹ƒOƒŒ[‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ‘ã‚¹ãƒ†ãƒ«ã‚°ãƒ¬ãƒ¼ã«å¤‰æ›´
                 renderer.material.color = new Color32(186, 186, 186, 255);
                 break;
 
             case 17:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ”’‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ç™½ã«å¤‰æ›´
                 renderer.material.color = new Color32(255, 255, 255, 255);
                 break;
 
             case 18:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ…F‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’æ°´è‰²ã«å¤‰æ›´
                 renderer.material.color = new Color32(0, 240, 255, 255);
                 break;
 
             case 19:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ•‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’é»’ã«å¤‰æ›´
                 renderer.material.color = new Color32(42, 42, 42, 255);
                 break;
 
             case 20:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒpƒXƒeƒ‹ƒuƒ‰ƒEƒ“‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ‘ã‚¹ãƒ†ãƒ«ãƒ–ãƒ©ã‚¦ãƒ³ã«å¤‰æ›´
                 renderer.material.color = new Color32(162, 115, 97, 255);
                 break;
 
             case 21:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğòF‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’æ©™è‰²ã«å¤‰æ›´
                 renderer.material.color = new Color32(255, 220, 184, 255);
                 break;
 
             case 22:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ‡F‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ç´«è‰²ã«å¤‰æ›´
                 renderer.material.color = new Color32(103, 45, 184, 255);
                 break;
 
             case 23:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğƒuƒ‰ƒEƒ“‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’ãƒ–ãƒ©ã‚¦ãƒ³ã«å¤‰æ›´
                 renderer.material.color = new Color32(103, 45, 0, 255);
                 break;
 
 
             case 24:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ[—Î‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’æ·±ç·‘ã«å¤‰æ›´
                 renderer.material.color = new Color32(42, 111, 0, 255);
                 break;
 
             case 25:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ[—Î‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’æ·±ç·‘ã«å¤‰æ›´
                 renderer.material.color = new Color32(103, 45, 184, 255);
                 break;
 
             case 26:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ[Â‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’æ·±é’ã«å¤‰æ›´
                 renderer.material.color = new Color32(0, 30, 156, 255);
                 break;
 
             case 27:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ[Ô‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’æ·±èµ¤ã«å¤‰æ›´
                 renderer.material.color = new Color32(112, 4, 0, 255);
                 break;
 
 
             case 28:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ[ƒIƒŒƒ“ƒW‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’æ·±ã‚ªãƒ¬ãƒ³ã‚¸ã«å¤‰æ›´
                 renderer.material.color = new Color32(184, 99, 0, 255);
                 break;
 
             case 29:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ[‰©F‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’æ·±é»„è‰²ã«å¤‰æ›´
                 renderer.material.color = new Color32(184, 177, 0, 255);
                 break;
 
             case 30:
-                //ƒIƒuƒWƒFƒNƒg‚ÌF‚ğ[…F‚É•ÏX
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‰²ã‚’æ·±æ°´è‰²ã«å¤‰æ›´
                 renderer.material.color = new Color32(0, 111, 111, 255);
                 break;
         }
     }
 
-    //F•ÏXƒc[ƒ‹ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚ç•\¦‚·‚é
+    //è‰²å¤‰æ›´ãƒ„ãƒ¼ãƒ«ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸã‚‰è¡¨ç¤ºã™ã‚‹
     public void PressedChangeColorButton()
     {
-        //”ñ•\¦‚È‚ç•\¦‚·‚é
-        if (Visible == false) 
-        { 
+        //éè¡¨ç¤ºãªã‚‰è¡¨ç¤ºã™ã‚‹
+        if (Visible == false)
+        {
             ColorPanel.SetActive(true);
             Visible = true;
         }
-        //•\¦‚³‚ê‚Ä‚½‚ç”ñ•\¦‚É‚·‚é
-        else 
+        //è¡¨ç¤ºã•ã‚Œã¦ãŸã‚‰éè¡¨ç¤ºã«ã™ã‚‹
+        else
         {
-            ColorPanel.SetActive(false); 
+            ColorPanel.SetActive(false);
             Visible = false;
         }
 

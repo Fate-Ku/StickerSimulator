@@ -16,6 +16,10 @@ public class OutputStickerTool : MonoBehaviour
     public GameObject successPanel;
     public TextMeshProUGUI successMessage;
 
+    [Header("Question Popup")]
+    public GameObject QuestionPanel;
+    public TextMeshProUGUI QuestionMessage;
+
     [Header("Save System")]
     public Camera pinkFrameCamera; // 粉色框専用カメラ
 
@@ -23,6 +27,7 @@ public class OutputStickerTool : MonoBehaviour
     {
         popupPanel.SetActive(false);
         successPanel.SetActive(false);
+        QuestionPanel.SetActive(false);
         errorText.gameObject.SetActive(false);
     }
 
@@ -38,6 +43,11 @@ public class OutputStickerTool : MonoBehaviour
     public void Cancel()
     {
         popupPanel.SetActive(false);
+    }
+
+    public void qCancel()
+    {
+        QuestionPanel.SetActive(false);
     }
 
     // 保存確認ボタン
@@ -69,10 +79,11 @@ public class OutputStickerTool : MonoBehaviour
         string jsonPath = Path.Combine(jsonFolderPath, fileName + ".json");
 
         // 重複チェック
-        if (File.Exists(imagePath) && File.Exists(jsonPath))
+        if (File.Exists(imagePath) || File.Exists(jsonPath))
         {
-            errorText.text = "ファイル名は既に存在します。\n名前を変更してください。";
-            errorText.gameObject.SetActive(true);
+            QuestionPanel.SetActive(true);
+            QuestionMessage.text = "ファイル名は既に存在します\n上書きしますか？";
+            QuestionMessage.gameObject.SetActive(true);
             return;
         }
 
@@ -81,6 +92,30 @@ public class OutputStickerTool : MonoBehaviour
         SaveStickerData(jsonPath);
 
         popupPanel.SetActive(false);
+        ShowSuccess(fileName);
+    }
+
+    public void Confirm2()
+    {
+        string fileName = nameInput.text.Trim();
+
+        // 追加したいフォルダ名前
+        string imageFolderName = "MyBrandStickersPhoto";
+        string imageFolderPath = Path.Combine(Application.persistentDataPath, imageFolderName);
+        string jsonFolderName = "MyBrandStickersInfo";
+        string jsonFolderPath = Path.Combine(Application.persistentDataPath, jsonFolderName);
+
+        // PNG Path
+        string imagePath = Path.Combine(imageFolderPath, fileName + ".png");
+        // JSON Path
+        string jsonPath = Path.Combine(jsonFolderPath, fileName + ".json");
+
+        // 保存処理
+        SaveImage(imagePath);
+        SaveStickerData(jsonPath);
+
+        popupPanel.SetActive(false);
+        QuestionPanel.SetActive(false);
         ShowSuccess(fileName);
     }
 

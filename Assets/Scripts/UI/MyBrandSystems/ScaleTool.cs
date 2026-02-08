@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class ScaleTool : MonoBehaviour
 {
@@ -7,17 +7,17 @@ public class ScaleTool : MonoBehaviour
 
     public void ScaleUp()
     {
-        //1.2”{
+        //1.2å€
         Scale(1f + changeScale);
     }
 
     public void ScaleDown()
     {
-        //0.83”{(1f + changeScale)‚ÍŒ³‚Ì‘å‚«‚³‚É–ß‚¹‚é‚æ‚¤‚É‚·‚é‚½‚ß
+        //0.83å€(1f + changeScale)ã¯å…ƒã®å¤§ãã•ã«æˆ»ã›ã‚‹ã‚ˆã†ã«ã™ã‚‹ãŸã‚
         Scale(1f / (1f + changeScale));
     }
 
-    //magnification¨”{—¦
+    //magnificationâ†’å€ç‡
     private void Scale(float magnification)
     {
         if (select == null) return;
@@ -25,14 +25,14 @@ public class ScaleTool : MonoBehaviour
 
         Transform target = select.targetObject;
 
-        //ƒV[ƒ‹‚Ì‘å¬‚ÌãŒÀ‚ğæ“¾
+        //ã‚·ãƒ¼ãƒ«ã®å¤§å°ã®ä¸Šé™ã‚’å–å¾—
         ScaleLimit limit = target.GetComponent<ScaleLimit>();
 
-        //Œ»İ‚Ì‘å‚«‚³‚©‚ç”{—¦‚ğ‚©‚¯‚Ä‘å‚«‚³‚ğ•Ï‰»‚·‚é
+        //ç¾åœ¨ã®å¤§ãã•ã‹ã‚‰å€ç‡ã‚’ã‹ã‘ã¦å¤§ãã•ã‚’å¤‰åŒ–ã™ã‚‹
         Vector3 nextScale = target.localScale * magnification;
 
-        //Mathf.Clamp(’l, Å¬’l, Å‘å’l)
-        //’l‚ğİ’è‚µ‚½‘å¬‚ÌãŒÀ‚æ‚è‘å‚«‚­i¬‚³‚­j‚È‚ç‚È‚¢‚æ‚¤‚É‚·‚é
+        //Mathf.Clamp(å€¤, æœ€å°å€¤, æœ€å¤§å€¤)
+        //å€¤ã‚’è¨­å®šã—ãŸå¤§å°ã®ä¸Šé™ã‚ˆã‚Šå¤§ããï¼ˆå°ã•ãï¼‰ãªã‚‰ãªã„ã‚ˆã†ã«ã™ã‚‹
         target.localScale = new Vector3(
             Mathf.Clamp(nextScale.x, limit.minScale.x, limit.maxScale.x),
             Mathf.Clamp(nextScale.y, limit.minScale.y, limit.maxScale.y),
