@@ -91,7 +91,6 @@ public class StickerLoadManager : MonoBehaviour
 
         Debug.Log($"ShowPage: {currentPage} / {savedImagePaths.Count}");
         Debug.Log("Path: " + savedImagePaths[currentPage]);
-
     }
 
     // ----------------------------------------
@@ -167,13 +166,12 @@ public class StickerLoadManager : MonoBehaviour
         obj.tag = "Sticker";
         obj.layer = LayerMask.NameToLayer("Sticker");
 
-
         // ④ SpriteRenderer を追加
         SpriteRenderer sr = obj.AddComponent<SpriteRenderer>();
         sr.sprite = sprite;
         sr.material = new Material(Shader.Find("Sprites/Default"));
 
-        // ★ sortingOrder = 25
+        // ★ 本体 sortingOrder（必要なら調整）
         sr.sortingOrder = 25;
 
         // ★ マテリアル設定（必要なら）
@@ -181,22 +179,48 @@ public class StickerLoadManager : MonoBehaviour
         if (mat != null)
             sr.material = mat;
 
-        // ⑤ 画面中央に配置
+        // ⑤ 画像サイズに応じてスケール調整
+        float baseSize = 300f; // ここは好みで調整してOK
+        float scaleFactor = baseSize / Mathf.Max(tex.width, tex.height);
+        obj.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1);
+
+        // ⑥ 画面中央に配置
         obj.transform.position = Vector3.zero;
 
-        // ⑥ 右図の機能を全部追加
+        // ⑦ selectSticker（選択枠）を追加
+        GameObject select = new GameObject("SelectSticker");
+        select.transform.SetParent(obj.transform);
+        select.transform.localPosition = Vector3.zero;
+
+        SpriteRenderer selectSR = select.AddComponent<SpriteRenderer>();
+        // ここはあなたの SelectSticker 用 Sprite パスに合わせて変更
+        selectSR.sprite = Resources.Load<Sprite>("SelectSticker/SelectSticker");
+        selectSR.material = new Material(Shader.Find("Universal Render Pipeline/2D/Sprite-Lit-Default"));
+
+        // ★ 選択枠の order in layer = 50
+        selectSR.sortingOrder = 50;
+
+        // ★ 選択枠のサイズをステッカーに合わせる
+        float padding = 1.1f; // 少し大きめに
+        if (selectSR.sprite != null)
+        {
+            select.transform.localScale = new Vector3(
+                (tex.width * scaleFactor) / selectSR.sprite.bounds.size.x * padding,
+                (tex.height * scaleFactor) / selectSR.sprite.bounds.size.y * padding,
+                1
+            );
+        }
+
+        // ★ selectSticker は初期状態で非表示
+        select.SetActive(false);
+
+        // ⑧ 必要なコンポーネント追加
         obj.AddComponent<BoxCollider2D>();
         obj.AddComponent<LayerControllerTool>();
-        //obj.AddComponent<ScaleTool>();
         obj.AddComponent<RotateTool>();
-        //obj.AddComponent<ScaleLimit>();
-        //obj.AddComponent<DefaultColorChange>();
         obj.AddComponent<Sticker_Manager>();
 
-        popupPanel.SetActive(false);
-
-
-        // ⑦ popup を閉じる
+        // ⑨ popup を閉じる
         popupPanel.SetActive(false);
 
         Debug.Log("ロード画像をステッカーとして生成しました: " + stickerName);

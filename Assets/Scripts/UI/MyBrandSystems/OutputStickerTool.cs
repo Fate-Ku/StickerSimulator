@@ -1,9 +1,11 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using System.IO;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using TMPro;
+using UnityEditor.Overlays;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class OutputStickerTool : MonoBehaviour
 {
@@ -22,6 +24,47 @@ public class OutputStickerTool : MonoBehaviour
 
     [Header("Save System")]
     public Camera pinkFrameCamera; // 粉色框専用カメラ
+
+    // ─────────────────────────────
+    // 保存データ構造
+    // ─────────────────────────────
+
+    [Serializable]
+    public class ChildLayerInfo
+    {
+        public string childName;
+        public int sortingOrder;
+
+        // ★ 子の material.color（0〜255）
+        public byte r, g, b, a;
+    }
+
+    [Serializable]
+    public class StickerData
+    {
+        public string prefabName;
+
+        public float x;
+        public float y;
+        public float rotation;
+
+        public float scaleX;
+        public float scaleY;
+
+        // ★ 親の material.color（0〜255）
+        public byte r, g, b, a;
+
+        public int sortingOrder;
+
+        public List<ChildLayerInfo> childLayers = new List<ChildLayerInfo>();
+    }
+
+    [Serializable]
+    public class StickerSaveData
+    {
+        public List<StickerData> stickers = new List<StickerData>();
+    }
+
 
     private void Start()
     {
@@ -88,7 +131,8 @@ public class OutputStickerTool : MonoBehaviour
         }
 
         // 保存処理
-        SaveImage(imagePath);
+        SaveAllStickersAsPNG(imagePath);
+        //SaveImage(imagePath);
         SaveStickerData(jsonPath);
 
         popupPanel.SetActive(false);
@@ -111,7 +155,8 @@ public class OutputStickerTool : MonoBehaviour
         string jsonPath = Path.Combine(jsonFolderPath, fileName + ".json");
 
         // 保存処理
-        SaveImage(imagePath);
+        SaveAllStickersAsPNG(imagePath);
+        //SaveImage(imagePath);
         SaveStickerData(jsonPath);
 
         popupPanel.SetActive(false);
@@ -181,66 +226,142 @@ public class OutputStickerTool : MonoBehaviour
         Debug.Log("PNG 保存完成: " + savePath);
     }
 
-    // -----------------------------
-    // JSON 保存（SpriteRenderer 情報）
-    // -----------------------------
-    [System.Serializable]
-    public class StickerInfo
-    {
-        public string name;
-        public Vector2 position;
-        public float rotation;
-        public Vector3 scale;
-        public Color color;
-    }
-
-    [System.Serializable]
-    public class StickerInfoList
-    {
-        public List<StickerInfo> stickers = new List<StickerInfo>();
-    }
-
     private void SaveStickerData(string jsonPath)
     {
-        StickerInfoList infoList;
+        StickerSaveData saveData = new StickerSaveData();
 
-        // ① 既存ファイルがあるなら読み込む
-        if (File.Exists(jsonPath))
-        {
-            string oldJson = File.ReadAllText(jsonPath);
-            infoList = JsonUtility.FromJson<StickerInfoList>(oldJson);
-
-            if (infoList == null)
-                infoList = new StickerInfoList();
-        }
-        else
-        {
-            // 既存ファイルがない場合は新規作成
-            infoList = new StickerInfoList();
-        }
-
-        // ② 今のシーンの Sticker を追加
         GameObject[] stickers = GameObject.FindGameObjectsWithTag("Sticker");
 
         foreach (var s in stickers)
         {
-            var renderer = s.GetComponent<SpriteRenderer>();
-            if (renderer == null) continue;
+            StickerData data = new StickerData();
+            data.prefabName = s.name.Replace("(Clone)", "");
 
-            StickerInfo info = new StickerInfo();
-            info.name = s.name.Replace("(Clone)", "");
-            info.position = s.transform.position;
-            info.rotation = s.transform.eulerAngles.z;
-            info.scale = s.transform.localScale;
-            info.color = renderer.color;
+            data.x = s.transform.position.x;
+            data.y = s.transform.position.y;
+            data.rotation = s.transform.eulerAngles.z;
 
-            infoList.stickers.Add(info);
+            data.scaleX = s.transform.localScale.x;
+            data.scaleY = s.transform.localScale.y;
+
+            // 親の SpriteRenderer
+            SpriteRenderer parentSR = s.GetComponentInChildren<SpriteRenderer>();
+            if (parentSR != null)
+            {
+                Color32 c = parentSR.material.color;   // ★ material.color を保存
+
+                data.r = c.r;
+                data.g = c.g;
+                data.b = c.b;
+                data.a = c.a;
+
+                data.sortingOrder = parentSR.sortingOrder;
+            }
+
+            // ★ 子の SpriteRenderer を保存
+            SpriteRenderer[] children = s.GetComponentsInChildren<SpriteRenderer>();
+
+            foreach (var child in children)
+            {
+                ChildLayerInfo info = new ChildLayerInfo();
+                info.childName = child.gameObject.name;
+                info.sortingOrder = child.sortingOrder;
+
+                Color32 cc = child.material.color;     // ★ material.color を保存
+                info.r = cc.r;
+                info.g = cc.g;
+                info.b = cc.b;
+                info.a = cc.a;
+
+                data.childLayers.Add(info);
+            }
+
+            saveData.stickers.Add(data);
         }
 
         // ③ JSON に書き戻す（上書きだが内容は追加済み）
-        string json = JsonUtility.ToJson(infoList, true);
+        string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(jsonPath, json);
 
         Debug.Log("JSON 保存完成: " + jsonPath);
+    }
+
+    public void SaveAllStickersAsPNG(string savePath)
+    {
+        GameObject[] stickers = GameObject.FindGameObjectsWithTag("Sticker");
+        if (stickers.Length == 0)
+        {
+            Debug.LogError("ステッカーがありません");
+            return;
+        }
+
+        // ① 全ステッカーの Bounds を取得
+        bool first = true;
+        Bounds totalBounds = new Bounds();
+
+        foreach (var s in stickers)
+        {
+            SpriteRenderer sr = s.GetComponentInChildren<SpriteRenderer>();
+            if (sr == null) continue;
+
+            if (first)
+            {
+                totalBounds = sr.bounds;
+                first = false;
+            }
+            else
+            {
+                totalBounds.Encapsulate(sr.bounds);
+            }
+        }
+
+        // ② Bounds のサイズを取得
+        float widthWorld = totalBounds.size.x;
+        float heightWorld = totalBounds.size.y;
+
+        // ③ ピクセルサイズに変換
+        int pixelsPerUnit = 100; // まふゆのプロジェクト基準
+        int texWidth = Mathf.RoundToInt(widthWorld * pixelsPerUnit);
+        int texHeight = Mathf.RoundToInt(heightWorld * pixelsPerUnit);
+
+        // ④ RenderTexture を作成
+        RenderTexture rt = new RenderTexture(texWidth, texHeight, 24, RenderTextureFormat.ARGB32);
+        rt.Create();
+
+        // ⑤ カメラをステッカー全体に合わせる
+        Camera cam = pinkFrameCamera;
+        cam.targetTexture = rt;
+
+        cam.orthographic = true;
+        cam.orthographicSize = heightWorld / 2f;
+
+        // カメラ位置を中央に
+        cam.transform.position = new Vector3(
+            totalBounds.center.x,
+            totalBounds.center.y,
+            cam.transform.position.z
+        );
+
+        // ⑥ 撮影
+        cam.Render();
+
+        RenderTexture.active = rt;
+
+        // ⑦ Texture2D に書き出し
+        Texture2D tex = new Texture2D(texWidth, texHeight, TextureFormat.RGBA32, false);
+        tex.ReadPixels(new Rect(0, 0, texWidth, texHeight), 0, 0);
+        tex.Apply();
+
+        // ⑧ PNG 保存
+        byte[] bytes = tex.EncodeToPNG();
+        File.WriteAllBytes(savePath, bytes);
+
+        // ⑨ 後処理
+        cam.targetTexture = null;
+        RenderTexture.active = null;
+        Destroy(rt);
+        Destroy(tex);
+
+        Debug.Log("ステッカー全体をまとめて PNG 保存完了: " + savePath);
     }
 }
