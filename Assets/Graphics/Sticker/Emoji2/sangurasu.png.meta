@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sangurasu_0: 6903715767710436686
+      sangurasu_1: -348769476827396674
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

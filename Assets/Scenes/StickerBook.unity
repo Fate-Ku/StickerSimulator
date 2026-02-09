@@ -412,7 +412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30B7\u30FC\u30EB\u5E33\n\u753B\u50CF\u751F\u6210"
+  m_text: "\u30B7\u30FC\u30EB\u3061\u3087\u3046\n\u753B\u50CF\u751F\u6210"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
   m_sharedMaterial: {fileID: -7786892333198751292, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
@@ -16398,6 +16398,10 @@ PrefabInstance:
       propertyPath: select
       value: 
       objectReference: {fileID: 1382962249}
+    - target: {fileID: 2525065552382589212, guid: b8557499a54c9044d81af86348278f1c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 5735076897835745847, guid: b8557499a54c9044d81af86348278f1c, type: 3}
       propertyPath: m_Name
       value: CircleSticker
@@ -17395,7 +17399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5168\u30B7\u30FC\u30EB\n\u524A\u9664"
+  m_text: "\u5168\u30B7\u30FC\u30EB\n\u3055\u304F\u3058\u3087"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
   m_sharedMaterial: {fileID: -7786892333198751292, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
@@ -18276,6 +18280,7 @@ MonoBehaviour:
   pageText: {fileID: 5179306146600683599}
   fileNameText: {fileID: 2843439116054106392}
   displayScale: 0.01
+  selectStickerPrefab: {fileID: 6775702166158595123, guid: e3b7491b159d0ed4eab12ff963a92718, type: 3}
 --- !u!1 &7835566856505123840
 GameObject:
   m_ObjectHideFlags: 0

@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kannmei_0: 6697926247782968260
+      kannmei_1: -1006456999282483109
+      kannmei_2: 551498164375579291
+      kannmei_3: 1424000984538208541
+      kannmei_4: -3375416377103562401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

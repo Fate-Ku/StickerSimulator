@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hasyagi_0: 6615727233970714645
+      hasyagi_1: -7271456883825496767
+      hasyagi_2: 8400423480342852455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

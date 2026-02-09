@@ -1234,7 +1234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30DE\u30A4\u30D6\u30E9\u30F3\u30C9"
+  m_text: "\u30DE\u30A4\u30B7\u30FC\u30EB\n\u3055\u304F\u305B\u3044"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
   m_sharedMaterial: {fileID: -7786892333198751292, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
@@ -1261,8 +1261,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.23
-  m_fontSizeBase: 39.23
+  m_fontSize: 35.59
+  m_fontSizeBase: 35.59
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0

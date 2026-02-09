@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      goukyuu_0: 3889053336053864027
+      goukyuu_1: 6589535921497245322
+      goukyuu_2: 3238930146389434408
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

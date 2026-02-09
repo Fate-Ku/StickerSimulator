@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bikkuri_0: 7194105721645084414
+      bikkuri_1: -4596712946799899102
+      bikkuri_2: -8812363732594444340
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

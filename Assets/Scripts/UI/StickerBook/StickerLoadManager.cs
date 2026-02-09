@@ -20,6 +20,8 @@ public class StickerLoadManager : MonoBehaviour
     private List<string> savedImagePaths = new List<string>();
     private int currentPage = 0;
 
+    public GameObject selectStickerPrefab;   // ← SelectSticker の Prefab をアサイン
+
     private void Start()
     {
         popupPanel.SetActive(false);
@@ -180,39 +182,57 @@ public class StickerLoadManager : MonoBehaviour
             sr.material = mat;
 
         // ⑤ 画像サイズに応じてスケール調整
-        float baseSize = 300f; // ここは好みで調整してOK
-        float scaleFactor = baseSize / Mathf.Max(tex.width, tex.height);
-        obj.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1);
+        //float baseSize = 300f; // ここは好みで調整してOK
+        //float scaleFactor = baseSize / Mathf.Max(tex.width, tex.height);
+        //obj.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1);
 
         // ⑥ 画面中央に配置
         obj.transform.position = Vector3.zero;
 
         // ⑦ selectSticker（選択枠）を追加
-        GameObject select = new GameObject("SelectSticker");
-        select.transform.SetParent(obj.transform);
+        GameObject select = Instantiate(selectStickerPrefab, obj.transform);
+        select.name = "SelectSticker";
         select.transform.localPosition = Vector3.zero;
 
-        SpriteRenderer selectSR = select.AddComponent<SpriteRenderer>();
-        // ここはあなたの SelectSticker 用 Sprite パスに合わせて変更
-        selectSR.sprite = Resources.Load<Sprite>("SelectSticker/SelectSticker");
-        selectSR.material = new Material(Shader.Find("Universal Render Pipeline/2D/Sprite-Lit-Default"));
+        // ★ 初期非表示
+        select.SetActive(false);
 
-        // ★ 選択枠の order in layer = 50
-        selectSR.sortingOrder = 50;
+        // ★ Prefab の SpriteRenderer を取得
+        SpriteRenderer prefabSR = selectStickerPrefab.GetComponent<SpriteRenderer>();
+        SpriteRenderer selectSR = select.GetComponent<SpriteRenderer>();
 
-        // ★ 選択枠のサイズをステッカーに合わせる
-        float padding = 1.1f; // 少し大きめに
-        if (selectSR.sprite != null)
+        // ★ Prefab の Sprite と Material をそのままコピー
+        if (prefabSR != null)
         {
-            select.transform.localScale = new Vector3(
-                (tex.width * scaleFactor) / selectSR.sprite.bounds.size.x * padding,
-                (tex.height * scaleFactor) / selectSR.sprite.bounds.size.y * padding,
-                1
-            );
+            selectSR.sprite = prefabSR.sprite;
+            selectSR.sharedMaterial = prefabSR.sharedMaterial;
         }
 
-        // ★ selectSticker は初期状態で非表示
-        select.SetActive(false);
+        // ★ order in layer = 50
+        selectSR.sortingOrder = 50;
+
+        // ★ SelectSticker のサイズをステッカーに合わせる
+        if (selectSR.sprite != null)
+        {
+            float padding = 1.1f;
+
+            // ステッカー本体の SpriteRenderer のワールドサイズ
+            Bounds b = sr.bounds;
+
+            float stickerWidth = b.size.x;
+            float stickerHeight = b.size.y;
+
+            // 外框 Sprite の元サイズ（ワールド座標）
+            float frameWidth = selectSR.sprite.bounds.size.x;
+            float frameHeight = selectSR.sprite.bounds.size.y;
+
+            // 外框のスケールを計算
+            float scaleX = (stickerWidth / frameWidth) * padding;
+            float scaleY = (stickerHeight / frameHeight) * padding;
+
+            select.transform.localScale = new Vector3(scaleX, scaleY, 1);
+        }
+
 
         // ⑧ 必要なコンポーネント追加
         obj.AddComponent<BoxCollider2D>();

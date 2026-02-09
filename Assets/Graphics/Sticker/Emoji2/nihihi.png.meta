@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nihihi_0: 732213347440116921
+      nihihi_1: -2564701137487562042
+      nihihi_2: 2845302890820535814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

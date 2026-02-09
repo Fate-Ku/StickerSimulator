@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nikoniko_0: -4963288742248108351
+      nikoniko_1: -4017765932036992305
+      nikoniko_2: -8957040807810805276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

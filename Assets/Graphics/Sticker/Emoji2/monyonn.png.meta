@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      monyonn_0: -6577184807163309533
+      monyonn_1: -1783036997403927906
+      monyonn_2: -2799305178704869121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
