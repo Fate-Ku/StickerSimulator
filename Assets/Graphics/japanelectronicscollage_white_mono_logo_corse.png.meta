@@ -1,0 +1,1443 @@
+fileFormatVersion: 2
+guid: 1e667099971827b478542ba6a3bd83cb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8378412659435163751
+    second: japanelectronicscollage_white_mono_logo_corse_0
+  - first:
+      213: -1311574271295795382
+    second: japanelectronicscollage_white_mono_logo_corse_1
+  - first:
+      213: -5388489882104684175
+    second: japanelectronicscollage_white_mono_logo_corse_2
+  - first:
+      213: 4773939249122719566
+    second: japanelectronicscollage_white_mono_logo_corse_3
+  - first:
+      213: 1085223247806439415
+    second: japanelectronicscollage_white_mono_logo_corse_4
+  - first:
+      213: -148682685009990559
+    second: japanelectronicscollage_white_mono_logo_corse_5
+  - first:
+      213: -915627710463692138
+    second: japanelectronicscollage_white_mono_logo_corse_6
+  - first:
+      213: -4630275716508606639
+    second: japanelectronicscollage_white_mono_logo_corse_7
+  - first:
+      213: -6502460350757132768
+    second: japanelectronicscollage_white_mono_logo_corse_8
+  - first:
+      213: 3381888109817755855
+    second: japanelectronicscollage_white_mono_logo_corse_9
+  - first:
+      213: 2227048539025108334
+    second: japanelectronicscollage_white_mono_logo_corse_10
+  - first:
+      213: 258449426002871579
+    second: japanelectronicscollage_white_mono_logo_corse_11
+  - first:
+      213: -8379585957796198547
+    second: japanelectronicscollage_white_mono_logo_corse_12
+  - first:
+      213: 3299402862774031097
+    second: japanelectronicscollage_white_mono_logo_corse_13
+  - first:
+      213: -1828059479550469625
+    second: japanelectronicscollage_white_mono_logo_corse_14
+  - first:
+      213: 3684108934472526740
+    second: japanelectronicscollage_white_mono_logo_corse_15
+  - first:
+      213: -3002677573670728968
+    second: japanelectronicscollage_white_mono_logo_corse_16
+  - first:
+      213: -1252058759599138102
+    second: japanelectronicscollage_white_mono_logo_corse_17
+  - first:
+      213: 658711632044823703
+    second: japanelectronicscollage_white_mono_logo_corse_18
+  - first:
+      213: -3549088086481589139
+    second: japanelectronicscollage_white_mono_logo_corse_19
+  - first:
+      213: 8090502449441737720
+    second: japanelectronicscollage_white_mono_logo_corse_20
+  - first:
+      213: -1955099317712821273
+    second: japanelectronicscollage_white_mono_logo_corse_21
+  - first:
+      213: 5878828652222424584
+    second: japanelectronicscollage_white_mono_logo_corse_22
+  - first:
+      213: -4221348226253951550
+    second: japanelectronicscollage_white_mono_logo_corse_23
+  - first:
+      213: 3527910473873672542
+    second: japanelectronicscollage_white_mono_logo_corse_24
+  - first:
+      213: -2162527284295548432
+    second: japanelectronicscollage_white_mono_logo_corse_25
+  - first:
+      213: -7678342509923831661
+    second: japanelectronicscollage_white_mono_logo_corse_26
+  - first:
+      213: 2066158916243867177
+    second: japanelectronicscollage_white_mono_logo_corse_27
+  - first:
+      213: 5914673863089657245
+    second: japanelectronicscollage_white_mono_logo_corse_28
+  - first:
+      213: -5289906293891745089
+    second: japanelectronicscollage_white_mono_logo_corse_29
+  - first:
+      213: -5258945683008722477
+    second: japanelectronicscollage_white_mono_logo_corse_30
+  - first:
+      213: 1870511426241517508
+    second: japanelectronicscollage_white_mono_logo_corse_31
+  - first:
+      213: 5676280223782553567
+    second: japanelectronicscollage_white_mono_logo_corse_32
+  - first:
+      213: 1230356618114948020
+    second: japanelectronicscollage_white_mono_logo_corse_33
+  - first:
+      213: 8682612507227753501
+    second: japanelectronicscollage_white_mono_logo_corse_34
+  - first:
+      213: -8680589795361390070
+    second: japanelectronicscollage_white_mono_logo_corse_35
+  - first:
+      213: 7474921831930144856
+    second: japanelectronicscollage_white_mono_logo_corse_36
+  - first:
+      213: -3754687973900390625
+    second: japanelectronicscollage_white_mono_logo_corse_37
+  - first:
+      213: -711307872475256038
+    second: japanelectronicscollage_white_mono_logo_corse_38
+  - first:
+      213: -120502224167208893
+    second: japanelectronicscollage_white_mono_logo_corse_39
+  - first:
+      213: 4166310981604205051
+    second: japanelectronicscollage_white_mono_logo_corse_40
+  - first:
+      213: 3945961947446258181
+    second: japanelectronicscollage_white_mono_logo_corse_41
+  - first:
+      213: -446861490455643112
+    second: japanelectronicscollage_white_mono_logo_corse_42
+  - first:
+      213: 7792134981137570186
+    second: japanelectronicscollage_white_mono_logo_corse_43
+  - first:
+      213: 8779353380997045603
+    second: japanelectronicscollage_white_mono_logo_corse_44
+  - first:
+      213: -1865328849252182970
+    second: japanelectronicscollage_white_mono_logo_corse_45
+  - first:
+      213: 4158305078323227310
+    second: japanelectronicscollage_white_mono_logo_corse_46
+  - first:
+      213: -4179522326587191948
+    second: japanelectronicscollage_white_mono_logo_corse_47
+  - first:
+      213: -8583727809811301358
+    second: japanelectronicscollage_white_mono_logo_corse_48
+  - first:
+      213: -3988416219471951269
+    second: japanelectronicscollage_white_mono_logo_corse_49
+  - first:
+      213: -2476864783478004091
+    second: japanelectronicscollage_white_mono_logo_corse_50
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_0
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 206
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99f2bb4b316e9bb80800000000000000
+      internalID: -8378412659435163751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_1
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 194
+        width: 79
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f4fd6362a5ccde0800000000000000
+      internalID: -1311574271295795382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_2
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 251
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1712d5d600d3835b0800000000000000
+      internalID: -5388489882104684175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_3
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 251
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4731432470704240800000000000000
+      internalID: 4773939249122719566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_4
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 194
+        width: 70
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff9f7b4bcc7f0f00800000000000000
+      internalID: 1085223247806439415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_5
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 216
+        width: 65
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c6abfb2e5cfedf0800000000000000
+      internalID: -148682685009990559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_6
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 194
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692be43d2790b43f0800000000000000
+      internalID: -915627710463692138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_7
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 206
+        width: 7
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f1361a4c4fdbfb0800000000000000
+      internalID: -4630275716508606639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_8
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 194
+        width: 13
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0262f0333ce92c5a0800000000000000
+      internalID: -6502460350757132768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_9
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 194
+        width: 15
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc8fdcf5151eeee20800000000000000
+      internalID: 3381888109817755855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_10
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 194
+        width: 67
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6de42ac8d018ee10800000000000000
+      internalID: 2227048539025108334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_11
+      rect:
+        serializedVersion: 2
+        x: 1516
+        y: 194
+        width: 40
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b150e453262369300800000000000000
+      internalID: 258449426002871579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_12
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 213
+        width: 38
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67c4b4e7fab5bb80800000000000000
+      internalID: -8379585957796198547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_13
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 194
+        width: 19
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f29d863c65d9cd20800000000000000
+      internalID: 3299402862774031097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_14
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 194
+        width: 25
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70adb1db69d61a6e0800000000000000
+      internalID: -1828059479550469625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 292
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49be3118e85902330800000000000000
+      internalID: 3684108934472526740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_16
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 38
+        width: 124
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa0356d7a85456d0800000000000000
+      internalID: -3002677573670728968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 36
+        width: 152
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca5d2c113bcf9ee0800000000000000
+      internalID: -1252058759599138102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_18
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 118
+        width: 147
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79413754db6342900800000000000000
+      internalID: 658711632044823703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_19
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 36
+        width: 148
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ca1b0703b1fbec0800000000000000
+      internalID: -3549088086481589139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_20
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 36
+        width: 149
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb0769cc1d374070800000000000000
+      internalID: 8090502449441737720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_21
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 36
+        width: 67
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e36e1377871ed4e0800000000000000
+      internalID: -1955099317712821273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_22
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 36
+        width: 67
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8062b17038bc59150800000000000000
+      internalID: 5878828652222424584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_23
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 36
+        width: 149
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd68e46722ca65c0800000000000000
+      internalID: -4221348226253951550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_24
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 100
+        width: 146
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e59ce9262e7a5f030800000000000000
+      internalID: 3527910473873672542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_25
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 36
+        width: 88
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f1497a74e82df1e0800000000000000
+      internalID: -2162527284295548432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_26
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 36
+        width: 90
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39075383b2c017590800000000000000
+      internalID: -7678342509923831661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_27
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 36
+        width: 137
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 926c83c56987cac10800000000000000
+      internalID: 2066158916243867177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_28
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 10
+        width: 54
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d951fbb8a84251250800000000000000
+      internalID: 5914673863089657245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_29
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 10
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbaba79b04a7696b0800000000000000
+      internalID: -5289906293891745089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_30
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 10
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d9e03fa3c87407b0800000000000000
+      internalID: -5258945683008722477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_31
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 11
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c75f655b3465f910800000000000000
+      internalID: 1870511426241517508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_32
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 11
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd742201ac236ce40800000000000000
+      internalID: 5676280223782553567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_33
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 11
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bbdac153da131110800000000000000
+      internalID: 1230356618114948020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_34
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 11
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c8ca7a216de7870800000000000000
+      internalID: 8682612507227753501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_35
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 10
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a028a96a299588780800000000000000
+      internalID: -8680589795361390070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_36
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 10
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85822046dc14cb760800000000000000
+      internalID: 7474921831930144856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_37
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 11
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f6c315e2ba4ebc0800000000000000
+      internalID: -3754687973900390625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_38
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 10
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b6c27324de026f0800000000000000
+      internalID: -711307872475256038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_39
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 10
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3487ed59dd3e35ef0800000000000000
+      internalID: -120502224167208893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_40
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 5
+        width: 39
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1e35283c5b1d930800000000000000
+      internalID: 4166310981604205051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_41
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 10
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a2ebe0c7fd2c630800000000000000
+      internalID: 3945961947446258181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_42
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 10
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81cf69d87dd6cc9f0800000000000000
+      internalID: -446861490455643112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_43
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 10
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8999981b79332c60800000000000000
+      internalID: 7792134981137570186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_44
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 10
+        width: 7
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d14ff826786d970800000000000000
+      internalID: 8779353380997045603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_45
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 10
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64419076b450d16e0800000000000000
+      internalID: -1865328849252182970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_46
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 5
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaaa825ef6445b930800000000000000
+      internalID: 4158305078323227310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_47
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 11
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47dc4f8869a5ff5c0800000000000000
+      internalID: -4179522326587191948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_48
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 11
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c3e87190970e880800000000000000
+      internalID: -8583727809811301358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_49
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 10
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ac7f5749c46a8c0800000000000000
+      internalID: -3988416219471951269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: japanelectronicscollage_white_mono_logo_corse_50
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 11
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5866e183a9860add0800000000000000
+      internalID: -2476864783478004091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      japanelectronicscollage_white_mono_logo_corse_0: -8378412659435163751
+      japanelectronicscollage_white_mono_logo_corse_1: -1311574271295795382
+      japanelectronicscollage_white_mono_logo_corse_10: 2227048539025108334
+      japanelectronicscollage_white_mono_logo_corse_11: 258449426002871579
+      japanelectronicscollage_white_mono_logo_corse_12: -8379585957796198547
+      japanelectronicscollage_white_mono_logo_corse_13: 3299402862774031097
+      japanelectronicscollage_white_mono_logo_corse_14: -1828059479550469625
+      japanelectronicscollage_white_mono_logo_corse_15: 3684108934472526740
+      japanelectronicscollage_white_mono_logo_corse_16: -3002677573670728968
+      japanelectronicscollage_white_mono_logo_corse_17: -1252058759599138102
+      japanelectronicscollage_white_mono_logo_corse_18: 658711632044823703
+      japanelectronicscollage_white_mono_logo_corse_19: -3549088086481589139
+      japanelectronicscollage_white_mono_logo_corse_2: -5388489882104684175
+      japanelectronicscollage_white_mono_logo_corse_20: 8090502449441737720
+      japanelectronicscollage_white_mono_logo_corse_21: -1955099317712821273
+      japanelectronicscollage_white_mono_logo_corse_22: 5878828652222424584
+      japanelectronicscollage_white_mono_logo_corse_23: -4221348226253951550
+      japanelectronicscollage_white_mono_logo_corse_24: 3527910473873672542
+      japanelectronicscollage_white_mono_logo_corse_25: -2162527284295548432
+      japanelectronicscollage_white_mono_logo_corse_26: -7678342509923831661
+      japanelectronicscollage_white_mono_logo_corse_27: 2066158916243867177
+      japanelectronicscollage_white_mono_logo_corse_28: 5914673863089657245
+      japanelectronicscollage_white_mono_logo_corse_29: -5289906293891745089
+      japanelectronicscollage_white_mono_logo_corse_3: 4773939249122719566
+      japanelectronicscollage_white_mono_logo_corse_30: -5258945683008722477
+      japanelectronicscollage_white_mono_logo_corse_31: 1870511426241517508
+      japanelectronicscollage_white_mono_logo_corse_32: 5676280223782553567
+      japanelectronicscollage_white_mono_logo_corse_33: 1230356618114948020
+      japanelectronicscollage_white_mono_logo_corse_34: 8682612507227753501
+      japanelectronicscollage_white_mono_logo_corse_35: -8680589795361390070
+      japanelectronicscollage_white_mono_logo_corse_36: 7474921831930144856
+      japanelectronicscollage_white_mono_logo_corse_37: -3754687973900390625
+      japanelectronicscollage_white_mono_logo_corse_38: -711307872475256038
+      japanelectronicscollage_white_mono_logo_corse_39: -120502224167208893
+      japanelectronicscollage_white_mono_logo_corse_4: 1085223247806439415
+      japanelectronicscollage_white_mono_logo_corse_40: 4166310981604205051
+      japanelectronicscollage_white_mono_logo_corse_41: 3945961947446258181
+      japanelectronicscollage_white_mono_logo_corse_42: -446861490455643112
+      japanelectronicscollage_white_mono_logo_corse_43: 7792134981137570186
+      japanelectronicscollage_white_mono_logo_corse_44: 8779353380997045603
+      japanelectronicscollage_white_mono_logo_corse_45: -1865328849252182970
+      japanelectronicscollage_white_mono_logo_corse_46: 4158305078323227310
+      japanelectronicscollage_white_mono_logo_corse_47: -4179522326587191948
+      japanelectronicscollage_white_mono_logo_corse_48: -8583727809811301358
+      japanelectronicscollage_white_mono_logo_corse_49: -3988416219471951269
+      japanelectronicscollage_white_mono_logo_corse_5: -148682685009990559
+      japanelectronicscollage_white_mono_logo_corse_50: -2476864783478004091
+      japanelectronicscollage_white_mono_logo_corse_6: -915627710463692138
+      japanelectronicscollage_white_mono_logo_corse_7: -4630275716508606639
+      japanelectronicscollage_white_mono_logo_corse_8: -6502460350757132768
+      japanelectronicscollage_white_mono_logo_corse_9: 3381888109817755855
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
