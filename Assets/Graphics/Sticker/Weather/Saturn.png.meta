@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Saturn_0: 5528776806964859323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
