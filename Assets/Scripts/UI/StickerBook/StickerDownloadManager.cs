@@ -34,7 +34,8 @@ public class StickerDownloadManager : MonoBehaviour
         string savePath = Path.Combine(downloadPath, fileName);
 
         // ★ ④ 保存実行
-        SaveImage(savePath);
+        SaveAllStickersAsPNG(savePath);
+        //SaveImage(savePath);
 
         // ★ ⑤ 成功ポップアップ
         ShowSuccess();
@@ -112,5 +113,87 @@ public class StickerDownloadManager : MonoBehaviour
         Destroy(tex);
 
         Debug.Log("PNG 保存完成: " + savePath);
+    }
+
+    public void SaveAllStickersAsPNG(string savePath)
+    {
+        GameObject[] stickers = GameObject.FindGameObjectsWithTag("Sticker");
+        if (stickers.Length == 0)
+        {
+            Debug.LogError("ステッカーがありません");
+            return;
+        }
+
+        // ① Bounds
+        bool first = true;
+        Bounds totalBounds = new Bounds();
+
+        foreach (var s in stickers)
+        {
+            SpriteRenderer sr = s.GetComponentInChildren<SpriteRenderer>();
+            if (sr == null) continue;
+
+            if (first)
+            {
+                totalBounds = sr.bounds;
+                first = false;
+            }
+            else
+            {
+                totalBounds.Encapsulate(sr.bounds);
+            }
+        }
+
+        float widthWorld = totalBounds.size.x;
+        float heightWorld = totalBounds.size.y;
+
+        int ppu = 100;
+        int texWidth = Mathf.RoundToInt(widthWorld * ppu);
+        int texHeight = Mathf.RoundToInt(heightWorld * ppu);
+
+        // ② RenderTexture（URP対応）
+        RenderTexture rt = new RenderTexture(texWidth, texHeight, 0, RenderTextureFormat.ARGB32);
+        rt.useMipMap = false;
+        rt.autoGenerateMips = false;
+        rt.Create();
+
+        // ③ カメラ設定
+        Camera cam = pinkFrameCamera;
+        cam.targetTexture = rt;
+
+        cam.forceIntoRenderTexture = true; // ★ URP で必須
+        cam.clearFlags = CameraClearFlags.Color;
+        cam.backgroundColor = new Color(0, 0, 0, 0); // ★ 透明背景
+
+        cam.orthographic = true;
+        cam.orthographicSize = heightWorld / 2f;
+
+        cam.transform.position = new Vector3(
+            totalBounds.center.x,
+            totalBounds.center.y,
+            cam.transform.position.z
+        );
+
+        // ④ 描画
+        cam.Render();
+
+        RenderTexture.active = rt;
+
+        // ⑤ Texture2D に書き出し
+        Texture2D tex = new Texture2D(texWidth, texHeight, TextureFormat.RGBA32, false);
+        tex.ReadPixels(new Rect(0, 0, texWidth, texHeight), 0, 0);
+        tex.Apply();
+
+        // ⑥ 保存
+        File.WriteAllBytes(savePath, tex.EncodeToPNG());
+
+        // ⑦ 後処理
+        cam.targetTexture = null;
+        RenderTexture.active = null;
+        rt.Release();
+        Destroy(rt);
+        Destroy(tex);
+
+        Debug.Log("PNG 保存完了: " + savePath);
     }
 }
