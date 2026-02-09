@@ -6992,6 +6992,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2126416416}
     - target: {fileID: 3310568129409781038, guid: db599a95bd736414491c80c86943abed, type: 3}
+      propertyPath: selectStickerPrefab
+      value: 
+      objectReference: {fileID: 6775702166158595123, guid: e3b7491b159d0ed4eab12ff963a92718, type: 3}
+    - target: {fileID: 3310568129409781038, guid: db599a95bd736414491c80c86943abed, type: 3}
       propertyPath: stickerPrefabs.Array.size
       value: 0
       objectReference: {fileID: 0}

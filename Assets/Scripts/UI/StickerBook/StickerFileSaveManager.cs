@@ -12,6 +12,9 @@ public class StickerFileSaveManager : MonoBehaviour
     public GameObject successPanel;
     public TextMeshProUGUI successMessage;
 
+    public GameObject selectStickerPrefab;   // ← SelectSticker の Prefab をアサイン
+
+
     // ─────────────────────────────
     // 保存データ構造
     // ─────────────────────────────
@@ -157,82 +160,122 @@ public class StickerFileSaveManager : MonoBehaviour
 
         foreach (var data in saveData.stickers)
         {
-            // ① まず Resources からプレハブを探す
-            GameObject prefab = Resources.Load<GameObject>("Stickers/" + data.prefabName);
-
             GameObject obj = null;
 
-            if (prefab != null)
+            string pngPath = Path.Combine(photoFolder, data.prefabName + ".png");
+
+            // ① ★ 先に PNG を探す
+            if (File.Exists(pngPath))
             {
-                // ★ プレハブが見つかった → 通常ロード
-                obj = Instantiate(
-                    prefab,
-                    new Vector2(data.x, data.y),
-                    Quaternion.Euler(0, 0, data.rotation)
+                Debug.Log($"PNG を使用してステッカー生成: {pngPath}");
+
+                // Texture 読み込み
+                byte[] bytes = File.ReadAllBytes(pngPath);
+                Texture2D tex = new Texture2D(2, 2);
+                tex.LoadImage(bytes);
+
+                // Sprite 化
+                Sprite sprite = Sprite.Create(
+                    tex,
+                    new Rect(0, 0, tex.width, tex.height),
+                    new Vector2(0.5f, 0.5f),
+                    100f
                 );
 
-                obj.transform.localScale = new Vector3(data.scaleX, data.scaleY, 1);
+                // GameObject 作成
+                obj = new GameObject(data.prefabName);
                 obj.tag = "Sticker";
+                obj.layer = LayerMask.NameToLayer("Sticker");
+
+                // SpriteRenderer
+                SpriteRenderer sr = obj.AddComponent<SpriteRenderer>();
+                sr.sprite = sprite;
+
+                // マテリアル
+                Material mat = Resources.Load<Material>("Materials/ChangeColor_Shape");
+                if (mat != null)
+                    sr.material = mat;
+
+                // Transform 復元
+                obj.transform.position = new Vector2(data.x, data.y);
+                obj.transform.rotation = Quaternion.Euler(0, 0, data.rotation);
+                obj.transform.localScale = new Vector3(data.scaleX, data.scaleY, 1);
+
+                // ⑤ ★ 外框（SelectSticker）を追加
+                GameObject select = Instantiate(selectStickerPrefab, obj.transform);
+                select.name = "SelectSticker";
+                select.transform.localPosition = Vector3.zero;
+
+                // 初期非表示
+                select.SetActive(false);
+
+                // Prefab の SpriteRenderer をコピー
+                SpriteRenderer prefabSR = selectStickerPrefab.GetComponent<SpriteRenderer>();
+                SpriteRenderer selectSR = select.GetComponent<SpriteRenderer>();
+
+                if (prefabSR != null)
+                {
+                    selectSR.sprite = prefabSR.sprite;
+                    selectSR.sharedMaterial = prefabSR.sharedMaterial;
+                }
+
+                // order in layer
+                selectSR.sortingOrder = 50;
+
+                // ★ 外框サイズをステッカーに完全フィットさせる
+                {
+                    float padding = 1.1f;
+
+                    // ステッカー本体のワールドサイズ
+                    Bounds b = sr.bounds;
+                    float stickerWidth = b.size.x;
+                    float stickerHeight = b.size.y;
+
+                    // 外框 Sprite の元サイズ
+                    float frameWidth = selectSR.sprite.bounds.size.x;
+                    float frameHeight = selectSR.sprite.bounds.size.y;
+
+                    // スケール計算
+                    float scaleX = (stickerWidth / frameWidth) * padding;
+                    float scaleY = (stickerHeight / frameHeight) * padding;
+
+                    select.transform.localScale = new Vector3(scaleX, scaleY, 1);
+                }
+
+
+                // 必要なコンポーネント
+                obj.AddComponent<BoxCollider2D>();
+                obj.AddComponent<LayerControllerTool>();
+                obj.AddComponent<RotateTool>();
+                obj.AddComponent<Sticker_Manager>();
             }
             else
             {
-                // ★ プレハブが見つからない → MyBrandStickersPhoto から PNG を探す
-                string pngPath = Path.Combine(photoFolder, data.prefabName + ".png");
+                // ② PNG が無い → prefab を探す
+                GameObject prefab = Resources.Load<GameObject>("Stickers/" + data.prefabName);
 
-                if (File.Exists(pngPath))
+                if (prefab != null)
                 {
-                    Debug.Log($"PNG を使用してステッカー生成: {pngPath}");
+                    Debug.Log($"Prefab を使用してステッカー生成: {data.prefabName}");
 
-                    // ① Texture2D を読み込む
-                    byte[] bytes = File.ReadAllBytes(pngPath);
-                    Texture2D tex = new Texture2D(2, 2);
-                    tex.LoadImage(bytes);
-
-                    // ② Sprite に変換
-                    Sprite sprite = Sprite.Create(
-                        tex,
-                        new Rect(0, 0, tex.width, tex.height),
-                        new Vector2(0.5f, 0.5f),
-                        100f
+                    obj = Instantiate(
+                        prefab,
+                        new Vector2(data.x, data.y),
+                        Quaternion.Euler(0, 0, data.rotation)
                     );
 
-                    // ③ GameObject 名は JSON の prefabName を使う
-                    obj = new GameObject(data.prefabName);
-                    obj.tag = "Sticker";
-                    obj.layer = LayerMask.NameToLayer("Sticker");
-
-
-                    // ④ SpriteRenderer を追加
-                    SpriteRenderer sr = obj.AddComponent<SpriteRenderer>();
-                    sr.sprite = sprite;
-                    sr.material = new Material(Shader.Find("Sprites/Default"));
-
-
-                    // ★ マテリアル設定
-                    Material mat = Resources.Load<Material>("Materials/ChangeColor_Shape");
-                    if (mat != null)
-                        sr.material = mat;
-
-                    // 位置・回転・スケール
-                    obj.transform.position = new Vector2(data.x, data.y);
-                    obj.transform.rotation = Quaternion.Euler(0, 0, data.rotation);
                     obj.transform.localScale = new Vector3(data.scaleX, data.scaleY, 1);
-
-                    // ★ 必要なコンポーネント追加
-                    obj.AddComponent<BoxCollider2D>();
-                    obj.AddComponent<LayerControllerTool>();
-                    obj.AddComponent<RotateTool>();
-                    obj.AddComponent<Sticker_Manager>();
+                    obj.tag = "Sticker";
                 }
                 else
                 {
-                    Debug.LogError($"Prefab も PNG も見つかりません: {data.prefabName}");
+                    Debug.LogError($"PNG も Prefab も見つかりません: {data.prefabName}");
                     continue;
                 }
             }
 
             // -----------------------------
-            // ★ 親の material.color を復元
+            // 親の material.color を復元
             // -----------------------------
             SpriteRenderer parentSR = obj.GetComponentInChildren<SpriteRenderer>();
             if (parentSR != null)
@@ -242,7 +285,7 @@ public class StickerFileSaveManager : MonoBehaviour
             }
 
             // -----------------------------
-            // ★ 子の SpriteRenderer を復元
+            // 子の SpriteRenderer を復元
             // -----------------------------
             SpriteRenderer[] children = obj.GetComponentsInChildren<SpriteRenderer>();
 
