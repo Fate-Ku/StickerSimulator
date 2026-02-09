@@ -107,8 +107,17 @@ public class Select : MonoBehaviour
             // 複製生成
             GameObject clone = Instantiate(hit.collider.gameObject, hit.collider.transform.position, Quaternion.identity);
 
-            // 複製されたオブジェクトはもう複製できないようにタグ変更
+            // 複製されたオブジェクトは Sticker に変更
             clone.tag = "Sticker";
+
+            // ★ 子オブジェクトのタグも Sticker に変更（SelectSticker 以外）
+            foreach (Transform child in clone.transform)
+            {
+                if (child.name != "SelectSticker")
+                {
+                    child.tag = "Sticker";
+                }
+            }
 
             // 複製されたオブジェクトを新しい選択対象にする
             targetObject = clone.transform;
@@ -117,7 +126,7 @@ public class Select : MonoBehaviour
             // default layer = 25
             targetRenderer.sortingOrder = 25;
 
-            //座標のずれを計算
+            // 座標のずれを計算
             m_offset = targetObject.position - worldPosition;
 
             // 元の位置も保存
@@ -125,10 +134,10 @@ public class Select : MonoBehaviour
 
             SelectSticker(clone.transform, worldPosition);
 
-            //シール選択状態にする
+            // シール選択状態にする
             isDraggingSticker = true;
 
-            return; // Sticker 選択処理に進まない
+            return;
         }
         // 2025.12.12 added by ko
 
