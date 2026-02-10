@@ -3830,7 +3830,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 6eaf64cdbe6c51e48b51b59edb1df18b, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_KeepTextSelectionVisible: 0
@@ -26948,8 +26948,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -193.02, y: -46.75}
-  m_SizeDelta: {x: 139.68, y: 70.95}
+  m_AnchoredPosition: {x: -211.39, y: -46.75}
+  m_SizeDelta: {x: 175.72, y: 70.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1347631242
 MonoBehaviour:
@@ -28387,7 +28387,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 165214314}
   m_HandleRect: {fileID: 165214313}
   m_Direction: 0
-  m_Value: -0.00000016657155
+  m_Value: -0.00000024985732
   m_Size: 0.47602636
   m_NumberOfSteps: 0
   m_OnValueChanged:

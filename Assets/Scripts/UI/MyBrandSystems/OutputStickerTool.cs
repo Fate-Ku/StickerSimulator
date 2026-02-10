@@ -95,6 +95,9 @@ public class OutputStickerTool : MonoBehaviour
     // 保存確認ボタン
     public void Confirm()
     {
+        // ★ 日本語入力を確定させる（IME の未確定文字を確定）
+        nameInput.DeactivateInputField();
+
         string fileName = nameInput.text.Trim();
 
         // 未入力チェック
@@ -102,6 +105,11 @@ public class OutputStickerTool : MonoBehaviour
         {
             errorText.text = "画像名を入力してください";
             errorText.gameObject.SetActive(true);
+
+            // ★ エラー時はフォーカスを戻す
+            nameInput.Select();
+            nameInput.ActivateInputField();
+
             return;
         }
 
@@ -140,6 +148,7 @@ public class OutputStickerTool : MonoBehaviour
 
     public void Confirm2()
     {
+
         string fileName = nameInput.text.Trim();
 
         // 追加したいフォルダ名前
