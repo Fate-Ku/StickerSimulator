@@ -28,6 +28,14 @@ public class SelectStickerTypeTool : MonoBehaviour
     [Header("FoodSticker")]
     public GameObject[] foodStickers;
 
+    //絵文字シールのグループを入れる配列
+    [Header("EmojiSticker")]
+    public GameObject[] emojiStickers;
+
+    //絵文字シール2のグループを入れる配列
+    [Header("EmojiSticker")]
+    public GameObject[] emoji2Stickers;
+
     //シール編集エリア
     [SerializeField] private Collider2D stickerArea; 
 
@@ -62,6 +70,16 @@ public class SelectStickerTypeTool : MonoBehaviour
         foreach (var sticker in foodStickers)
             if (sticker != null)
                 sticker.SetActive(false);
+
+        //絵文字シールは非表示にする
+        foreach (var sticker in emojiStickers)
+            if (sticker != null)
+                sticker.SetActive(false);
+
+        //絵文字シールは非表示にする
+        foreach (var sticker in emoji2Stickers)
+            if (sticker != null)
+                sticker.SetActive(false);
     }
 
     //形状シールボタンが押された
@@ -79,6 +97,8 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(weatherStickers);
         HideGroup(musicStickers);
         HideGroup(foodStickers);
+        HideGroup(emojiStickers);
+        HideGroup(emoji2Stickers);
     }
 
     //動物ボタンが押された
@@ -95,6 +115,8 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(weatherStickers);
         HideGroup(musicStickers);
         HideGroup(foodStickers);
+        HideGroup(emojiStickers);
+        HideGroup(emoji2Stickers);
     }
 
     //花ボタンが押された
@@ -111,6 +133,8 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(weatherStickers);
         HideGroup(musicStickers);
         HideGroup(foodStickers);
+        HideGroup(emojiStickers);
+        HideGroup(emoji2Stickers);
     }
 
     //天気ボタンが押された
@@ -127,6 +151,8 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(flowerStickers);
         HideGroup(musicStickers);
         HideGroup(foodStickers);
+        HideGroup(emojiStickers);
+        HideGroup(emoji2Stickers);
     }
 
     //音楽ボタンが押された
@@ -143,6 +169,8 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(flowerStickers);
         HideGroup(weatherStickers);
         HideGroup(foodStickers);
+        HideGroup(emojiStickers);
+        HideGroup(emoji2Stickers);
     }
 
     //食べ物ボタンが押された
@@ -159,6 +187,47 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(flowerStickers);
         HideGroup(weatherStickers);
         HideGroup(musicStickers);
+        HideGroup(emojiStickers);
+        HideGroup(emoji2Stickers);
+    }
+
+
+    //絵文字ボタンが押された
+    public void OnEmojiButton()
+    {
+        //選択状態解除
+        select.targetObject = null;
+        select.targetRenderer = null;
+
+        //食べ物シールを表示し、別のシールを非表示にする
+        ShowGroup(emojiStickers);
+        HideGroup(shapeStickers);
+        HideGroup(animalStickers);
+        HideGroup(flowerStickers);
+        HideGroup(weatherStickers);
+        HideGroup(musicStickers);
+        HideGroup(foodStickers);
+        HideGroup(emoji2Stickers);
+    }
+
+
+
+    //絵文字ボタンが押された
+    public void OnEmoji2Button()
+    {
+        //選択状態解除
+        select.targetObject = null;
+        select.targetRenderer = null;
+
+        //食べ物シールを表示し、別のシールを非表示にする
+        ShowGroup(emoji2Stickers);
+        HideGroup(shapeStickers);
+        HideGroup(animalStickers);
+        HideGroup(flowerStickers);
+        HideGroup(weatherStickers);
+        HideGroup(musicStickers);
+        HideGroup(foodStickers);
+        HideGroup(emojiStickers);
     }
 
     //特定グループだけを表示する

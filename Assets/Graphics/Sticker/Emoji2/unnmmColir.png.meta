@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 5bcdadbdc7042674fa673b67b3030273
+guid: b927a502fdc8d8d44b47cf4bbd5ff018
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6697926247782968260
-    second: kannmei_0
-  - first:
-      213: -1006456999282483109
-    second: kannmei_1
-  - first:
-      213: 551498164375579291
-    second: kannmei_2
-  - first:
-      213: 1424000984538208541
-    second: kannmei_3
-  - first:
-      213: -3375416377103562401
-    second: kannmei_4
+      213: -5137635165573895061
+    second: unnmmColir_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -112,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kannmei_0
+      name: unnmmColir_0
       rect:
         serializedVersion: 2
-        x: 127
-        y: 311
-        width: 291
-        height: 354
+        x: 1144
+        y: 513
+        width: 1299
+        height: 1375
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,96 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4cb6eda6f60d3fc50800000000000000
-      internalID: 6697926247782968260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kannmei_1
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 663
-        width: 201
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b50ef0c01b85802f0800000000000000
-      internalID: -1006456999282483109
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kannmei_2
-      rect:
-        serializedVersion: 2
-        x: 494
-        y: 320
-        width: 293
-        height: 343
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b9ae2e598a057a700800000000000000
-      internalID: 551498164375579291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kannmei_3
-      rect:
-        serializedVersion: 2
-        x: 555
-        y: 663
-        width: 201
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d19d43bc95113c310800000000000000
-      internalID: 1424000984538208541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kannmei_4
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 292
-        width: 253
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f59c4b150bc1821d0800000000000000
-      internalID: -3375416377103562401
+      spriteID: b6ca96a890473b8b0800000000000000
+      internalID: -5137635165573895061
       vertices: []
       indices: 
       edges: []
@@ -225,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      kannmei_0: 6697926247782968260
-      kannmei_1: -1006456999282483109
-      kannmei_2: 551498164375579291
-      kannmei_3: 1424000984538208541
-      kannmei_4: -3375416377103562401
+      unnmmColir_0: -5137635165573895061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
