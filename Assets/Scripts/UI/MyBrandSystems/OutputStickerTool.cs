@@ -73,11 +73,39 @@ public class OutputStickerTool : MonoBehaviour
         errorText.gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        //if (popupPanel.activeSelf && nameInput.isFocused)
+        {
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                StartCoroutine(HandleEnterKey());
+            }
+        }
+    }
+
+    private IEnumerator HandleEnterKey()
+    {
+        // ★ IME を確定
+        nameInput.DeactivateInputField();
+
+        // ★ 1フレーム待つ（IME が text に反映される）
+        yield return null;
+
+        // ★ フォーカスを戻す
+        nameInput.Select();
+        nameInput.ActivateInputField();
+    }
+
     // 保存ポップアップを開く
     public void OpenPopup()
     {
         popupPanel.SetActive(true);
         nameInput.text = "";
+
+        nameInput.Select();
+        nameInput.ActivateInputField();
+
         errorText.gameObject.SetActive(false);
     }
 
