@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ff7b806eb22760d498a433ffd65b16d1
+guid: 03ccfc3f1adb4ad4b9ec8c9fd210eadf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8303829947599512654
-    second: BearColor_0
+      213: 6885684166699473731
+    second: Flower_2Colorpng_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BearColor_0
+      name: Flower_2Colorpng_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 5
+        y: 13
+        width: 21
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e446bed77512d3370800000000000000
-      internalID: 8303829947599512654
+      spriteID: 34b57a7844dde8f50800000000000000
+      internalID: 6885684166699473731
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BearColor_0: 8303829947599512654
+      Flower_2Colorpng_0: 6885684166699473731
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
