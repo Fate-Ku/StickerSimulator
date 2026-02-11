@@ -73,11 +73,39 @@ public class OutputStickerTool : MonoBehaviour
         errorText.gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        //if (popupPanel.activeSelf && nameInput.isFocused)
+        {
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                StartCoroutine(HandleEnterKey());
+            }
+        }
+    }
+
+    private IEnumerator HandleEnterKey()
+    {
+        // ★ IME を確定
+        nameInput.DeactivateInputField();
+
+        // ★ 1フレーム待つ（IME が text に反映される）
+        yield return null;
+
+        // ★ フォーカスを戻す
+        nameInput.Select();
+        nameInput.ActivateInputField();
+    }
+
     // 保存ポップアップを開く
     public void OpenPopup()
     {
         popupPanel.SetActive(true);
         nameInput.text = "";
+
+        nameInput.Select();
+        nameInput.ActivateInputField();
+
         errorText.gameObject.SetActive(false);
     }
 
@@ -95,6 +123,9 @@ public class OutputStickerTool : MonoBehaviour
     // 保存確認ボタン
     public void Confirm()
     {
+        // ★ 日本語入力を確定させる（IME の未確定文字を確定）
+        nameInput.DeactivateInputField();
+
         string fileName = nameInput.text.Trim();
 
         // 未入力チェック
@@ -102,6 +133,11 @@ public class OutputStickerTool : MonoBehaviour
         {
             errorText.text = "画像名を入力してください";
             errorText.gameObject.SetActive(true);
+
+            // ★ エラー時はフォーカスを戻す
+            nameInput.Select();
+            nameInput.ActivateInputField();
+
             return;
         }
 
@@ -140,6 +176,7 @@ public class OutputStickerTool : MonoBehaviour
 
     public void Confirm2()
     {
+
         string fileName = nameInput.text.Trim();
 
         // 追加したいフォルダ名前
