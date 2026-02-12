@@ -1,8 +1,9 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class StickerLoadManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class StickerLoadManager : MonoBehaviour
     private int currentPage = 0;
 
     public GameObject selectStickerPrefab;   // ← SelectSticker の Prefab をアサイン
+
+    public LayerControllerTool globalLayerManager;
 
     private void Start()
     {
@@ -174,7 +177,7 @@ public class StickerLoadManager : MonoBehaviour
         sr.material = new Material(Shader.Find("Sprites/Default"));
 
         // ★ 本体 sortingOrder（必要なら調整）
-        sr.sortingOrder = 25;
+        //sr.sortingOrder = 25;
 
         // ★ マテリアル設定（必要なら）
         Material mat = Resources.Load<Material>("Materials/ChangeColor_Shape");
@@ -234,15 +237,30 @@ public class StickerLoadManager : MonoBehaviour
         }
 
 
-        // ⑧ 必要なコンポーネント追加
+        // ⑧ 增加 Sorting Group 並設定屬性
+        SortingGroup sg = obj.AddComponent<SortingGroup>();
+        sg.sortingOrder = 100;    // 設定為你要求的 100
+        sg.sortAtRoot = true;      // 勾選 Sort At Root
+
+        // ⑨ 必要なコンポーネント追加
         obj.AddComponent<BoxCollider2D>();
-        obj.AddComponent<LayerControllerTool>();
         obj.AddComponent<RotateTool>();
         obj.AddComponent<Sticker_Manager>();
+
+        if (globalLayerManager != null)
+        {
+            globalLayerManager.RegisterNewLayer(sg);
+        }
+        else
+        {
+            Debug.LogError("No Global Layer Manager！請在 Inspector 拖入物件。");
+        }
+
 
         // ⑨ popup を閉じる
         popupPanel.SetActive(false);
 
         Debug.Log("ロード画像をステッカーとして生成しました: " + stickerName);
+        Debug.Log($"生成成功: {stickerName}, SortingOrder: {sg.sortingOrder}, SortAtRoot: {sg.sortAtRoot}");
     }
 }

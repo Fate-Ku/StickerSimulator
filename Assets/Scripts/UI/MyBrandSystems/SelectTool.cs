@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 
 public class Select : MonoBehaviour
 {
+    public LayerControllerTool layerTool;
+
     //どれだけ中央と座標がずれているか
     private Vector3 m_offset;
 
@@ -119,12 +122,19 @@ public class Select : MonoBehaviour
                 }
             }
 
+            // sorting group
+            SortingGroup sg = clone.GetComponent<SortingGroup>();
+            if (sg != null && layerTool != null)
+            {
+                layerTool.RegisterNewLayer(sg);
+            }
+
             // 複製されたオブジェクトを新しい選択対象にする
             targetObject = clone.transform;
             targetRenderer = clone.GetComponent<SpriteRenderer>();
 
             // default layer = 25
-            targetRenderer.sortingOrder = 25;
+            //targetRenderer.sortingOrder = 25;
 
             // 座標のずれを計算
             m_offset = targetObject.position - worldPosition;
@@ -151,6 +161,18 @@ public class Select : MonoBehaviour
             //クリックしたオブジェクトを選択対象として登録
             targetObject = hit.transform;
             targetRenderer = targetObject.GetComponent<SpriteRenderer>();
+
+            // --- Layertool ---
+            if (layerTool != null)
+            {
+                SortingGroup sg = targetObject.GetComponentInParent<SortingGroup>();
+                if (sg != null)
+                {
+                    layerTool.SetSelectedIndexFromSticker(sg);
+                }
+            }
+
+            // ----------------------------
 
             //座標のずれを計算
             m_offset = targetObject.position - worldPosition;
