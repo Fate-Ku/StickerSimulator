@@ -36,6 +36,10 @@ public class SelectStickerTypeTool : MonoBehaviour
     [Header("HiraganaSticker")]
     public GameObject[] hiraganaStickers;
 
+    //カタカナのグループを入れる配列
+    [Header("KatakanaSticker")]
+    public GameObject[] katakanaStickers;
+
     //シール編集エリア
     [SerializeField] private Collider2D stickerArea; 
 
@@ -80,6 +84,11 @@ public class SelectStickerTypeTool : MonoBehaviour
         foreach (var sticker in hiraganaStickers)
             if (sticker != null)
                 sticker.SetActive(false);
+
+        //カタカナシールは非表示にする
+        foreach (var sticker in katakanaStickers)
+            if (sticker != null)
+                sticker.SetActive(false);
     }
 
     //形状シールボタンが押された
@@ -99,6 +108,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(foodStickers);
         HideGroup(emojiStickers);
         HideGroup(hiraganaStickers);
+        HideGroup(katakanaStickers);
     }
 
     //動物ボタンが押された
@@ -117,6 +127,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(foodStickers);
         HideGroup(emojiStickers);
         HideGroup(hiraganaStickers);
+        HideGroup(katakanaStickers);
     }
 
     //花ボタンが押された
@@ -135,6 +146,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(foodStickers);
         HideGroup(emojiStickers);
         HideGroup(hiraganaStickers);
+        HideGroup(katakanaStickers);
     }
 
     //天気ボタンが押された
@@ -153,6 +165,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(foodStickers);
         HideGroup(emojiStickers);
         HideGroup(hiraganaStickers);
+        HideGroup(katakanaStickers);
     }
 
     //音楽ボタンが押された
@@ -171,6 +184,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(foodStickers);
         HideGroup(emojiStickers);
         HideGroup(hiraganaStickers);
+        HideGroup(katakanaStickers);
     }
 
     //食べ物ボタンが押された
@@ -189,6 +203,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(musicStickers);
         HideGroup(emojiStickers);
         HideGroup(hiraganaStickers);
+        HideGroup(katakanaStickers);
     }
 
 
@@ -199,7 +214,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         select.targetObject = null;
         select.targetRenderer = null;
 
-        //食べ物シールを表示し、別のシールを非表示にする
+        //絵文字シールを表示し、別のシールを非表示にする
         ShowGroup(emojiStickers);
         HideGroup(shapeStickers);
         HideGroup(animalStickers);
@@ -208,6 +223,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(musicStickers);
         HideGroup(foodStickers);
         HideGroup(hiraganaStickers);
+        HideGroup(katakanaStickers);
     }
 
 
@@ -219,7 +235,7 @@ public class SelectStickerTypeTool : MonoBehaviour
         select.targetObject = null;
         select.targetRenderer = null;
 
-        //食べ物シールを表示し、別のシールを非表示にする
+        //ひらがなシールを表示し、別のシールを非表示にする
         ShowGroup(hiraganaStickers);
         HideGroup(shapeStickers);
         HideGroup(animalStickers);
@@ -228,6 +244,27 @@ public class SelectStickerTypeTool : MonoBehaviour
         HideGroup(musicStickers);
         HideGroup(foodStickers);
         HideGroup(emojiStickers);
+        HideGroup(katakanaStickers);
+    }
+
+
+    //カタカナボタンが押された
+    public void OnKatakanaButton()
+    {
+        //選択状態解除
+        select.targetObject = null;
+        select.targetRenderer = null;
+
+        //ひらがなシールを表示し、別のシールを非表示にする
+        ShowGroup(katakanaStickers);
+        HideGroup(shapeStickers);
+        HideGroup(animalStickers);
+        HideGroup(flowerStickers);
+        HideGroup(weatherStickers);
+        HideGroup(musicStickers);
+        HideGroup(foodStickers);
+        HideGroup(emojiStickers);
+        HideGroup(hiraganaStickers);
     }
 
     //特定グループだけを表示する
