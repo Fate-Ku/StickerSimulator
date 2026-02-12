@@ -12,6 +12,9 @@ public class LayerControllerTool : MonoBehaviour
     // 在 LayerControllerTool.cs 中加入
     public void RegisterNewLayer(SortingGroup newGroup)
     {
+        if (!newGroup) return; 
+
+
         if (!layers.Contains(newGroup))
         {
             layers.Add(newGroup);       // 加入清單
@@ -161,10 +164,13 @@ public class LayerControllerTool : MonoBehaviour
     // 依照 List 順序重新賦值給 Sorting Group
     public void ApplyOrder()
     {
+        //Destroy 済みのものを削除
+        layers.RemoveAll(layer => layer == null);
+
         for (int i = 0; i < layers.Count; i++)
         {
-            // List 索引 0 的物體，SortingOrder 為 0 (最底層)
-            // 索引越大，Order 越高，顯示在越前面
+            if (!layers[i]) continue; // 念のため保険
+
             layers[i].sortingOrder = i;
         }
     }
