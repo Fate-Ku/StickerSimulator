@@ -356,7 +356,7 @@ public class OutputStickerTool : MonoBehaviour
         float heightWorld = totalBounds.size.y;
 
         // ③ ピクセルサイズに変換
-        int pixelsPerUnit = 100; // まふゆのプロジェクト基準
+        int pixelsPerUnit = 100; 
         int texWidth = Mathf.RoundToInt(widthWorld * pixelsPerUnit);
         int texHeight = Mathf.RoundToInt(heightWorld * pixelsPerUnit);
 

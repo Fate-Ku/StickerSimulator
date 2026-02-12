@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class StickerFileSaveManager : MonoBehaviour
@@ -44,7 +45,10 @@ public class StickerFileSaveManager : MonoBehaviour
         // ★ 親の material.color（0〜255）
         public byte r, g, b, a;
 
-        public int sortingOrder;
+        public int sortingOrder; // childen
+
+        public int groupOrder;
+        public bool sortAtRoot;
 
         public List<ChildLayerInfo> childLayers = new List<ChildLayerInfo>();
     }
@@ -84,6 +88,14 @@ public class StickerFileSaveManager : MonoBehaviour
 
         foreach (var s in stickers)
         {
+            // ★ 核心修正：檢查父物件
+            // 如果我的父物件不為 null，且父物件的標籤也是 "Sticker"，代表我是別人的子零件
+            // 那我就不應該作為一個獨立的「貼紙(prefabName)」被存入。
+            if (s.transform.parent != null && s.transform.parent.CompareTag("Sticker"))
+            {
+                continue;
+            }
+
             StickerData data = new StickerData();
             data.prefabName = s.name.Replace("(Clone)", "");
 
@@ -94,8 +106,16 @@ public class StickerFileSaveManager : MonoBehaviour
             data.scaleX = s.transform.localScale.x;
             data.scaleY = s.transform.localScale.y;
 
+            // Sorting Group 設定
+            UnityEngine.Rendering.SortingGroup sg = s.GetComponent<UnityEngine.Rendering.SortingGroup>();
+            if (sg != null)
+            {
+                data.groupOrder = sg.sortingOrder;
+                data.sortAtRoot = sg.sortAtRoot;
+            }
+
             // 親の SpriteRenderer
-            SpriteRenderer parentSR = s.GetComponentInChildren<SpriteRenderer>();
+            SpriteRenderer parentSR = s.GetComponent<SpriteRenderer>();
             if (parentSR != null)
             {
                 Color32 c = parentSR.material.color;   // ★ material.color を保存
@@ -109,19 +129,22 @@ public class StickerFileSaveManager : MonoBehaviour
             }
 
             // ★ 子の SpriteRenderer を保存
-            SpriteRenderer[] children = s.GetComponentsInChildren<SpriteRenderer>();
+            // 2. 處理真正的子物件 (避開主本體與選取框)
+            SpriteRenderer[] allRenderers = s.GetComponentsInChildren<SpriteRenderer>(true);
 
-            foreach (var child in children)
+            foreach (var child in allRenderers)
             {
+                // ★ 過濾條件：
+                // 1. 不能是主本體自己 (parentSR)
+                // 2. 不能是選取框 (SelectSticker)
+                if (child == parentSR || child.gameObject.name == "SelectSticker") continue;
+
                 ChildLayerInfo info = new ChildLayerInfo();
                 info.childName = child.gameObject.name;
                 info.sortingOrder = child.sortingOrder;
 
-                Color32 cc = child.material.color;     // ★ material.color を保存
-                info.r = cc.r;
-                info.g = cc.g;
-                info.b = cc.b;
-                info.a = cc.a;
+                Color32 cc = child.material.color;
+                info.r = cc.r; info.g = cc.g; info.b = cc.b; info.a = cc.a;
 
                 data.childLayers.Add(info);
             }
@@ -144,6 +167,9 @@ public class StickerFileSaveManager : MonoBehaviour
         // 既存削除
         GameObject[] oldStickers = GameObject.FindGameObjectsWithTag("Sticker");
         foreach (var s in oldStickers) Destroy(s);
+
+        LayerControllerTool manager = FindObjectOfType<LayerControllerTool>();
+        if (manager != null) manager.layers.Clear();
 
         if (!File.Exists(SavePath))
         {
@@ -245,7 +271,6 @@ public class StickerFileSaveManager : MonoBehaviour
 
                 // 必要なコンポーネント
                 obj.AddComponent<BoxCollider2D>();
-                obj.AddComponent<LayerControllerTool>();
                 obj.AddComponent<RotateTool>();
                 obj.AddComponent<Sticker_Manager>();
             }
@@ -274,6 +299,18 @@ public class StickerFileSaveManager : MonoBehaviour
                 }
             }
 
+            // ★ 復元 Sorting Group
+            UnityEngine.Rendering.SortingGroup sg = obj.GetComponent<UnityEngine.Rendering.SortingGroup>();
+            if (sg == null) sg = obj.AddComponent<UnityEngine.Rendering.SortingGroup>();
+
+            sg.sortingOrder = data.groupOrder;
+            sg.sortAtRoot = data.sortAtRoot;
+
+            if (manager != null)
+            {
+                manager.RegisterLoadLayer(sg);
+            }
+
             // -----------------------------
             // 親の material.color を復元
             // -----------------------------
@@ -300,7 +337,22 @@ public class StickerFileSaveManager : MonoBehaviour
                     }
                 }
             }
+
+            // ★ 修正所有子項目的 Tag (排除 SelectSticker)
+            foreach (Transform child in obj.transform)
+            {
+                if (child.name != "SelectSticker")
+                {
+                    child.tag = "Sticker";
+                }
+            }
+
         }
+            if (manager != null)
+            {
+                manager.ApplyOrder();
+                Debug.Log("所有圖層已重新排序並恢復控制功能");
+            }
 
         Debug.Log("シールロード完了: " + SavePath);
     }
