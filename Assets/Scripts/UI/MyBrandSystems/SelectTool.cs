@@ -243,23 +243,40 @@ public class Select : MonoBehaviour
         //シール選択状態解除
         isDraggingSticker = false;
 
-        // UIの上にカーソルがあったら、入力を受け付けない
-        if (EventSystem.current.IsPointerOverGameObject()) return;
-
         //オブジェクトが選択されていなければ処理しない
-        if (targetObject == null) return;
+        if (targetObject == null || StickerArea == null) return;
 
-        //シール編集エリアの中に現在位置があるか？
-        bool isInsideArea = StickerArea.OverlapPoint(targetObject.position);
+        Collider2D col = targetObject.GetComponent<Collider2D>();
+        if (col == null) return;
 
-        // 枠内なら何もしない
-        if (isInsideArea) { return; }
+        Bounds objBounds = col.bounds;
+        Bounds areaBounds = StickerArea.bounds;
 
-        else
+        bool wasOutside = !StickerArea.OverlapPoint(originalPosition);
+        bool isOutsideNow = !StickerArea.OverlapPoint(targetObject.position);
+
+        //外→外の場合だけ削除する
+        if (wasOutside && isOutsideNow)
         {
-            // 枠外なら削除する
-            Destroy(targetObject.gameObject); 
+            Destroy(targetObject.gameObject);
+            return;
         }
+
+        Vector3 pos = targetObject.position;
+
+        // X方向補正
+        if (objBounds.min.x < areaBounds.min.x)
+            pos.x += areaBounds.min.x - objBounds.min.x;
+        else if (objBounds.max.x > areaBounds.max.x)
+            pos.x -= objBounds.max.x - areaBounds.max.x;
+
+        // Y方向補正
+        if (objBounds.min.y < areaBounds.min.y)
+            pos.y += areaBounds.min.y - objBounds.min.y;
+        else if (objBounds.max.y > areaBounds.max.y)
+            pos.y -= objBounds.max.y - areaBounds.max.y;
+
+        targetObject.position = pos;
     }
 
 

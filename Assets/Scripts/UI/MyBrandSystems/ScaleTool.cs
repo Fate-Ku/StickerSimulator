@@ -5,6 +5,9 @@ public class ScaleTool : MonoBehaviour
     [SerializeField] private Select select;
     [SerializeField] private float changeScale = 0.2f;
 
+    //シール編集エリア
+    [SerializeField] private Collider2D stickerArea;
+
     public void ScaleUp()
     {
         //1.2倍
@@ -38,5 +41,27 @@ public class ScaleTool : MonoBehaviour
             Mathf.Clamp(nextScale.y, limit.minScale.y, limit.maxScale.y),
             Mathf.Clamp(nextScale.z, limit.minScale.z, limit.maxScale.z)
         );
+
+        Collider2D col = target.GetComponent<Collider2D>();
+        if (col == null || stickerArea == null) return;
+
+        Bounds objBounds = col.bounds;
+        Bounds areaBounds = stickerArea.bounds;
+
+        Vector3 pos = target.position;
+
+        //X方向補正
+        if (objBounds.min.x < areaBounds.min.x)
+            pos.x += areaBounds.min.x - objBounds.min.x;
+        else if (objBounds.max.x > areaBounds.max.x)
+            pos.x -= objBounds.max.x - areaBounds.max.x;
+
+        //Y方向補正
+        if (objBounds.min.y < areaBounds.min.y)
+            pos.y += areaBounds.min.y - objBounds.min.y;
+        else if (objBounds.max.y > areaBounds.max.y)
+            pos.y -= objBounds.max.y - areaBounds.max.y;
+
+        target.position = pos;
     }
 }

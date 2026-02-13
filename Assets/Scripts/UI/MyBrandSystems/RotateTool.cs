@@ -8,7 +8,9 @@ public class RotateTool : MonoBehaviour
     //最後に選択していたオブジェクト
     private Transform lastTarget;
 
-    //private bool canRotate = false;
+
+    //シール編集エリア
+    public Collider2D StickerArea;
 
     public void Update()
     {
@@ -36,14 +38,46 @@ public class RotateTool : MonoBehaviour
     //左に15度回転
     public void RotateLeft()
     {
-        select.targetObject.transform.Rotate(0, 0, 15.0f, Space.World);
+        if (select.targetObject == null) return;
+
+        select.targetObject.Rotate(0, 0, 15.0f, Space.World);
+
+        ClampInsideArea();
     }
 
     //右に15度回転
     public void RotateRight()
     {
-        select.targetObject.transform.Rotate(0, 0, -15.0f, Space.World);
+        if (select.targetObject == null) return;
+
+        select.targetObject.Rotate(0, 0, -15.0f, Space.World);
+
+        ClampInsideArea();
     }
 
+    private void ClampInsideArea()
+    {
+        if (select.targetObject == null || StickerArea == null) return;
+
+        Collider2D col = select.targetObject.GetComponent<Collider2D>();
+        if (col == null) return;
+
+        Bounds objBounds = col.bounds;
+        Bounds areaBounds = StickerArea.bounds;
+
+        Vector3 pos = select.targetObject.position;
+
+        if (objBounds.min.x < areaBounds.min.x)
+            pos.x += areaBounds.min.x - objBounds.min.x;
+        else if (objBounds.max.x > areaBounds.max.x)
+            pos.x -= objBounds.max.x - areaBounds.max.x;
+
+        if (objBounds.min.y < areaBounds.min.y)
+            pos.y += areaBounds.min.y - objBounds.min.y;
+        else if (objBounds.max.y > areaBounds.max.y)
+            pos.y -= objBounds.max.y - areaBounds.max.y;
+
+        select.targetObject.position = pos;
+    }
 
 }
