@@ -37,8 +37,6 @@ public class StickerDownloadManager : MonoBehaviour
         SaveAllStickersAsPNG(savePath);
         //SaveImage(savePath);
 
-        // ★ ⑤ 成功ポップアップ
-        ShowSuccess();
     }
 
     // -----------------------------
@@ -77,50 +75,60 @@ public class StickerDownloadManager : MonoBehaviour
         successPanel.SetActive(false);
     }
 
+    private void WrongMsg()
+    {
+        successPanel.SetActive(true);
+        successMessage.text = $"シールを飾りませんか？";
+
+        StartCoroutine(AutoCloseSuccess());
+
+    }
+
+
     // -----------------------------
     // PNG 保存（カメラキャプチャ）
     // -----------------------------
-    public void SaveImage(string savePath)
-    {
-        Camera cam = pinkFrameCamera;
+    //public void SaveImage(string savePath)
+    //{
+    //    Camera cam = pinkFrameCamera;
 
-        float heightWorldUnits = cam.orthographicSize * 2f;
-        float widthWorldUnits = heightWorldUnits * cam.aspect;
+    //    float heightWorldUnits = cam.orthographicSize * 2f;
+    //    float widthWorldUnits = heightWorldUnits * cam.aspect;
 
-        int pixelsPerUnit = 100;
-        int rtWidth = Mathf.RoundToInt(widthWorldUnits * pixelsPerUnit);
-        int rtHeight = Mathf.RoundToInt(heightWorldUnits * pixelsPerUnit);
+    //    int pixelsPerUnit = 100;
+    //    int rtWidth = Mathf.RoundToInt(widthWorldUnits * pixelsPerUnit);
+    //    int rtHeight = Mathf.RoundToInt(heightWorldUnits * pixelsPerUnit);
 
-        RenderTexture rt = new RenderTexture(rtWidth, rtHeight, 24, RenderTextureFormat.ARGB32);
-        rt.Create();
+    //    RenderTexture rt = new RenderTexture(rtWidth, rtHeight, 24, RenderTextureFormat.ARGB32);
+    //    rt.Create();
 
-        cam.targetTexture = rt;
-        cam.Render();
+    //    cam.targetTexture = rt;
+    //    cam.Render();
 
-        RenderTexture.active = rt;
+    //    RenderTexture.active = rt;
 
-        Texture2D tex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, false);
-        tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
-        tex.Apply();
+    //    Texture2D tex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, false);
+    //    tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
+    //    tex.Apply();
 
-        byte[] bytes = tex.EncodeToPNG();
-        File.WriteAllBytes(savePath, bytes);
+    //    byte[] bytes = tex.EncodeToPNG();
+    //    File.WriteAllBytes(savePath, bytes);
 
-        cam.targetTexture = null;
-        RenderTexture.active = null;
+    //    cam.targetTexture = null;
+    //    RenderTexture.active = null;
 
-        Destroy(rt);
-        Destroy(tex);
+    //    Destroy(rt);
+    //    Destroy(tex);
 
-        Debug.Log("PNG 保存完成: " + savePath);
-    }
+    //    Debug.Log("PNG 保存完成: " + savePath);
+    //}
 
     public void SaveAllStickersAsPNG(string savePath)
     {
         GameObject[] stickers = GameObject.FindGameObjectsWithTag("Sticker");
         if (stickers.Length == 0)
         {
-            Debug.LogError("ステッカーがありません");
+            WrongMsg();
             return;
         }
 
@@ -193,6 +201,9 @@ public class StickerDownloadManager : MonoBehaviour
         rt.Release();
         Destroy(rt);
         Destroy(tex);
+
+        // 成功ポップアップ
+        ShowSuccess();
 
         Debug.Log("PNG 保存完了: " + savePath);
     }

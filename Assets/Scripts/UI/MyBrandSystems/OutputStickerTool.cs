@@ -100,6 +100,14 @@ public class OutputStickerTool : MonoBehaviour
     // 保存ポップアップを開く
     public void OpenPopup()
     {
+        GameObject[] stickers = GameObject.FindGameObjectsWithTag("Sticker");
+        if (stickers.Length == 0)
+        {
+            WrongMsg();
+            return;
+        }
+
+
         popupPanel.SetActive(true);
         nameInput.text = "";
 
@@ -216,51 +224,60 @@ public class OutputStickerTool : MonoBehaviour
         successPanel.SetActive(false);
     }
 
+    private void WrongMsg()
+    {
+        successPanel.SetActive(true);
+        successMessage.text = $"シールを作りませんか？";
+
+        StartCoroutine(AutoCloseSuccess());
+
+    }
+
 
     // -----------------------------
     // PNG 保存（SpriteRenderer 合成）
     // -----------------------------
-    private void SaveImage(string savePath)
-    {
-        Camera cam = pinkFrameCamera;
+    //private void SaveImage(string savePath)
+    //{
+    //    Camera cam = pinkFrameCamera;
 
-        float heightWorldUnits = cam.orthographicSize * 2f;
-        float widthWorldUnits = heightWorldUnits * cam.aspect;
+    //    float heightWorldUnits = cam.orthographicSize * 2f;
+    //    float widthWorldUnits = heightWorldUnits * cam.aspect;
 
-        int pixelsPerUnit = 100;
-        int rtWidth = Mathf.RoundToInt(widthWorldUnits * pixelsPerUnit);
-        int rtHeight = Mathf.RoundToInt(heightWorldUnits * pixelsPerUnit);
+    //    int pixelsPerUnit = 100;
+    //    int rtWidth = Mathf.RoundToInt(widthWorldUnits * pixelsPerUnit);
+    //    int rtHeight = Mathf.RoundToInt(heightWorldUnits * pixelsPerUnit);
 
-        // --- 修改開始 ---
-        // 讓 Unity 自動根據專案設置處理色彩空間 (使用預設 constructor)
-        RenderTexture rt = new RenderTexture(rtWidth, rtHeight, 24, RenderTextureFormat.ARGB32);
+    //    // --- 修改開始 ---
+    //    // 讓 Unity 自動根據專案設置處理色彩空間 (使用預設 constructor)
+    //    RenderTexture rt = new RenderTexture(rtWidth, rtHeight, 24, RenderTextureFormat.ARGB32);
 
-        // 如果專案是 Linear 模式，這會確保顏色正確轉換到 sRGB
-        rt.Create();
-        // --- 修改結束 ---
+    //    // 如果專案是 Linear 模式，這會確保顏色正確轉換到 sRGB
+    //    rt.Create();
+    //    // --- 修改結束 ---
 
-        cam.targetTexture = rt;
-        cam.Render();
+    //    cam.targetTexture = rt;
+    //    cam.Render();
 
-        RenderTexture.active = rt;
+    //    RenderTexture.active = rt;
 
-        // 這裡最後一個參數 linear 設為 false (即使用 sRGB)，這是 PNG 圖片的標準格式
-        Texture2D tex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, false);
+    //    // 這裡最後一個參數 linear 設為 false (即使用 sRGB)，這是 PNG 圖片的標準格式
+    //    Texture2D tex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, false);
 
-        tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
-        tex.Apply();
+    //    tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
+    //    tex.Apply();
 
-        byte[] bytes = tex.EncodeToPNG();
-        File.WriteAllBytes(savePath, bytes);
+    //    byte[] bytes = tex.EncodeToPNG();
+    //    File.WriteAllBytes(savePath, bytes);
 
-        cam.targetTexture = null;
-        RenderTexture.active = null;
+    //    cam.targetTexture = null;
+    //    RenderTexture.active = null;
 
-        Destroy(rt);
-        Destroy(tex);
+    //    Destroy(rt);
+    //    Destroy(tex);
 
-        Debug.Log("PNG 保存完成: " + savePath);
-    }
+    //    Debug.Log("PNG 保存完成: " + savePath);
+    //}
 
     private void SaveStickerData(string jsonPath)
     {

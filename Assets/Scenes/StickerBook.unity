@@ -3340,6 +3340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 1382962249}
+  StickerArea: {fileID: 0}
 --- !u!1 &370787188
 GameObject:
   m_ObjectHideFlags: 0
@@ -5704,7 +5705,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 200
   m_TargetDisplay: 0
 --- !u!224 &624049665
 RectTransform:
@@ -10132,7 +10133,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 165214314}
   m_HandleRect: {fileID: 165214313}
   m_Direction: 0
-  m_Value: -0.0000027164162
+  m_Value: -0.0000025805955
   m_Size: 0.59702647
   m_NumberOfSteps: 0
   m_OnValueChanged:
