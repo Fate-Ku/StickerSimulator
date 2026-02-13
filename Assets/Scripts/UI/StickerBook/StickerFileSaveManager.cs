@@ -86,6 +86,21 @@ public class StickerFileSaveManager : MonoBehaviour
 
         GameObject[] stickers = GameObject.FindGameObjectsWithTag("Sticker");
 
+        // ★ 追加：groupOrder（SortingGroup.sortingOrder）昇順に並び替え
+        //List<GameObject> sorted = new List<GameObject>(stickers);
+        //sorted.Sort((a, b) =>
+        //{
+        //    var sga = a.GetComponent<UnityEngine.Rendering.SortingGroup>();
+        //    var sgb = b.GetComponent<UnityEngine.Rendering.SortingGroup>();
+
+        //    // SortingGroup が無い場合は 0 として扱う
+        //    int ga = sga != null ? sga.sortingOrder : 0;
+        //    int gb = sgb != null ? sgb.sortingOrder : 0;
+
+        //    return ga.CompareTo(gb); // 小さい → 大きい
+        //});
+
+
         foreach (var s in stickers)
         {
             // ★ 核心修正：檢查父物件
@@ -183,6 +198,9 @@ public class StickerFileSaveManager : MonoBehaviour
         Debug.Log($"JSONから{saveData.stickers.Count}個のシールデータを読み込みました。");
 
         string photoFolder = Path.Combine(Application.persistentDataPath, "MyBrandStickersPhoto");
+
+        // ★ groupOrder 昇順に並び替え（小さい → 大きい）
+        saveData.stickers.Sort((a, b) => a.groupOrder.CompareTo(b.groupOrder));
 
         foreach (var data in saveData.stickers)
         {

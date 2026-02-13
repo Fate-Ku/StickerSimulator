@@ -148,16 +148,10 @@ public class StickerLoadManager : MonoBehaviour
 
     public void CreateStickerFromCurrentImage()
     {
-        if (previewImage.texture == null)
-        {
-            Debug.Log("表示中の画像がありません");
-            return;
-        }
+        if (previewImage.texture == null) return;
 
-        // ① Texture2D を取得
         Texture2D tex = previewImage.texture as Texture2D;
-
-        // ② Sprite に変換
+        // 建立 Sprite
         Sprite sprite = Sprite.Create(
             tex,
             new Rect(0, 0, tex.width, tex.height),
@@ -165,102 +159,74 @@ public class StickerLoadManager : MonoBehaviour
             100f
         );
 
-        // ★ ③ RawImage のファイル名をそのまま GameObject 名にする
         string stickerName = fileNameText.text;
         GameObject obj = new GameObject(stickerName);
         obj.tag = "Sticker";
         obj.layer = LayerMask.NameToLayer("Sticker");
 
-        // ④ SpriteRenderer を追加
+        // 1. 先處理 SpriteRenderer
         SpriteRenderer sr = obj.AddComponent<SpriteRenderer>();
         sr.sprite = sprite;
-        sr.material = new Material(Shader.Find("Sprites/Default"));
 
-        // ★ 本体 sortingOrder（必要なら調整）
-        //sr.sortingOrder = 25;
-
-        // ★ マテリアル設定（必要なら）
+        // 2. 處理材質 (這是最容易出錯的地方)
         Material mat = Resources.Load<Material>("Materials/ChangeColor_Shape");
         if (mat != null)
-            sr.material = mat;
+        {
+            // 使用實例化的材質，避免多個貼紙共用同一個實體導致渲染異常
+            sr.material = new Material(mat);
+        }
+        else
+        {
+            sr.material = new Material(Shader.Find("Sprites/Default"));
+        }
 
-        // ⑤ 画像サイズに応じてスケール調整
-        //float baseSize = 300f; // ここは好みで調整してOK
-        //float scaleFactor = baseSize / Mathf.Max(tex.width, tex.height);
-        //obj.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1);
-
-        // ⑥ 画面中央に配置
         obj.transform.position = Vector3.zero;
 
-        // ⑦ selectSticker（選択枠）を追加
-        GameObject select = Instantiate(selectStickerPrefab, obj.transform);
-        select.name = "SelectSticker";
-        select.transform.localPosition = Vector3.zero;
+        // 3. 處理 Collider (確保點擊範圍正確)
+        BoxCollider2D col = obj.AddComponent<BoxCollider2D>();
+        col.size = sr.sprite.bounds.size; // 強制校正 Collider 大小
 
-        // ★ 初期非表示
-        select.SetActive(false);
-
-        // ★ Prefab の SpriteRenderer を取得
-        SpriteRenderer prefabSR = selectStickerPrefab.GetComponent<SpriteRenderer>();
-        SpriteRenderer selectSR = select.GetComponent<SpriteRenderer>();
-
-        // ★ Prefab の Sprite と Material をそのままコピー
-        if (prefabSR != null)
-        {
-            selectSR.sprite = prefabSR.sprite;
-            selectSR.sharedMaterial = prefabSR.sharedMaterial;
-        }
-
-        // ★ order in layer = 50
-        selectSR.sortingOrder = 50;
-
-        // ★ SelectSticker のサイズをステッカーに合わせる
-        if (selectSR.sprite != null)
-        {
-            float padding = 1.1f;
-
-            // ステッカー本体の SpriteRenderer のワールドサイズ
-            Bounds b = sr.bounds;
-
-            float stickerWidth = b.size.x;
-            float stickerHeight = b.size.y;
-
-            // 外框 Sprite の元サイズ（ワールド座標）
-            float frameWidth = selectSR.sprite.bounds.size.x;
-            float frameHeight = selectSR.sprite.bounds.size.y;
-
-            // 外框のスケールを計算
-            float scaleX = (stickerWidth / frameWidth) * padding;
-            float scaleY = (stickerHeight / frameHeight) * padding;
-
-            select.transform.localScale = new Vector3(scaleX, scaleY, 1);
-        }
-
-
-        // ⑧ 增加 Sorting Group 並設定屬性
+        // 4. 處理 Sorting Group (確保整體排序)
         SortingGroup sg = obj.AddComponent<SortingGroup>();
-        sg.sortingOrder = 100;    // 設定為你要求的 100
-        sg.sortAtRoot = true;      // 勾選 Sort At Root
+        sg.sortingOrder = 100;
+        sg.sortAtRoot = true;
 
-        // ⑨ 必要なコンポーネント追加
-        obj.AddComponent<BoxCollider2D>();
-        obj.AddComponent<RotateTool>();
-        obj.AddComponent<Sticker_Manager>();
+        // 5. 處理外框 SelectSticker
+        if (selectStickerPrefab != null)
+        {
+            GameObject select = Instantiate(selectStickerPrefab, obj.transform);
+            select.name = "SelectSticker";
+            select.transform.localPosition = Vector3.zero;
+            select.SetActive(false);
 
+            SpriteRenderer selectSR = select.GetComponent<SpriteRenderer>();
+            if (selectSR != null)
+            {
+                // 外框在 Sorting Group 內部必須比本體高
+                selectSR.sortingOrder = 1;
+                sr.sortingOrder = 0; // 本體設為 0
+
+                // 修正縮放邏輯：使用本地尺寸而非世界邊界
+                float padding = 1.1f;
+                float sWidth = sprite.rect.width / sprite.pixelsPerUnit;
+                float sHeight = sprite.rect.height / sprite.pixelsPerUnit;
+                float fWidth = selectSR.sprite.rect.width / selectSR.sprite.pixelsPerUnit;
+                float fHeight = selectSR.sprite.rect.height / selectSR.sprite.pixelsPerUnit;
+
+                select.transform.localScale = new Vector3(
+                    (sWidth / fWidth) * padding,
+                    (sHeight / fHeight) * padding,
+                    1f
+                );
+            }
+        }
+
+        // 6. 註冊到 LayerManager
         if (globalLayerManager != null)
         {
             globalLayerManager.RegisterNewLayer(sg);
         }
-        else
-        {
-            Debug.LogError("No Global Layer Manager！請在 Inspector 拖入物件。");
-        }
 
-
-        // ⑨ popup を閉じる
         popupPanel.SetActive(false);
-
-        Debug.Log("ロード画像をステッカーとして生成しました: " + stickerName);
-        Debug.Log($"生成成功: {stickerName}, SortingOrder: {sg.sortingOrder}, SortAtRoot: {sg.sortAtRoot}");
     }
 }

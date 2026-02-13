@@ -155,17 +155,25 @@ public class Select : MonoBehaviour
         // オブジェクトが選択されているかつそのオブジェクトがStickerタグを持っている場合
         if (hit.collider != null && hit.collider.CompareTag("Sticker"))
         {
-            //選択枠を呼ぶ
-            SelectSticker(hit.transform, worldPosition);
+            Transform root = hit.transform;
 
-            //クリックしたオブジェクトを選択対象として登録
-            targetObject = hit.transform;
-            targetRenderer = targetObject.GetComponent<SpriteRenderer>();
+            // ★ 子オブジェクトをクリックした場合は親 Sticker を取得
+            if (root.parent != null && root.parent.CompareTag("Sticker"))
+            {
+                root = root.parent;
+            }
 
-            // --- Layertool ---
+            // 選択枠
+            SelectSticker(root, worldPosition);
+
+            // 選択対象
+            targetObject = root;
+            targetRenderer = root.GetComponent<SpriteRenderer>();
+
+            // LayerTool
             if (layerTool != null)
             {
-                SortingGroup sg = targetObject.GetComponentInParent<SortingGroup>();
+                SortingGroup sg = root.GetComponent<SortingGroup>();
                 if (sg != null)
                 {
                     layerTool.SetSelectedIndexFromSticker(sg);
