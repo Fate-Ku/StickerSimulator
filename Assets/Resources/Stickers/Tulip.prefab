@@ -189,7 +189,6 @@ GameObject:
   - component: {fileID: 5039826850659544406}
   - component: {fileID: 6485731360241271034}
   - component: {fileID: 7388381503952891727}
-  - component: {fileID: 8461052654491759048}
   - component: {fileID: 2926745348905330408}
   m_Layer: 6
   m_Name: Tulip
@@ -284,6 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   select: {fileID: 0}
   changeScale: 0.2
+  stickerArea: {fileID: 0}
 --- !u!114 &4765493881869771750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 0}
+  StickerArea: {fileID: 0}
 --- !u!114 &6485731360241271034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,61 +337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
---- !u!60 &8461052654491759048
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6710285863678220022}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.21, y: 0.18}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.112846226, y: 0.030756503}
-      - {x: 0.09764224, y: 0.09460789}
-      - {x: -0.08176637, y: 0.09595919}
-      - {x: -0.11031366, y: 0.03498036}
-      - {x: -0.11031377, y: -0.23244128}
-      - {x: 0.0072662756, y: -0.19190198}
-      - {x: 0.10845281, y: -0.17399517}
-      - {x: 0.120954365, y: -0.079735324}
-  m_UseDelaunayMesh: 0
 --- !u!210 &2926745348905330408
 SortingGroup:
   m_ObjectHideFlags: 0

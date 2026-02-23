@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HibiscusColor_0: -8262552783879243575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

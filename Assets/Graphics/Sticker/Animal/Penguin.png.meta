@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ce4ba0198913fb54caa30913c0903aca
+guid: 16f85be9e22573f45bc14f41613dc232
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1659537318708056447
-    second: Hibiscus_0
+      213: -3289575033469672952
+    second: Penguin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hibiscus_0
+      name: Penguin_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 12
-        width: 349
-        height: 360
+        x: 65
+        y: 96
+        width: 248
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f711915166cd70710800000000000000
-      internalID: 1659537318708056447
+      spriteID: 802eb0c9fe41952d0800000000000000
+      internalID: -3289575033469672952
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Hibiscus_0: 1659537318708056447
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
