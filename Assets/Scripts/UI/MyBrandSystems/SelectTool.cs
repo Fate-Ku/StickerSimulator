@@ -98,79 +98,90 @@ public class Select : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         //当たり判定
-        RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(worldPosition, Vector2.zero);
 
-        // 既存選択を解除
+        if (hits.Length == 0) return;
+
+        // 一番前にあるものを探す
+        RaycastHit2D? bestHit = null;
+        int highestOrder = int.MinValue;
+
+        foreach (var h in hits)
+        {
+            if (h.collider == null) continue;
+
+            // 親のSortingGroupを取得（子クリック対策）
+            SortingGroup sg = h.collider.GetComponentInParent<SortingGroup>();
+            if (sg == null) continue;
+
+            if (sg.sortingOrder > highestOrder)
+            {
+                highestOrder = sg.sortingOrder;
+                bestHit = h;
+            }
+        }
+
+        if (!bestHit.HasValue) return;
+
+        RaycastHit2D hit = bestHit.Value;
+
+        // 既存選択解除
         Deselect();
 
-        // 2025.12.12 added by ko
-        // Cloneable タグなら「複製」して Sticker に変える
-        if (hit.collider != null && hit.collider.CompareTag("Cloneable"))
+        // ===============================
+        // Cloneable の場合
+        // ===============================
+        if (hit.collider.CompareTag("Cloneable"))
         {
-            // 複製生成
-            GameObject clone = Instantiate(hit.collider.gameObject, hit.collider.transform.position, Quaternion.identity);
+            GameObject clone = Instantiate(
+                hit.collider.gameObject,
+                hit.collider.transform.position,
+                Quaternion.identity
+            );
 
-            // 複製されたオブジェクトは Sticker に変更
             clone.tag = "Sticker";
 
-            // ★ 子オブジェクトのタグも Sticker に変更（SelectSticker 以外）
             foreach (Transform child in clone.transform)
             {
                 if (child.name != "SelectSticker")
-                {
                     child.tag = "Sticker";
-                }
             }
 
-            // sorting group
             SortingGroup sg = clone.GetComponent<SortingGroup>();
             if (sg != null && layerTool != null)
             {
                 layerTool.RegisterNewLayer(sg);
             }
 
-            // 複製されたオブジェクトを新しい選択対象にする
             targetObject = clone.transform;
             targetRenderer = clone.GetComponent<SpriteRenderer>();
 
-            // default layer = 25
-            //targetRenderer.sortingOrder = 25;
-
-            // 座標のずれを計算
             m_offset = targetObject.position - worldPosition;
-
-            // 元の位置も保存
             originalPosition = targetObject.position;
 
             SelectSticker(clone.transform, worldPosition);
 
-            // シール選択状態にする
             isDraggingSticker = true;
-
             return;
         }
-        // 2025.12.12 added by ko
 
-        // Sticker を選択した場合の処理
-        // オブジェクトが選択されているかつそのオブジェクトがStickerタグを持っている場合
-        if (hit.collider != null && hit.collider.CompareTag("Sticker"))
+        // ===============================
+        // Sticker の場合
+        // ===============================
+        if (hit.collider.CompareTag("Sticker"))
         {
             Transform root = hit.transform;
 
-            // ★ 子オブジェクトをクリックした場合は親 Sticker を取得
             if (root.parent != null && root.parent.CompareTag("Sticker"))
             {
                 root = root.parent;
             }
 
-            // 選択枠
             SelectSticker(root, worldPosition);
 
-            // 選択対象
             targetObject = root;
             targetRenderer = root.GetComponent<SpriteRenderer>();
 
-            // LayerTool
             if (layerTool != null)
             {
                 SortingGroup sg = root.GetComponent<SortingGroup>();
@@ -180,19 +191,11 @@ public class Select : MonoBehaviour
                 }
             }
 
-            // ----------------------------
-
-            //座標のずれを計算
             m_offset = targetObject.position - worldPosition;
-
-            // 元の位置も保存
             originalPosition = targetObject.position;
 
-            //シールドラッグ状態にする
             isDraggingSticker = true;
-
         }
-
     }
 
     //シールの選択枠を表示する
